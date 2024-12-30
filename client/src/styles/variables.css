@@ -1,0 +1,47 @@
+:root {
+  /* Colors */
+
+  --blue: #3b82f6;
+  --dark-blue: #1627a7;
+  --orange: #fb923c;
+  --purple: #9747ff;
+  --black: #1f2937;
+  --gray-1: #374151;
+  --gray-2: #6b7280;
+  --gray-3: #d1d5db;
+  --gray-4: #f3f4f6;
+  --white: #f9fafb;
+
+  /* Gradient-colors */
+  --gradient-gray: linear-gradient(180deg, #6b7280 025%, #1f2937 90%);
+  --gradient-gray: linear-gradient(180deg, #3b82f6 025%, #1627a7 90%);
+
+  /* font-style*/
+
+  --fontFamily-Texturina: 'Texturina', cursive;
+  --fontFamily-Lora: 'Lora', sans-serif;
+
+  /* font-size */
+
+  --fontSize-title-1: 2.25rem;
+  --fontSize-title-2: 1.75rem;
+  --fontSize-title-3: 1.25rem;
+  --fontSize-text-1: 1rem;
+  --fontSize-text-2: 0.875rem;
+
+  /* font-weight */
+  --weight-regular: 400;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Tipografia */
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+
+  --section-space: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blue);
+}

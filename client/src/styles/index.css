@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('./global.css');
+@import './styles/variables.css';
 
 
 body {
