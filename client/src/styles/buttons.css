@@ -1,0 +1,75 @@
+@import url('./variables.css');
+
+.btn-primary-b,
+.btn-secundary-b {
+  padding: 16px 48px;
+  font-size: 18px;
+  border-radius: var(--border-radius);
+} 
+
+.btn-primary-m,
+.btn-secundary-m {
+  padding: 12px 40px;
+  font-size: 16px;
+  border-radius: var(--border-radius);
+}
+
+.btn-primary-p,
+.btn-secundary-p {
+  padding: 8px 32px;
+  font-size: 14px;
+  border-radius: var(--border-radius);
+}
+
+.btn-primary-b,
+.btn-primary-m,
+.btn-primary-p {
+  background: var(--blue);
+  color: var(--white);
+  transition: .3s;
+}
+
+.btn-secundary-b,
+.btn-secundary-m,
+.btn-secundary-p  {
+  background: transparent;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  transition: .3s;
+}
+
+.btn-secundary-b:hover,
+.btn-secundary-m:hover,
+.btn-secundary-p:hover {
+  border-color: var(--dark-blue);
+}
+
+.btn-primary-b:hover,
+.btn-primary-m:hover,
+.btn-primary-p:hover,
+.btn-primary-b:focus-visible,
+.btn-primary-m:focus-visible,
+.btn-primary-p:focus-visible,
+.btn-secundary-b:hover,
+.btn-secundary-m:hover,
+.btn-secundary-p:hover {
+  background: var(--dark-blue);
+  color: var(--white);
+}
+
+.btn-secundary-b:focus-visible,
+.btn-secundary-m:focus-visible,
+.btn-secundary-p:focus-visible {
+  background-color: transparent;
+  color: var(--dark-blue);
+}
+
+.btn-primary-b:disabled,
+.btn-primary-m:disabled,
+.btn-primary-p:disabled,
+.btn-secundary-b:disabled,
+.btn-secundary-m:disabled,
+.btn-secundary-p:disabled {
+  background-color: var(--gray-1);
+  color: var(--white);
+}

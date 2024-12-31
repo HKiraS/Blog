@@ -9,7 +9,6 @@ header {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 4px 4px 0 #00000033;
-  position: fixed;
   width: 100%;
 }
 
@@ -89,8 +88,7 @@ body.dark .dark-mode-toggle span {
   border-radius: var(--border-radius);
 }
 
-.navbar-link.active,
-.navbar-link:hover {
+.navbar-link.active {
   color: var(--purple);
 }
 

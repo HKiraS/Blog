@@ -26,6 +26,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--purple);
+}
+
 img {
   height: auto;
 }
@@ -55,7 +59,7 @@ address {
 }
 
 html {
-  font-size: 10px;
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 

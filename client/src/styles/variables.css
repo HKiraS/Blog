@@ -2,7 +2,7 @@
   /* Colors */
 
   --blue: #3b82f6;
-  --dark-blue: #1627a7;
+  --dark-blue: #25408e;
   --orange: #fb923c;
   --purple: #9747ff;
   --black: #1F2937;
@@ -13,7 +13,7 @@
   --white: #f9fafb;
 
   /* Gradient-colors */
-  --gradient-gray: linear-gradient(to bottom, #6b7280 025%, #1f2937 90%);
+  --gradient-gray: linear-gradient(to bottom, #6b7280e3 025%, #1f2937 90%);
   --gradient-blue: linear-gradient(to bottom, #3b82f6 50%, #1627a7 100%);
 
   /* font-style*/
@@ -28,7 +28,7 @@
   --fontSize-title-desktop-1: 2.25rem;
   --fontSize-title-desktop-2: 1.75rem;
   --fontSize-title-desktop-3: 1.25rem;
-  --fontSize-text-desktop-1: 1rem;
+  --fontSize-text-desktop-1: 1.15rem;
   --fontSize-text-desktop-2: 0.875rem;
 
   /* mobile */
@@ -53,7 +53,7 @@
 
 /* Tipografia Desktop */
 .title-b-desktop {
-  font-size: var(--fontSize-text-desktop-1);
+  font-size: var(--fontSize-title-desktop-1);
   font-family: var(--fontFamily-Texturina);
   font-weight: var(--weight-bold);
 }
@@ -71,39 +71,43 @@
   font-size: var(--fontSize-text-desktop-1);
   font-family: var(--fontFamily-Lora);
   font-weight: var(--weight-regular);
+  line-height: 1.5rem;
 }
 .text-p-desktop {
   font-size: var(--fontSize-text-desktop-2-desktop-2);
   font-family: var(--fontFamily-Lora);
   font-weight: var(--weight-regular);
+  line-height: 1.25rem;
 }
 
 /* Tipografia Mobile */
 
-.title-b-mobile {
-  font-size: var(--fontSize-title-mobile-1);
-  font-family: var(--fontFamily-Texturina);
-  font-weight: var(--weight-bold);
-}
-.title-m-mobile {
-  font-size: var(--fontSize-title-mobile-2);
-  font-family: var(--fontFamily-Texturina);
-  font-weight: var(--weight-semibold);
-}
-.title-p-mobile {
-  font-size: var(--fontSize-title-mobile-3);
-  font-family: var(--fontFamily-Texturina);
-  font-weight: var(--weight-semibold);
-}
-.text-n-mobile {
-  font-size: var(--fontSize-text-mobile-1);
-  font-family: var(--fontFamily-Lora);
-  font-weight: var(--weight-semibold);
-}
-.text-p-mobile {
-  font-size: var(--fontSize-text-mobile-2);
-  font-family: var(--fontFamily-Lora);
-  font-weight: var(--weight-semibold);
+@media (max-width: 768px) {
+  .title-b-desktop {
+    font-size: var(--fontSize-title-mobile-1);
+    font-family: var(--fontFamily-Texturina);
+    font-weight: var(--weight-bold);
+  }
+  .title-m-desktop {
+    font-size: var(--fontSize-title-mobile-2);
+    font-family: var(--fontFamily-Texturina);
+    font-weight: var(--weight-semibold);
+  }
+  .title-p-desktop {
+    font-size: var(--fontSize-title-mobile-3);
+    font-family: var(--fontFamily-Texturina);
+    font-weight: var(--weight-semibold);
+  }
+  .text-n-desktop {
+    font-size: var(--fontSize-text-mobile-1);
+    font-family: var(--fontFamily-Lora);
+    font-weight: var(--weight-regular);
+  }
+  .text-p-desktop {
+    font-size: var(--fontSize-text-mobile-2);
+    font-family: var(--fontFamily-Lora);
+    font-weight: var(--weight-regular);
+  }
 }
 
 /* Variaveis */
@@ -133,76 +137,3 @@
 
 
 
-.btn-primary-b,
-.btn-secundary-b {
-  padding: 16px 48px;
-  font-size: 18px;
-  border-radius: var(--border-radius);
-} 
-
-.btn-primary-m,
-.btn-secundary-m {
-  padding: 12px 40px;
-  font-size: 16px;
-  border-radius: var(--border-radius);
-}
-
-.btn-primary-p,
-.btn-secundary-p {
-  padding: 8px 32px;
-  font-size: 14px;
-  border-radius: var(--border-radius);
-}
-
-.btn-primary-b,
-.btn-primary-m,
-.btn-primary-p {
-  background: var(--gradient-blue);
-  color: var(--white);
-  
-}
-
-.btn-secundary-b,
-.btn-secundary-m,
-.btn-secundary-p  {
-  background: transparent;
-  color: var(--blue);
-  border: 2px solid var(--blue);
-  transition: .3s;
-}
-
-.btn-secundary-b:hover,
-.btn-secundary-m:hover,
-.btn-secundary-p:hover {
-  border-color: var(--dark-blue);
-}
-
-.btn-primary-b:hover,
-.btn-primary-m:hover,
-.btn-primary-p:hover,
-.btn-primary-b:focus-visible,
-.btn-primary-m:focus-visible,
-.btn-primary-p:focus-visible,
-.btn-secundary-b:hover,
-.btn-secundary-m:hover,
-.btn-secundary-p:hover {
-  background: var(--dark-blue);
-  color: var(--white);
-}
-
-.btn-secundary-b:focus-visible,
-.btn-secundary-m:focus-visible,
-.btn-secundary-p:focus-visible {
-  background-color: transparent;
-  color: var(--dark-blue);
-}
-
-.btn-primary-b:disabled,
-.btn-primary-m:disabled,
-.btn-primary-p:disabled,
-.btn-secundary-b:disabled,
-.btn-secundary-m:disabled,
-.btn-secundary-p:disabled {
-  background-color: var(--gray-1);
-  color: var(--white);
-}

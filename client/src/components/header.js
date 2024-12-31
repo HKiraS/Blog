@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './Button';
 import '../styles/header.css';
 import logo from '../assets/images/logo/logo.jpeg';
 import moon from '../assets/images/icon/moon.svg';
@@ -38,6 +39,7 @@ export function Header() {
             <input
               type="search"
               placeholder="Buscar..."
+              name='search'
               className=" max-w-md search-bar-input"
             />
           </div>
@@ -71,9 +73,7 @@ export function Header() {
               </li>
             </ul>
           </nav>
-          <a href="/" className="btn-primary-p">
-            Login
-          </a>
+          <Button text="Login" type="primary" size="m" />
         </div>
       </div>
     </header>
