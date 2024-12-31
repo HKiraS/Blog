@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 @import './styles/variables.css';
+@import './styles/reset.css';
 
 
 body {
-  color: var(--gray-5);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.dark {
+  background-color: var(--gray-1);
+}
+
+body.light {
+  background-color: var(--white);
 }
 
 code {

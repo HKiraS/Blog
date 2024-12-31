@@ -1,9 +1,10 @@
 import './styles/App.css';
+import { Header } from './components/header';
 
 function App() {
   return (
     <div className="App">
-      <a href="#home">hruiowehjw</a>
+      <Header />
     </div>
   );
 }
