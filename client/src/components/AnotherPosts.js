@@ -116,14 +116,10 @@ const posts = [
     href: '/',
   },
 ];
+const handleClick = (e) => e.target.classList.toggle('active');
 
 export default function AnotherPosts(obj) {
   const [isTagActive, setIsTagActive] = React.useState(false);
-
-  const handleClick = (event) => {
-    console.log('Clicou no botão:', event.target.textContent);
-    event.target.classList.toggle('active');
-  };
 
   const containerActive = isTagActive ? 'active' : '';
 
@@ -133,19 +129,17 @@ export default function AnotherPosts(obj) {
         <header className="shadow-lg my-16" id="AnotherPosts">
           <div className="container mx-auto flex justify-between items-center py-8 relative">
             <h1 className="title-b-desktop relative">Outros Posts</h1>
-            <div data-tags-container={isTagActive}
+            <div
+              data-tags-container={isTagActive}
               className="flex items-center gap-2 cursor-pointer btn-filter p-3"
               onClick={(e) => {
-                setIsTagActive(!isTagActive)
+                setIsTagActive(!isTagActive);
               }}
             >
               <img src={filter} alt="icone filtro" />
               <span className="text-n-desktop">Filtro</span>
             </div>
-            <div
-              
-              className="tags-container grid grid-cols-3 gap-3 rounded absolute p-3 right-1"
-            >
+            <div className="tags-container grid grid-cols-3 gap-3 rounded absolute p-3 right-1">
               {[
                 'Ação',
                 'Aventura',
@@ -169,7 +163,8 @@ export default function AnotherPosts(obj) {
                     >
                       {item}
                     </span>
-                  );}
+                  );
+                }
                 return null;
               })}
 
@@ -182,40 +177,44 @@ export default function AnotherPosts(obj) {
             </div>
           </div>
         </header>
-        <div data-container={containerActive} className="posts-container container mx-auto grid grid-cols-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 sm:gap-4 my-16">
-          {posts.map(({ img, title, timeRead, date, description, id }) => { 
+        <div
+          data-container={containerActive}
+          className="posts-container container mx-auto grid grid-cols-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 sm:gap-4 my-16"
+        >
+          {posts.map(({ img, title, timeRead, date, description, id }) => {
             if (id < 11) {
-            return(
-            <Postes
-              key={id}
-              img={img}
-              title={title}
-              description={description}
-              timeRead={timeRead}
-              date={date}
-            />
-          );} 
-          return null;
+              return (
+                <Postes
+                  key={id}
+                  img={img}
+                  title={title}
+                  description={description}
+                  timeRead={timeRead}
+                  date={date}
+                />
+              );
+            }
+            return null;
           })}
         </div>
-        <div id="page-controls" className="flex mx-auto my-16 justify-center sm:gap-2 items-center">
-          <NavArrows  direction="left" />
+        <div
+          id="page-controls"
+          className="flex mx-auto my-16 justify-center sm:gap-2 items-center"
+        >
+          <NavArrows direction="left" />
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index, arr) => {
             const isActive = index === 0 ? 'active' : '';
             const classButton = `w-10 h-10 color-black p-2 duration-300 hover:bg-n-desktop ${isActive}`;
 
             return (
-              <button
-                key={index}
-                className={classButton}
-              >
+              <button key={index} className={classButton}>
                 {item}
               </button>
             );
           })}
           <NavArrows direction="right" />
         </div>
-      </div> 
+      </div>
     </section>
   );
 }

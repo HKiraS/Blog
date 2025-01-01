@@ -54,6 +54,22 @@ button {
   cursor: pointer;
 }
 
+button:focus {
+  outline: none;
+}
+
+header {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--fontFamily-Lora);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 4px 0 #00000033;
+  width: 100%;
+}
+
 address {
   font-style: normal;
 }
