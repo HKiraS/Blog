@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/RecentPosts.css';
-import { Postes } from './Postes';
+import { Posts } from './Posts';
 
 const posts = [
   {
@@ -129,7 +129,6 @@ export function RecentPosts(obj) {
     item.classes = 'small-post';
   });
 
-  
   return (
     <section className="">
       <div className="container mx-auto recent-posts">
@@ -137,7 +136,7 @@ export function RecentPosts(obj) {
         <div className="posts-container grid grid-cols-10">
           <div className="col-span-5 row-span-3 w-full h-full grid grid-cols-1 gap-8 ">
             <div className="main-post-container col-span-5 row-start-1 w-full">
-              <Postes
+              <Posts
                 date={mainPost.date}
                 description={mainPost.description}
                 title={mainPost.title}
@@ -149,8 +148,8 @@ export function RecentPosts(obj) {
             <div className="small-posts-container col-span-5 row-start-2 row-end-4 max-w-full grid grid-cols-2 gap-8">
               <span className="separator w-11/12 h-0.5 col-span-2 row-start-1 place-self-center opacity-20"></span>
               {smallPosts.map(
-                ({ img, title, description, timeRead, date, classes, id}) => (
-                  <Postes
+                ({ img, title, description, timeRead, date, classes, id }) => (
+                  <Posts
                     key={id}
                     img={img}
                     title={title}
@@ -167,7 +166,7 @@ export function RecentPosts(obj) {
           <div className="side-posts-container col-start-7 col-end-11 row-span-full grid grid-cols-1 place-content-center gap-12">
             {sidePosts.map(
               ({ img, title, description, timeRead, date, classes, id }) => (
-                <Postes
+                <Posts
                   img={img}
                   key={id}
                   title={title}

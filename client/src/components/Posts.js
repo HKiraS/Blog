@@ -4,7 +4,7 @@ import '../styles/RecentPosts.css';
 import clock from '../assets/images/icon/clock.svg';
 import calendar from '../assets/images/icon/calendar.svg';
 
-export function Postes({
+export function Posts({
   img,
   title,
   description,

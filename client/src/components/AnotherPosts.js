@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/AnotherPosts.css';
 import filter from '../assets/images/icon/filter.svg';
-import { Postes } from './Postes';
+import { Posts } from './Posts';
 import NavArrows from './NavArrows';
 
 const posts = [
@@ -179,12 +179,12 @@ export default function AnotherPosts(obj) {
         </header>
         <div
           data-container={containerActive}
-          className="posts-container container mx-auto grid grid-cols-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 sm:gap-4 my-16"
+          className="posts-container container mx-auto grid grid-cols-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 my-16"
         >
           {posts.map(({ img, title, timeRead, date, description, id }) => {
             if (id < 11) {
               return (
-                <Postes
+                <Posts
                   key={id}
                   img={img}
                   title={title}
