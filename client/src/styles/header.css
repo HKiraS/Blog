@@ -88,7 +88,8 @@ body.dark .dark-mode-toggle span {
   border-radius: var(--border-radius);
 }
 
-.navbar-link.active {
+.navbar-link.active,
+.navbar-link:hover {
   color: var(--purple);
 }
 

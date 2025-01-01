@@ -40,6 +40,7 @@ export function Header() {
               type="search"
               placeholder="Buscar..."
               name='search'
+              id='search'
               className=" max-w-md search-bar-input"
             />
           </div>

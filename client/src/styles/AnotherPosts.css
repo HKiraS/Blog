@@ -1,0 +1,123 @@
+
+.another-posts .title-b-desktop {
+  color: var(--orange);
+}
+
+.another-posts .title-b-desktop::before {
+  content: '';
+  background-color: var(--orange);
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.btn-filter {
+  transition: .3s;
+}
+
+.btn-filter:hover,
+.btn-filter:focus,
+.btn-filter.active {
+  color: var(--orange);
+}
+
+.tags-container[data-container=active] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.tags-container {
+  background-color: var(--black);
+  border: 1px solid var(--gray-3);  
+  bottom: -160%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+body.light .tags-container {
+  background-color: var(--gray-4);
+  border: 1px solid var(--black);
+}
+
+
+
+.tags-container::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent; 
+  border-bottom: 30px solid var(--gray-3); 
+  position: absolute;
+  top: -15%;
+  right: 20px;
+  z-index: 2;
+}
+
+
+.tags-container .tag {
+  border: 1px solid var(--gray-3);  
+}
+
+body.light .tags-container .tag {
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
+.tags-container .tag:hover {
+  background-color: var(--gray-3);
+  color: var(--black);
+  border: 1px solid var(--black);
+}
+
+body.light .tags-container .tag:hover {
+  background-color: var(--black);
+  border: 1px solid var(--black);
+  color: var(--white);
+}
+
+.tags-container .tag.active {
+  background-color: var(--orange);
+  color: var(--black);
+  border: 1px solid var(--orange) !important;
+}
+
+.tags-container label {
+  cursor: pointer;
+  background-color: var(--orange);
+  color: var(--black);
+}
+
+body.dark #page-controls button{
+  color: var(--white);
+}
+
+body.light #page-controls button{
+  color: var(--black);
+}
+
+#page-controls button:hover,
+#page-controls button.active {
+  color: var(--orange) !important;
+}
+
+@media (max-width: 900px) {
+  .another-posts .posts-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .another-posts .posts-container {
+    grid-template-columns: repeat(1, 1fr);
+    margin-inline: 1rem;
+  }
+}

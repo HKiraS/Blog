@@ -10,7 +10,7 @@ export function Postes({
   description,
   timeRead,
   date,
-  classes,
+  classes = 'small',
   href = '/',
   onClick = () => {
     window.location.href = href;
@@ -29,7 +29,7 @@ export function Postes({
     description = description.substring(0, 197).padEnd(200, '...');
   } 
 
-  const classPost = `post-box shadow-sm cursor-pointer rounded overflow-hidden duration-500 ${classes}`;
+  const classPost = `post-box shadow-sm cursor-pointer rounded shadow-lg overflow-hidden duration-500 ${classes}`;
   const classesTitle = classes.includes('main')
     ? 'post-title duration-500 title-b-desktop'
     : 'post-title duration-500 title-m-desktop';

@@ -135,5 +135,32 @@
   color: var(--blue);
 }
 
+.left svg {
+  transform: rotate(180deg);
+}
 
+body.dark .nav-arrow {
+  background-color: var(--white);
+}
 
+body.light .nav-arrow {
+  background-color: var(--black);
+}
+
+body.light .nav-arrow:hover,
+body.dark .nav-arrow:hover {
+  background-color: var(--purple);
+}
+
+body.light .nav-arrow svg {
+  stroke: var(--white);
+}
+
+body.dark .nav-arrow svg {
+  stroke: var(--black);
+}
+
+body.light .nav-arrow:hover svg,
+body.dark .nav-arrow:hover svg {
+  stroke: var(--black);
+}

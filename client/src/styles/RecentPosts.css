@@ -22,6 +22,10 @@ body.dark .recent-posts h1::after {
   background-color: var(--orange);
 }
 
+.post-box {
+  background-color: var(--gray-4);
+}
+
 .post-box:hover {
   transform: translateY(-10px);
 }
@@ -55,10 +59,4 @@ body.dark .separator {
 
 .main-post-container {
   height: calc(100% - 2rem);
-}
-
-.main-post,
-.side-post,
-.small-post {
-  background-color: var(--gray-4);
 }
