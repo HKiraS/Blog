@@ -164,3 +164,22 @@ body.light .nav-arrow:hover svg,
 body.dark .nav-arrow:hover svg {
   stroke: var(--black);
 }
+
+h1.title-b-desktop::before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: var(--purple);
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  border-radius: 4px;
+}
+
+h1.title-b-desktop.title-in-black-bg {
+  color: var(--orange);
+}
+
+h1.title-b-desktop.title-in-black-bg::before {
+  background-color: var(--orange);
+}

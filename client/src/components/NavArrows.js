@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NavArrows({direction, onClick = () => {console.log('Não foi passado nenhuma função')}}) {
   const arrowDirection = direction === 'left' ? 'left' : 'right';
-  const arrowClass = `nav-arrow p-2 rounded-full flex item-center duration-300 justify-center ${arrowDirection}`;
+  const arrowClass = `nav-arrow p-2 rounded-full flex items-center duration-300 justify-center ${arrowDirection}`;
   const ariaLabel = direction === 'left' 
     ? 'Navegar para página anterior' 
     : 'Navegar para próxima página';

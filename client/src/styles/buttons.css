@@ -1,11 +1,11 @@
-@import url('./variables.css');
+@import url('./global.css');
 
 .btn-primary-b,
 .btn-secundary-b {
   padding: 16px 48px;
   font-size: 18px;
   border-radius: var(--border-radius);
-} 
+}
 
 .btn-primary-m,
 .btn-secundary-m {
@@ -14,8 +14,8 @@
   border-radius: var(--border-radius);
 }
 
-.btn-primary-p,
-.btn-secundary-p {
+.btn-primary-s,
+.btn-secundary-s {
   padding: 8px 32px;
   font-size: 14px;
   border-radius: var(--border-radius);
@@ -23,53 +23,53 @@
 
 .btn-primary-b,
 .btn-primary-m,
-.btn-primary-p {
+.btn-primary-s {
   background: var(--blue);
   color: var(--white);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .btn-secundary-b,
 .btn-secundary-m,
-.btn-secundary-p  {
+.btn-secundary-s {
   background: transparent;
   color: var(--blue);
   border: 2px solid var(--blue);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .btn-secundary-b:hover,
 .btn-secundary-m:hover,
-.btn-secundary-p:hover {
+.btn-secundary-s:hover {
   border-color: var(--dark-blue);
 }
 
 .btn-primary-b:hover,
 .btn-primary-m:hover,
-.btn-primary-p:hover,
+.btn-primary-s:hover,
 .btn-primary-b:focus-visible,
 .btn-primary-m:focus-visible,
-.btn-primary-p:focus-visible,
+.btn-primary-s:focus-visible,
 .btn-secundary-b:hover,
 .btn-secundary-m:hover,
-.btn-secundary-p:hover {
+.btn-secundary-s:hover {
   background: var(--dark-blue);
   color: var(--white);
 }
 
 .btn-secundary-b:focus-visible,
 .btn-secundary-m:focus-visible,
-.btn-secundary-p:focus-visible {
+.btn-secundary-s:focus-visible {
   background-color: transparent;
   color: var(--dark-blue);
 }
 
 .btn-primary-b:disabled,
 .btn-primary-m:disabled,
-.btn-primary-p:disabled,
+.btn-primary-s:disabled,
 .btn-secundary-b:disabled,
 .btn-secundary-m:disabled,
-.btn-secundary-p:disabled {
+.btn-secundary-s:disabled {
   background-color: var(--gray-1);
   color: var(--white);
 }

@@ -1,18 +1,3 @@
-
-.another-posts .title-b-desktop {
-  color: var(--orange);
-}
-
-.another-posts .title-b-desktop::before {
-  content: '';
-  background-color: var(--orange);
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-}
-
 .btn-filter {
   transition: .3s;
 }
@@ -108,6 +93,14 @@ body.light #page-controls button{
   color: var(--orange) !important;
 }
 
+
+
+@media (min-width: 1000px) {
+  .another-posts .posts-container .post-content > div {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 900px) {
   .another-posts .posts-container {
     grid-template-columns: repeat(2, 1fr);
@@ -115,9 +108,24 @@ body.light #page-controls button{
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .another-posts .posts-container {
     grid-template-columns: repeat(1, 1fr);
-    margin-inline: 1rem;
+    gap: 1rem;
+    width: calc(100% - 2rem);
   }
+
+  .another-posts .post-box button{
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .another-posts .post-box {
+    max-width: 100%;
+  }
+  .another-posts .post-box .post-image {
+    max-height: 150px;
+  }
+
 }
