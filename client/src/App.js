@@ -2,8 +2,9 @@ import './styles/App.css';
 import { Header } from './components/header';
 // import { Button } from './components/Button';
 import { RecentPosts } from './components/RecentPosts';
-import {AnotherPosts} from './components/AnotherPosts';
-import {Characters} from './components/Characters.js';
+import { AnotherPosts } from './components/AnotherPosts';
+import { Characters } from './components/Characters';
+import { Footer } from './components/Footer';
 
 const dados = [
   {
@@ -124,7 +125,8 @@ function App() {
       <Header />
       <RecentPosts data={dados} />
       <AnotherPosts data={dados} />
-      <Characters    data={dados} />
+      <Characters data={dados} />
+      <Footer />
     </div>
   );
 }

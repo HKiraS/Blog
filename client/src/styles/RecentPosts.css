@@ -49,3 +49,9 @@ body.dark .separator {
 .main-post-container {
   height: calc(100% - 2rem);
 }
+
+@media (max-width: 768px) {
+  .recent-posts h1.title-b-desktop {
+    justify-self: center;
+  }
+}
