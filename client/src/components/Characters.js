@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Character } from './Character.js';
 import { Button } from './Button.js';
 import NavArrows from './NavArrows';
@@ -8,7 +8,7 @@ export function Characters({ data }) {
     <section className="w-full my-16">
       <header className="shadow-lg">
         <div className="container mx-auto flex justify-between items-center  my-8">
-          <h1 className="title-b-desktop relative title-in-black-bg gap-4">
+          <h1 className="title-b-desktop relative in-black-bg gap-4">
             Personagens
           </h1>
           <div className="btn-container flex gap-6">

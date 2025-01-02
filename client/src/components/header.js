@@ -72,17 +72,17 @@ export function Header() {
           <nav className="navbar flex gap-6 items-center">
             <ul className="flex navbar-container gap-6">
               <li className="navbar-link cursor-pointer relative active">
-                <a href="/" className="title-p-desktop active">
+                <a href="/" className="title-s-desktop active">
                   Home
                 </a>
               </li>
               <li className="navbar-link cursor-pointer relative">
-                <a href="./pages/personagens.html" className="title-p-desktop">
+                <a href="./pages/personagens.html" className="title-s-desktop">
                   Personagens
                 </a>
               </li>
               <li className="navbar-link cursor-pointer relative">
-                <a href="./pages/personagens.html" className="title-p-desktop">
+                <a href="./pages/personagens.html" className="title-s-desktop">
                   Tags
                 </a>
               </li>
@@ -102,7 +102,7 @@ export function Header() {
               <li className="navbar-link-mobile cursor-pointer relative active p-1">
                 <a
                   href="/"
-                  className="title-p-desktop px-3 py-4 duration-500 active"
+                  className="title-s-desktop px-3 py-4 duration-500 active"
                 >
                   Home
                 </a>
@@ -111,7 +111,7 @@ export function Header() {
               <li className="navbar-link-mobile cursor-pointer relative">
                 <a
                   href="./pages/personagens.html"
-                  className="title-p-desktop px-3 py-4 duration-500 "
+                  className="title-s-desktop px-3 py-4 duration-500 "
                 >
                   Personagens
                 </a>
@@ -120,13 +120,18 @@ export function Header() {
               <li className="navbar-link-mobile cursor-pointer relative">
                 <a
                   href="./pages/personagens.html"
-                  className="title-p-desktop px-3 py-4 duration-500"
+                  className="title-s-desktop px-3 py-4 duration-500"
                 >
                   Tags
                 </a>
                 <span className="w-full h-full absolute top-0 left-0"></span>
               </li>
-              <Button text="Login" type="primary" size="m" classes="rounded-none w-full" />
+              <Button
+                text="Login"
+                type="primary"
+                size="m"
+                classes="rounded-none w-full"
+              />
             </ul>
           </nav>
         </div>

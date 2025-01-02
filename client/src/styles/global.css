@@ -5,7 +5,7 @@
   --dark-blue: #25408e;
   --orange: #fb923c;
   --purple: #9747ff;
-  --black: #1F2937;
+  --black: #1f2937;
   --gray-1: #374151;
   --gray-2: #6b7280;
   --gray-3: #d1d5db;
@@ -62,7 +62,7 @@
   font-family: var(--fontFamily-Texturina);
   font-weight: var(--weight-semibold);
 }
-.title-p-desktop {
+.title-s-desktop {
   font-size: var(--fontSize-title-desktop-3);
   font-family: var(--fontFamily-Texturina);
   font-weight: var(--weight-semibold);
@@ -73,8 +73,8 @@
   font-weight: var(--weight-regular);
   line-height: 1.5rem;
 }
-.text-p-desktop {
-  font-size: var(--fontSize-text-desktop-2-desktop-2);
+.text-s-desktop {
+  font-size: var(--fontSize-text-desktop-2);
   font-family: var(--fontFamily-Lora);
   font-weight: var(--weight-regular);
   line-height: 1.25rem;
@@ -93,7 +93,7 @@
     font-family: var(--fontFamily-Texturina);
     font-weight: var(--weight-semibold);
   }
-  .title-p-desktop {
+  .title-s-desktop {
     font-size: var(--fontSize-title-mobile-3);
     font-family: var(--fontFamily-Texturina);
     font-weight: var(--weight-semibold);
@@ -103,7 +103,7 @@
     font-family: var(--fontFamily-Lora);
     font-weight: var(--weight-regular);
   }
-  .text-p-desktop {
+  .text-s-desktop {
     font-size: var(--fontSize-text-mobile-2);
     font-family: var(--fontFamily-Lora);
     font-weight: var(--weight-regular);
@@ -139,7 +139,8 @@
   transform: rotate(180deg);
 }
 
-body.dark .nav-arrow {
+body.dark .nav-arrow,
+.separator.in-black-bg {
   background-color: var(--white);
 }
 
@@ -156,10 +157,7 @@ body.light .nav-arrow svg {
   stroke: var(--white);
 }
 
-body.dark .nav-arrow svg {
-  stroke: var(--black);
-}
-
+body.dark .nav-arrow svg,
 body.light .nav-arrow:hover svg,
 body.dark .nav-arrow:hover svg {
   stroke: var(--black);
@@ -176,10 +174,10 @@ h1.title-b-desktop::before {
   border-radius: 4px;
 }
 
-h1.title-b-desktop.title-in-black-bg {
+h1.title-b-desktop.in-black-bg {
   color: var(--orange);
 }
 
-h1.title-b-desktop.title-in-black-bg::before {
+h1.title-b-desktop.in-black-bg::before {
   background-color: var(--orange);
 }

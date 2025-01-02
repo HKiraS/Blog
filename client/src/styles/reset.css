@@ -57,7 +57,7 @@ button:focus {
   outline: none;
 }
 
-header {
+header, footer {
   background-color: var(--black);
   color: var(--white);
   font-family: var(--fontFamily-Lora);

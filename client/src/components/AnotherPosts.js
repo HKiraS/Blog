@@ -16,7 +16,9 @@ export function AnotherPosts({ data }) {
       <div>
         <header className="shadow-lg my-16" id="AnotherPosts">
           <div className="container mx-auto flex justify-between items-center py-8 relative">
-            <h1 className="title-b-desktop relative title-in-black-bg">Outros Posts</h1>
+            <h1 className="title-b-desktop relative in-black-bg">
+              Outros Posts
+            </h1>
             <div
               data-tags-container={isTagActive}
               className="flex items-center gap-2 cursor-pointer btn-filter p-3"
