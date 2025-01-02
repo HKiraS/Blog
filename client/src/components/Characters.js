@@ -27,8 +27,8 @@ export function Characters({ data }) {
           </div>
         </div>
       </header>
-      <div className="flex items-center container mx-auto justify-center w-11/12 gap-8">
-        <NavArrows direction="left" />
+      <div className="flex items-center max-w-screen-2xl mx-auto justify-center w-11/12 gap-8">
+        <NavArrows direction="left" classes="max-md:hidden"/>
         <div className="character-container mx-auto my-16 flex flex-col gap-8 overflow-hidden w-full">
           <div className="gap-8 character-box grid grid-flow-col">
             {data
@@ -45,7 +45,7 @@ export function Characters({ data }) {
               ))}
           </div>
         </div>
-        <NavArrows />
+        <NavArrows classes="max-md:hidden" direction="right" />
       </div>
     </section>
   );

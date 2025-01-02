@@ -28,7 +28,7 @@
   --fontSize-title-desktop-1: 2.25rem;
   --fontSize-title-desktop-2: 1.75rem;
   --fontSize-title-desktop-3: 1.25rem;
-  --fontSize-text-desktop-1: 1.15rem;
+  --fontSize-text-desktop-1: 1rem;
   --fontSize-text-desktop-2: 0.875rem;
 
   /* mobile */
@@ -36,8 +36,8 @@
   --fontSize-title-mobile-1: 1.75rem;
   --fontSize-title-mobile-2: 1.5rem;
   --fontSize-title-mobile-3: 1.125rem;
-  --fontSize-text-mobile-1: 1rem;
-  --fontSize-text-mobile-2: 0.75rem;
+  --fontSize-text-mobile-1: 0.875rem;
+  --fontSize-text-mobile-2: 0.6rem;
 
   /* font-weight */
   --weight-regular: 400;
@@ -50,6 +50,11 @@
 
   --section-space: 70px;
 }
+
+/* 
+  * Variaveis 
+*/
+
 
 /* Tipografia Desktop */
 .title-b-desktop {
@@ -110,14 +115,41 @@
   }
 }
 
-/* Variaveis */
+input::placeholder,
+input::-moz-placeholder
+input::-webkit-input-placeholder
+input:-ms-input-placeholder {
+  color: var(--gray-2);
+  font-family: var(--fontFamily-Lora);
+  font-size: var(--fontSize-text-mobile-1);
+}
 
+body.dark .nav-arrow,
+.separator.in-black-bg,
+body.dark .separator,
+.white-bg {
+  background-color: var(--white);
+}
+
+body.light .nav-arrow,
+.separator,
 .black-bg {
   background-color: var(--black);
 }
 
-.white-bg {
-  background-color: var(--white);
+body.light .nav-arrow:hover,
+body.dark .nav-arrow:hover {
+  background-color: var(--purple);
+}
+
+body.light .nav-arrow svg {
+  stroke: var(--white);
+}
+
+body.dark .nav-arrow svg,
+body.light .nav-arrow:hover svg,
+body.dark .nav-arrow:hover svg {
+  stroke: var(--black);
 }
 
 .logo {
@@ -139,29 +171,6 @@
   transform: rotate(180deg);
 }
 
-body.dark .nav-arrow,
-.separator.in-black-bg {
-  background-color: var(--white);
-}
-
-body.light .nav-arrow {
-  background-color: var(--black);
-}
-
-body.light .nav-arrow:hover,
-body.dark .nav-arrow:hover {
-  background-color: var(--purple);
-}
-
-body.light .nav-arrow svg {
-  stroke: var(--white);
-}
-
-body.dark .nav-arrow svg,
-body.light .nav-arrow:hover svg,
-body.dark .nav-arrow:hover svg {
-  stroke: var(--black);
-}
 
 h1.title-b-desktop::before {
   content: '';
@@ -181,3 +190,6 @@ h1.title-b-desktop.in-black-bg {
 h1.title-b-desktop.in-black-bg::before {
   background-color: var(--orange);
 }
+
+
+

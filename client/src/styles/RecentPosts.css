@@ -1,5 +1,3 @@
-@import url('./global.css');
-
 .recent-posts h1.title-b-desktop {
   color: var(--purple);
 }
@@ -36,22 +34,4 @@ body.dark .recent-posts h1.title-b-desktop::before {
 .date img {
   width: 16px;
   height: 16px;
-}
-
-.separator {
-  background-color: var(--black);
-}
-
-body.dark .separator {
-  background-color: var(--white);
-}
-
-.main-post-container {
-  height: calc(100% - 2rem);
-}
-
-@media (max-width: 768px) {
-  .recent-posts h1.title-b-desktop {
-    justify-self: center;
-  }
 }

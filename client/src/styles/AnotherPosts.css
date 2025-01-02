@@ -1,5 +1,5 @@
 .btn-filter {
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .btn-filter:hover,
@@ -8,7 +8,7 @@
   color: var(--orange);
 }
 
-.tags-container[data-container=active] {
+.tags-container[data-container='active'] {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
@@ -17,7 +17,7 @@
 
 .tags-container {
   background-color: var(--black);
-  border: 1px solid var(--gray-3);  
+  border: 1px solid var(--gray-3);
   bottom: -160%;
   z-index: 1;
   opacity: 0;
@@ -31,24 +31,21 @@ body.light .tags-container {
   border: 1px solid var(--black);
 }
 
-
-
 .tags-container::before {
   content: '';
   width: 0;
   height: 0;
   border-left: 15px solid transparent;
-  border-right: 15px solid transparent; 
-  border-bottom: 30px solid var(--gray-3); 
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid var(--gray-3);
   position: absolute;
   top: -15%;
   right: 20px;
   z-index: 2;
 }
 
-
 .tags-container .tag {
-  border: 1px solid var(--gray-3);  
+  border: 1px solid var(--gray-3);
 }
 
 body.light .tags-container .tag {
@@ -80,11 +77,11 @@ body.light .tags-container .tag:hover {
   color: var(--black);
 }
 
-body.dark #page-controls button{
+body.dark #page-controls button {
   color: var(--white);
 }
 
-body.light #page-controls button{
+body.light #page-controls button {
   color: var(--black);
 }
 
@@ -93,29 +90,18 @@ body.light #page-controls button{
   color: var(--orange) !important;
 }
 
-
-
 @media (min-width: 1000px) {
   .another-posts .posts-container .post-content > div {
     gap: 1rem;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .another-posts .posts-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 700px) {
-  .another-posts .posts-container {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem;
     width: calc(100% - 2rem);
   }
 
-  .another-posts .post-box button{
+  .another-posts .post-box button {
     max-width: 100%;
   }
 }
@@ -127,5 +113,4 @@ body.light #page-controls button{
   .another-posts .post-box .post-image {
     max-height: 150px;
   }
-
 }

@@ -1,6 +1,17 @@
 .footer-container {
-  grid-template-columns: 3fr 33px 1fr;
+  grid-template-columns: 3fr auto 1fr;
   grid-template-rows: 3fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+  grid-template-columns: 3fr repeat(2, auto);
+    grid-template-rows: 1fr auto;
+  }
+}
+
+.footer-container .separator {
+  margin-inline: 1rem;
 }
 
 .footer-text, 

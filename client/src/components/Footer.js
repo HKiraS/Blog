@@ -7,21 +7,13 @@ import discord from '../assets/images/icon/discord.svg';
 export function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-container container mx-auto grid gap-4">
-        <div className="about gap-6 grid pr-3 pb-4">
+      <div className="footer-container container mx-auto grid max-md:grid-cols-2 gap-4">
+        <div className="about gap-6 grid  pr-3 pb-4">
           <h2 className="footer-title title-m-desktop">Sobre</h2>
           <p className="footer-text text-s-desktop">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             mattis blandit nulla ut tincidunt. In sollicitudin, lorem nec
             pretium tristique, ligula nibh scelerisque nulla, at interdum urna
-            ante in tortor. Nunc mattis leo non ex placerat sollicitudin.
-            Praesent consequat sagittis mi, at efficitur dui fermentum ac.
-            Aliquam id bibendum magna. Morbi consequat justo eu ex facilisis
-            volutpat. Sed eget sagittis eros. Duis arcu odio, lobortis semper
-            tempor at, fringilla at velit. Phasellus venenatis porttitor nibh,
-            vel malesuada nibh aliquet blandit. Pellentesque nibh nunc, eleifend
-            sed odio in, suscipit porttitor justo. In finibus in nibh id cursus.
-            Nullam porta maximus nisi, vitae tristique metus. do Post 1
           </p>
         </div>
         <span className="separator h-5/6 w-px opacity-20 in-black-bg justify-self-center self-center"></span>

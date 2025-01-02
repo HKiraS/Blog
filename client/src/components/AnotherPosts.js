@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/AnotherPosts.css';
 import filter from '../assets/images/icon/filter.svg';
 import { Posts } from './Posts';
@@ -8,8 +8,26 @@ const handleClick = (e) => e.target.classList.toggle('active');
 
 export function AnotherPosts({ data }) {
   const [isTagActive, setIsTagActive] = React.useState(false);
+  const [postsLimit, setPostsLimit] = React.useState(10);
 
-  const containerActive = isTagActive ? 'active' : '';
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1268) {
+        setPostsLimit(10);
+      } else if (window.innerWidth < 1268 && window.innerWidth > 1024) {
+        setPostsLimit(8);
+      } else if (window.innerWidth < 1024) {
+        setPostsLimit(6);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);  const containerActive = isTagActive ? 'active' : '';
 
   return (
     <section className="another-posts w-full my-16">
@@ -69,22 +87,19 @@ export function AnotherPosts({ data }) {
         </header>
         <div
           data-container={containerActive}
-          className="posts-container container mx-auto grid grid-cols-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 my-16"
+          className="posts-container px-4 container mx-auto grid grid-cols-5 max-md:grid-cols-2 max-lg:grid-cols-3 max-xl:grid-cols-4 xl:grid-cols-5 gap-8 max-md:gap-2 my-16"
         >
-          {data.map(({ img, title, timeRead, date, description, id }) => {
-            if (id < 11) {
-              return (
-                <Posts
-                  key={id}
-                  img={img}
-                  title={title}
-                  description={description}
-                  timeRead={timeRead}
-                  date={date}
-                />
-              );
-            }
-            return null;
+          {data.map(({ img, title, timeRead, date, description }, index) => {
+            return index < postsLimit ? (
+              <Posts
+                key={index}
+                img={img}
+                title={title}
+                description={description}
+                timeRead={timeRead}
+                date={date}
+              />
+            ) : null;
           })}
         </div>
         <div

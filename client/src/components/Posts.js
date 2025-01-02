@@ -22,8 +22,8 @@ export function Posts({
     title = title.substring(0, 27).padEnd(30, '...');
   }
 
-  if (classes.includes('small') && description.length > 200) {
-    description = description.substring(0, 97).padEnd(100, '...');
+  if (classes.includes('small') && description.length > 50) {
+    description = description.substring(0, 47).padEnd(50, '...');
   } else if (description.length > 197) {
     description = description.substring(0, 197).padEnd(200, '...');
   }
@@ -45,9 +45,9 @@ export function Posts({
           alt="post-image"
         />
       </div>
-      <div className="post-content flex flex-col px-6 pt-4 pb-8">
+      <div className="post-content flex flex-col px-6 max-md:px-4 pt-4 max-md:pt-2 pb-8 ">
         <h2 className={classesTitle}>{title}</h2>
-        <div className="flex gap-4 lg:gap-8 items-center mt-2 mb-3 text-s-desktop ">
+        <div className="flex gap-4 lg:gap-8 items-center mt-2 max-md:mt-1 mb-3 max-md:mb-2 text-s-desktop flex-wrap max-lg:gap-2">
           <div className="time-read flex items-center gap-1">
             <img className="" src={clock} alt="relógio" />
             <span className="self-center">{timeRead}</span>
@@ -62,7 +62,7 @@ export function Posts({
           text="Leia mais"
           type="secundary"
           size="s"
-          classes="mt-4 max-w-max"
+          classes="mt-4 max-w-max max-md:max-w-full"
         />
       </div>
     </div>

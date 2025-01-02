@@ -89,14 +89,14 @@ export function Header() {
             </ul>
             <Button text="Login" type="primary" size="m" />
           </nav>
-          <nav className="navbar-mobile flex gap-6 items-center">
+          <nav className="navbar-mobile flex items-center">
             <button
               className="navbar-toggle-btn flex flex-col gap-2 p-4"
               onClick={handleClick}
             >
-              <span className="bar rounded-full w-12 h-1"></span>
-              <span className="bar rounded-full w-12 h-1"></span>
-              <span className="bar rounded-full w-12 h-1"></span>
+              <span className="bar rounded-full w-8 h-0.5"></span>
+              <span className="bar rounded-full w-8 h-0.5"></span>
+              <span className="bar rounded-full w-8 h-0.5"></span>
             </button>
             <ul className="flex navbar-container-mobile rounded-bl flex-col fixed gap-px overflow-hidden top-0 right-0 duration-300">
               <li className="navbar-link-mobile cursor-pointer relative active p-1">
