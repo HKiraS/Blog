@@ -1,0 +1,11 @@
+#Loading {
+  display: none;
+}
+
+body.loading #Loading {
+  display: block;
+  height: 100dvh;
+  background-color: var(--black);
+  color: var(--white);
+  z-index: 999;
+}

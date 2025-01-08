@@ -57,7 +57,8 @@ button:focus {
   outline: none;
 }
 
-header, footer {
+header,
+footer {
   background-color: var(--black);
   color: var(--white);
   font-family: var(--fontFamily-Lora);
@@ -84,14 +85,6 @@ body {
   font-family: var(--fontFamily-Lora);
   font-size: var(--fontSize-text-mobile-1);
   font-weight: var(--weight-regular);
-}
-
-body.loaded {
-  overflow: overlay;
-}
-
-body.nav-active {
-  overflow: hidden;
 }
 
 ::-webkit-scrollbar {

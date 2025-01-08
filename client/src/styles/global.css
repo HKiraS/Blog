@@ -124,6 +124,14 @@ input:-ms-input-placeholder {
   font-size: var(--fontSize-text-mobile-1);
 }
 
+body.loaded {
+  overflow: overlay;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
 body.dark .nav-arrow,
 .separator.in-black-bg,
 body.dark .separator,

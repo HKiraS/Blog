@@ -16,19 +16,19 @@ function toggleDarkMode() {
   localStorage.setItem('theme', currentMode);
 }
 
-// Função para alternar o menu de navegação
-const handleClick = (event) => {
-  const navbar = document.querySelector('.navbar-container-mobile');
-  navbar.classList.toggle('active');
-  event.currentTarget.classList.toggle('active');
-  document.body.classList.toggle('nav-active');
-};
-
 // Carregar o estado do tema ao carregar a página
 (function loadTheme() {
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.body.classList.add(savedTheme);
 })();
+
+// Função para alternar o menu de navegação
+const handleClick = (event) => {
+  const navbar = document.querySelector('.navbar-container-mobile');
+  navbar.classList.toggle('active');
+  event.currentTarget.classList.toggle('active');
+  document.body.classList.toggle('no-scroll');
+};
 
 export function Header() {
   return (
