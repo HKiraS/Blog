@@ -179,6 +179,10 @@ body.dark .nav-arrow:hover svg {
   transform: rotate(180deg);
 }
 
+svg {
+  width: 24px;
+  height: 24px;
+}
 
 h1.title-b-desktop::before {
   content: '';

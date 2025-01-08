@@ -1,7 +1,7 @@
 import React from 'react';
-import {ReactComponent as github} from '../assets/icon/github.svg';
-import {ReactComponent as linkedin} from '../assets/icon/linkedin.svg';
-import {ReactComponent as discord} from '../assets/icon/discord.svg';
+import {ReactComponent as GithubSvg} from '../assets/icon/github.svg';
+import {ReactComponent as LinkedinSvg} from '../assets/icon/linkedin.svg';
+import {ReactComponent as DiscordSvg} from '../assets/icon/discord.svg';
 import '../styles/Footer.css';
 
 export function Footer() {
@@ -35,9 +35,9 @@ export function Footer() {
           <span className="separator w-4/5 h-px in-black-bg opacity-20"></span>
           <p className='text-s-desktop'>&copy; 2024 Undertale Blog. Todos os direitos reservados.</p>
           <div className="social flex gap-6">
-            <a href="/" className='rounded shadow-2xl shadow-white duration-500 p-2'><img src={github} alt="Link para o Github" /></a>
-            <a href="/" className='rounded shadow-2xl shadow-white duration-500 p-2'><img src={discord} alt="Link para o Discord" /></a>
-            <a href="/" className='rounded shadow-2xl shadow-white duration-500 p-2'><img src={linkedin} alt="Link para o Linkedin" /></a>
+            <a href="/" className='rounded shadow-2xl shadow-white duration-500 p-2'><GithubSvg /></a>
+            <a href="/" className='rounded shadow-2xl shadow-white duration-500 p-2'><DiscordSvg /></a>
+            <a href="/" className='rounded shadow-2xl shadow-white duration-500 p-2'><LinkedinSvg /></a>
           </div>
         </div>
       </div>

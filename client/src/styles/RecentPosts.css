@@ -30,8 +30,8 @@ body.dark .recent-posts h1.title-b-desktop::before {
 .date {
   color: var(--gray-2);
 }
-.time-read img,
-.date img {
+.time-read svg,
+.date svg {
   width: 16px;
   height: 16px;
 }

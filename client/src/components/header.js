@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from './Button';
 import logo from '../assets/logo/logo.jpeg';
-import {ReactComponent as moon} from '../assets/icon/moon.svg';
-import {ReactComponent as sun} from '../assets/icon/sun.svg';
-import {ReactComponent as search} from '../assets/icon/search.svg';
+import {ReactComponent as MoonSvg} from '../assets/icon/moon.svg';
+import {ReactComponent as SunSvg} from '../assets/icon/sun.svg';
+import {ReactComponent as SearchSvg} from '../assets/icon/search.svg';
 import '../styles/header.css';
 
 // Trocar o tema da página
@@ -44,7 +44,7 @@ export function Header() {
         <div className="flex-1 mx-4">
           <div className="relative flex search-bar justify-center">
             <button className="search-bar-btn py-2 px-3">
-              <img src={search} alt="Pesquise" />
+              <SearchSvg />
             </button>
             <input
               type="search"
@@ -61,16 +61,8 @@ export function Header() {
             onClick={toggleDarkMode}
           >
             <span className="absolute top-0 left-0 grid place-content-center duration-300">
-              <img
-                className="sun absolute top-0 left-0 opacity-0 invisible"
-                src={sun}
-                alt="modo claro"
-              />
-              <img
-                className="moon absolute top-0 left-0 opacity-0 invisible"
-                src={moon}
-                alt="modo escuro"
-              />
+              <SunSvg className="sun absolute top-0 left-0 opacity-100 invisible" />
+              <MoonSvg className="moon absolute top-0 left-0 opacity-0 invisible" />
             </span>
           </button>
           <nav className="navbar flex gap-6 items-center">

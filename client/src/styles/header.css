@@ -14,14 +14,14 @@ body.dark .dark-mode-toggle {
 }
 
 .dark-mode-toggle span,
-.dark-mode-toggle span img {
+.dark-mode-toggle span svg {
   width: 24px;
   height: 24px;
   border-radius: 24px;
 }
 
-body.light .dark-mode-toggle span img.sun,
-body.dark .dark-mode-toggle span img.moon {
+body.light .dark-mode-toggle span svg.sun,
+body.dark .dark-mode-toggle span svg.moon {
   z-index: 1;
   opacity: 1;
   visibility: visible;
@@ -78,11 +78,6 @@ body.dark .dark-mode-toggle span {
 
 .search-bar-btn:hover {
   background-color: var(--gray-3);
-}
-
-.search-bar-btn img {
-  width: 24px;
-  height: 24px;
 }
 
 .search-bar-input {

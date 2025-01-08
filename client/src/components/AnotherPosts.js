@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {ReactComponent as filter} from '../assets/icon/filter.svg';
+import {ReactComponent as FilterSvg} from '../assets/icon/filter.svg';
 import { Posts } from './Posts';
 import NavArrows from './NavArrows';
 import '../styles/AnotherPosts.css';
@@ -44,7 +44,7 @@ export function AnotherPosts({ data }) {
                 setIsTagActive(!isTagActive);
               }}
             >
-              <img src={filter} alt="icone filtro" />
+              <FilterSvg />
               <span className="text-n-desktop">Filtro</span>
             </div>
             <div className="tags-container grid grid-cols-3 gap-3 rounded absolute p-3 right-1">

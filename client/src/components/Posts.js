@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './Button';
-import {ReactComponent as clock} from '../assets/icon/clock.svg';
-import {ReactComponent as calendar} from '../assets/icon/calendar.svg';
+import {ReactComponent as ClockSvg} from '../assets/icon/clock.svg';
+import {ReactComponent as CalendarSvg} from '../assets/icon/calendar.svg';
 import '../styles/RecentPosts.css';
 
 export function Posts({
@@ -49,11 +49,11 @@ export function Posts({
         <h2 className={classesTitle}>{title}</h2>
         <div className="flex gap-4 lg:gap-8 items-center mt-2 max-md:mt-1 mb-3 max-md:mb-2 text-s-desktop flex-wrap max-lg:gap-2">
           <div className="time-read flex items-center gap-1">
-            <img className="" src={clock} alt="relógio" />
+            <ClockSvg />
             <span className="self-center">{timeRead}</span>
           </div>
           <div className="date flex items-center gap-1">
-            <img src={calendar} alt="calendário" />
+            <CalendarSvg />
             <span className="self-center">{date}</span>
           </div>
         </div>
