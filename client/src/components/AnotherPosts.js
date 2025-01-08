@@ -12,9 +12,9 @@ export function AnotherPosts({ data }) {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 1268) {
+      if (window.innerWidth > 1280) {
         setPostsLimit(10);
-      } else if (window.innerWidth < 1268 && window.innerWidth > 1024) {
+      } else if (window.innerWidth < 1280 && window.innerWidth > 1024) {
         setPostsLimit(8);
       } else if (window.innerWidth < 1024) {
         setPostsLimit(6);

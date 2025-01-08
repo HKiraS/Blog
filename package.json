@@ -1,90 +1,36 @@
 {
-  
-    "name": "blog",
-  
-    "version": "1.0.0",
-  
-    "main": "server.js",
-  
-    "type": "module",
-  
-    "scripts": {
-  
-      
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
     "start-client": "cd client && npm start",
-  
-      
     "start-server": "cd server && nodemon server.js",
-  
-      
     "start": "npm run start-client & npm run start-server",
-  
-      
     "start2": "node server/server.js"
-  
-    },
-  
-    "keywords": [],
-  
-    "author": "",
-  
-    "license": "ISC",
-  
-    "description": "",
-  
-    "dependencies": {
-  
-      
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
     "@headlessui/react": "^2.2.0",
-  
-      
     "@heroicons/react": "^2.2.0",
-  
-      
     "axios": "^1.7.9",
-  
-      
     "bcrypt": "^5.1.1",
-  
-      
     "cors": "^2.8.5",
-  
-      
     "dotenv": "^16.4.7",
-  
-      
     "express": "^4.21.2",
-  
-      
     "jsonwebtoken": "^9.0.2",
-  
-      
     "mongod": "^2.0.0",
-  
-      
     "mongoose": "^8.9.2",
-  
-      
     "multer": "^1.4.5-lts.1",
-  
-      
     "react-router-dom": "^7.1.1"
-  
-    },
-  
-    "devDependencies": {
-  
-      
+  },
+  "devDependencies": {
     "autoprefixer": "^10.4.20",
-  
-      
     "nodemon": "^3.1.9",
-  
-      
     "postcss": "^8.4.49",
-  
-      
     "tailwindcss": "^3.4.17"
-  
-    }
+  }
 }

@@ -4,10 +4,14 @@ import { Button } from './Button.js';
 import NavArrows from './NavArrows';
 
 export function Characters({ data }) {
+
+  const evenData = data.filter((_, index) => index % 2 === 0);
+  const oddData = data.filter((_, index) => index % 2 !== 0);
+
   return (
     <section className="w-full my-16">
       <header className="shadow-lg">
-        <div className="container mx-auto flex justify-between items-center  my-8">
+        <div className="container mx-auto flex justify-between items-center my-8">
           <h1 className="title-b-desktop relative in-black-bg gap-4">
             Personagens
           </h1>
@@ -28,24 +32,40 @@ export function Characters({ data }) {
         </div>
       </header>
       <div className="flex items-center max-w-screen-2xl mx-auto justify-center w-11/12 gap-8">
-        <NavArrows direction="left" classes="max-md:hidden"/>
-        <div className="character-container mx-auto my-16 flex flex-col gap-8 overflow-hidden w-full">
-          <div className="gap-8 character-box grid grid-flow-col">
-            {data
-              .filter((_, index) => index % 2 === 0)
-              .map((item) => (
-                <Character key={item.id} name={item.title} img={item.img} />
-              ))}
+        <NavArrows
+          classes="max-md:hidden"
+          direction="left"
+        />
+        <div 
+          className="character-container mx-auto my-16 flex flex-col gap-8 overflow-hidden w-full"
+        >
+          <div
+            className="gap-8 character-box flex relative"
+          >
+            {evenData.map((item) => (
+              <Character
+                key={item.id}
+                name={item.title}
+                img={item.img}
+              />
+            ))}
           </div>
-          <div className="gap-8 character-box flex">
-            {data
-              .filter((_, index) => index % 2 !== 0)
-              .map((item) => (
-                <Character key={item.id} name={item.title} img={item.img} />
-              ))}
+          <div
+            className="gap-8 character-box flex relative"
+          >
+            {oddData.map((item) => (
+              <Character
+                key={item.id}
+                name={item.title}
+                img={item.img}
+              />
+            ))}
           </div>
         </div>
-        <NavArrows classes="max-md:hidden" direction="right" />
+        <NavArrows
+          classes="max-md:hidden"
+          direction="right"
+        />
       </div>
     </section>
   );

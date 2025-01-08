@@ -1,15 +1,17 @@
 .btn-option {
   background-color: var(--white);
   color: var(--black);
-
 }
 
 .btn-option:hover {
   background-color: var(--gray-3);
 }
 
-.character-container {
-  width: 100%;
+.character-box {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: center;
 }
 
 .character-card {
@@ -27,22 +29,14 @@
 }
 
 .character-card:hover .overlay {
-  opacity: .3;
+  opacity: 0.3;
 }
 
-.character-card:hover h2  {
+.character-card:hover h2 {
   opacity: 1;
 }
 
-.character-box:first-child {
-  transform: translateX(-100px);
-}
-
-.character-box:last-child {
-  transform: translateX(100px);
-}
-
-.character-card h2  {
+.character-card h2 {
   color: var(--white);
 }
 
@@ -58,11 +52,8 @@
     height: 150px;
   }
 
-  .character-box, .character-container {
+  .character-box,
+  .character-container {
     gap: 16px;
-  }
-
-  .character-box:first-child {
-    transform: translateX(-50px);
   }
 }
