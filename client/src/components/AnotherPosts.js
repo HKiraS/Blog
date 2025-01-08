@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import '../styles/AnotherPosts.css';
-import filter from '../assets/images/icon/filter.svg';
+import {ReactComponent as filter} from '../assets/icon/filter.svg';
 import { Posts } from './Posts';
 import NavArrows from './NavArrows';
+import '../styles/AnotherPosts.css';
 
 const handleClick = (e) => e.target.classList.toggle('active');
 
@@ -30,7 +30,7 @@ export function AnotherPosts({ data }) {
   }, []);  const containerActive = isTagActive ? 'active' : '';
 
   return (
-    <section className="another-posts w-full my-16">
+    <section className="another-posts w-full my-16" id='posts'>
       <div>
         <header className="shadow-lg my-16" id="AnotherPosts">
           <div className="container mx-auto flex justify-between items-center py-8 relative">

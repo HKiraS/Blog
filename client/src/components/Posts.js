@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from './Button';
+import {ReactComponent as clock} from '../assets/icon/clock.svg';
+import {ReactComponent as calendar} from '../assets/icon/calendar.svg';
 import '../styles/RecentPosts.css';
-import clock from '../assets/images/icon/clock.svg';
-import calendar from '../assets/images/icon/calendar.svg';
 
 export function Posts({
   img,

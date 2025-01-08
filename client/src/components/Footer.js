@@ -1,8 +1,8 @@
 import React from 'react';
+import {ReactComponent as github} from '../assets/icon/github.svg';
+import {ReactComponent as linkedin} from '../assets/icon/linkedin.svg';
+import {ReactComponent as discord} from '../assets/icon/discord.svg';
 import '../styles/Footer.css';
-import github from '../assets/images/icon/github.svg';
-import linkedin from '../assets/images/icon/linkedin.svg';
-import discord from '../assets/images/icon/discord.svg';
 
 export function Footer() {
   return (

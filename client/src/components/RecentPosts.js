@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/RecentPosts.css';
 import { Posts } from './Posts';
+import '../styles/RecentPosts.css';
 
 export function RecentPosts({ data }) {
   const mainPost = data[0];

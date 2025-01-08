@@ -9,7 +9,7 @@ export function Characters({ data }) {
   const oddData = data.filter((_, index) => index % 2 !== 0);
 
   return (
-    <section className="w-full my-16">
+    <section className="w-full my-16" id='characters'>
       <header className="shadow-lg">
         <div className="container mx-auto flex justify-between items-center my-8">
           <h1 className="title-b-desktop relative in-black-bg gap-4">

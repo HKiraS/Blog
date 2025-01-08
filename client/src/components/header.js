@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from './Button';
+import logo from '../assets/logo/logo.jpeg';
+import {ReactComponent as moon} from '../assets/icon/moon.svg';
+import {ReactComponent as sun} from '../assets/icon/sun.svg';
+import {ReactComponent as search} from '../assets/icon/search.svg';
 import '../styles/header.css';
-import logo from '../assets/images/logo/logo.jpeg';
-import moon from '../assets/images/icon/moon.svg';
-import sun from '../assets/images/icon/sun.svg';
-import search from '../assets/images/icon/search.svg';
 
 // Trocar o tema da página
 function toggleDarkMode() {
@@ -29,6 +29,10 @@ const handleClick = (event) => {
   event.currentTarget.classList.toggle('active');
   document.body.classList.toggle('no-scroll');
 };
+
+if (window.screenY > 100) {
+  
+}
 
 export function Header() {
   return (
@@ -77,12 +81,12 @@ export function Header() {
                 </a>
               </li>
               <li className="navbar-link cursor-pointer relative">
-                <a href="./pages/personagens.html" className="title-s-desktop">
+                <a href="#characters" className="title-s-desktop">
                   Personagens
                 </a>
               </li>
               <li className="navbar-link cursor-pointer relative">
-                <a href="./pages/personagens.html" className="title-s-desktop">
+                <a href="#posts" className="title-s-desktop">
                   Tags
                 </a>
               </li>
@@ -99,7 +103,7 @@ export function Header() {
               <span className="bar rounded-full w-8 h-0.5"></span>
             </button>
             <ul className="flex navbar-container-mobile rounded-bl flex-col fixed gap-px overflow-hidden top-0 right-0 duration-300">
-              <li className="navbar-link-mobile cursor-pointer relative active p-1">
+              <li className="navbar-link-mobile cursor-pointer relative active p-1" onClick={handleClick}>
                 <a
                   href="/"
                   className="title-s-desktop px-3 py-4 duration-500 active"
@@ -108,18 +112,18 @@ export function Header() {
                 </a>
                 <span className="w-full h-full absolute top-0 left-0"></span>
               </li>
-              <li className="navbar-link-mobile cursor-pointer relative">
+              <li className="navbar-link-mobile cursor-pointer relative" onClick={handleClick}>
                 <a
-                  href="./pages/personagens.html"
+                  href="#characters"
                   className="title-s-desktop px-3 py-4 duration-500 "
                 >
                   Personagens
                 </a>
                 <span className="w-full h-full absolute top-0 left-0"></span>
               </li>
-              <li className="navbar-link-mobile cursor-pointer relative">
+              <li className="navbar-link-mobile cursor-pointer relative" onClick={handleClick}>
                 <a
-                  href="./pages/personagens.html"
+                  href="#posts"
                   className="title-s-desktop px-3 py-4 duration-500"
                 >
                   Tags
