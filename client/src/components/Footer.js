@@ -18,16 +18,16 @@ export function Footer() {
         </div>
         <span className="separator h-5/6 w-px opacity-20 in-black-bg justify-self-center self-center"></span>
         <div className="flex flex-col gap-3 col-start-3 col-end-3 row-span-1 row-end-1 px-3">
-          <h2 className="footer-title title-m-desktop">Links Rapidos</h2>
-          <ul className="footer-links ml-6">
+          <h2 className="title-m-desktop self-center text-nowrap max-sm:text-wrap">Links Rapidos</h2>
+          <ul className="footer-links flex flex-col gap-2 lg:self-center">
             <li className="footer-link relative flex items-center">
-              <a href="/" className='duration-500'>Personagens</a>
+              <a href="/" className='pl-3 duration-500'>Personagens</a>
             </li>
             <li className="footer-link relative flex items-center">
-              <a href="/" className='duration-500'>Tags</a>
+              <a href="/" className='pl-3 duration-500'>Tags</a>
             </li>
             <li className="footer-link relative flex items-center">
-              <a href="/" className='duration-500'>Contato</a>
+              <a href="/" className='pl-3 duration-500'>Contato</a>
             </li>
           </ul>
         </div>
@@ -35,9 +35,9 @@ export function Footer() {
           <span className="separator w-4/5 h-px in-black-bg opacity-20"></span>
           <p className='text-s-desktop'>&copy; 2024 Undertale Blog. Todos os direitos reservados.</p>
           <div className="social flex gap-6">
-            <a href="/" className='rounded shadow-2xl shadow-white duration-500 p-2'><GithubSvg /></a>
-            <a href="/" className='rounded shadow-2xl shadow-white duration-500 p-2'><DiscordSvg /></a>
-            <a href="/" className='rounded shadow-2xl shadow-white duration-500 p-2'><LinkedinSvg /></a>
+            <a href="/" className='rounded shadow-2xl duration-500 p-2'><GithubSvg /></a>
+            <a href="/" className='rounded shadow-2xl duration-500 p-2'><DiscordSvg /></a>
+            <a href="/" className='rounded shadow-2xl duration-500 p-2'><LinkedinSvg /></a>
           </div>
         </div>
       </div>

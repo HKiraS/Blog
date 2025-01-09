@@ -40,8 +40,6 @@ body.dark .dark-mode-toggle span {
   display: none;
 }
 
-
-
 .navbar-container {
   transform: translateY(-4px);
 }
@@ -97,7 +95,6 @@ body.dark .dark-mode-toggle span {
     display: none;
   }
 
-
   .navbar-container-mobile {
     position: fixed;
     top: 95px;
@@ -120,14 +117,14 @@ body.dark .dark-mode-toggle span {
   }
 
   .navbar-container-mobile .navbar-link-mobile::before {
-    content: "";
+    content: '';
     background-color: var(--purple);
     width: 0;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    transition: .5s;
+    transition: 0.5s;
   }
 
   .navbar-container-mobile .navbar-link-mobile.active span,
@@ -154,5 +151,4 @@ body.dark .dark-mode-toggle span {
   .navbar-mobile .btn-primary-m {
     border-radius: 0;
   }
-  
 }

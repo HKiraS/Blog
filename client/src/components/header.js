@@ -62,7 +62,7 @@ export function Header() {
           >
             <span className="absolute top-0 left-0 grid place-content-center duration-300">
               <SunSvg className="sun absolute top-0 left-0 opacity-100 invisible" />
-              <MoonSvg className="moon absolute top-0 left-0 opacity-0 invisible" />
+              <MoonSvg className="moon absolute top-0 left-0 opacity-0 invisible stroke-black" />
             </span>
           </button>
           <nav className="navbar flex gap-6 items-center">

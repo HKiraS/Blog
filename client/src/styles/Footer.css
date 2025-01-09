@@ -21,38 +21,29 @@
 
 .footer-links {
   color: var(--gray-3);
-  
 }
 
 footer .footer-link:hover {
-  color: white !important;
-  text-shadow: 0 0 5px var(--purple);
+  color: var(--purple);
 }
 
 .footer-link::before {
   content: "";
   display: inline-block;
-  width: 6px;
-  height: 6px;
-  position: absolute;
-  border-radius: 100%;
-  background-color: var(--purple);
-  left: -20px;
-  align-self: center;
+  width: 12px;
+  height: 4px;
+  position: relative;
+  background-color: var(--gray-3);
   transition: .5s;
 }
 
 .footer-link:hover::before {
-  box-shadow: 0 0 5px var(--purple);
+  width: 16px;
+  background-color: var(--purple);
 }
 
 .social a:hover {
   background-color: var(--blue);
   box-shadow: 0 0 10px 0 var(--blue);
   transform: translateY(-3px);
-}
-
-.social a:hover:first-child {
-  background-color: var(--purple);
-  box-shadow: 0 0 10px 0 var(--purple);
 }

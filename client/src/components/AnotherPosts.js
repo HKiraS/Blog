@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import {ReactComponent as FilterSvg} from '../assets/icon/filter.svg';
+import { ReactComponent as FilterSvg } from '../assets/icon/filter.svg';
 import { Posts } from './Posts';
 import NavArrows from './NavArrows';
 import '../styles/AnotherPosts.css';
 
-const handleClick = (e) => e.target.classList.toggle('active');
+
 
 export function AnotherPosts({ data }) {
-  const [isTagActive, setIsTagActive] = React.useState(false);
+  const [TagActive, setTagActive] = React.useState(false);
   const [postsLimit, setPostsLimit] = React.useState(10);
 
   useEffect(() => {
@@ -22,15 +22,15 @@ export function AnotherPosts({ data }) {
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []);  const containerActive = isTagActive ? 'active' : '';
+  }, []);
 
   return (
-    <section className="another-posts w-full my-16" id='posts'>
+    <section className="another-posts w-full my-16" id="posts">
       <div>
         <header className="shadow-lg my-16" id="AnotherPosts">
           <div className="container mx-auto flex justify-between items-center py-8 relative">
@@ -38,55 +38,18 @@ export function AnotherPosts({ data }) {
               Outros Posts
             </h1>
             <div
-              data-tags-container={isTagActive}
               className="flex items-center gap-2 cursor-pointer btn-filter p-3"
-              onClick={(e) => {
-                setIsTagActive(!isTagActive);
+              onClick={() => {
+                setTagActive(!TagActive);
               }}
             >
               <FilterSvg />
               <span className="text-n-desktop">Filtro</span>
             </div>
-            <div className="tags-container grid grid-cols-3 gap-3 rounded absolute p-3 right-1">
-              {[
-                'Ação',
-                'Aventura',
-                'Comédia',
-                'Magia',
-                'Guerra',
-                'Romance',
-                'Ação',
-                'Aventura',
-                'Comédia',
-                'Magia',
-                'Guerra',
-                'Romance',
-              ].map((item, index) => {
-                if (index < 8) {
-                  return (
-                    <span
-                      onClick={handleClick}
-                      key={index}
-                      className="p-3 text-n-desktop tag duration-300 rounded cursor-pointer"
-                    >
-                      {item}
-                    </span>
-                  );
-                }
-                return null;
-              })}
-
-              <label
-                htmlFor="search"
-                className="rounded cursor-pointer flex items-center justify-center font-bold"
-              >
-                Pesquisar
-              </label>
-            </div>
+            {TagActive ? console.log('Filtro') : null}
           </div>
         </header>
         <div
-          data-container={containerActive}
           className="posts-container px-4 container mx-auto grid grid-cols-5 max-md:grid-cols-2 max-lg:grid-cols-3 max-xl:grid-cols-4 xl:grid-cols-5 gap-8 max-md:gap-2 my-16"
         >
           {data.map(({ img, title, timeRead, date, description }, index) => {

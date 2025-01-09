@@ -13,7 +13,7 @@
   --white: #f9fafb;
 
   /* Gradient-colors */
-  --gradient-gray: linear-gradient(to bottom, #6b7280e3 025%, #1f2937 90%);
+  --gradient-gray: linear-gradient(to bottom, #6b7280e3 25%, #1f2937 90%);
   --gradient-blue: linear-gradient(to bottom, #3b82f6 50%, #1627a7 100%);
 
   /* font-style*/
@@ -54,7 +54,6 @@
 /* 
   * Variaveis 
 */
-
 
 /* Tipografia Desktop */
 .title-b-desktop {
@@ -117,8 +116,8 @@
 
 input::placeholder,
 input::-moz-placeholder
-input::-webkit-input-placeholder
-input:-ms-input-placeholder {
+  input::-webkit-input-placeholder
+  input:-ms-input-placeholder {
   color: var(--gray-2);
   font-family: var(--fontFamily-Lora);
   font-size: var(--fontSize-text-mobile-1);
@@ -150,25 +149,19 @@ body.dark .nav-arrow:hover {
   background-color: var(--purple);
 }
 
-body.light .nav-arrow svg {
-  stroke: var(--white);
-}
-
-body.dark .nav-arrow svg,
-body.light .nav-arrow:hover svg,
-body.dark .nav-arrow:hover svg {
-  stroke: var(--black);
-}
-
 .logo {
   width: 64px;
   height: 64px;
 }
 
-.color-white {
+.color-white,
+body.light .nav-arrow svg {
   color: var(--white);
 }
-.color-black {
+.color-black,
+body.dark .nav-arrow svg,
+body.light .nav-arrow:hover svg,
+body.dark .nav-arrow:hover svg {
   color: var(--black);
 }
 .color-blue {
@@ -182,6 +175,7 @@ body.dark .nav-arrow:hover svg {
 svg {
   width: 24px;
   height: 24px;
+  color: white;
 }
 
 h1.title-b-desktop::before {
@@ -202,6 +196,3 @@ h1.title-b-desktop.in-black-bg {
 h1.title-b-desktop.in-black-bg::before {
   background-color: var(--orange);
 }
-
-
-
