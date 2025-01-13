@@ -1,0 +1,92 @@
+.article-post {
+  background-color: var(--white);
+  color: var(--gray-2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-post.dark {
+  --blue: #fb923c;
+  --white: #1f2937;
+  --gray-4: #374151;
+  --gray-3: #6b7280;
+  --gray-2: #d1d5db;
+  --gray-1: #f3f4f6;
+  --black: #f9fafb;
+}
+
+.article-post path {
+  stroke: var(--gray-2);
+}
+
+.article-post .autor {
+  color: var(--gray-2);
+}
+
+.article-post-container {
+  max-width: 80%;
+}
+
+.img-post {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.img-post-container {
+  width: 640px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.tag-post::before {
+  content: url('../assets/icon/tag.svg');
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.tag-post:hover {
+  color: var(--purple);
+}
+
+body.dark .article-post .separator {
+  background-color: var(--black);
+}
+
+.acessability-container button {
+  border-color: var(--gray-3);
+  outline: var(--blue);
+}
+
+.acessability-container button path {
+  stroke: var(--gray-1);
+  fill: var(--gray-1);
+}
+
+.acessability-container button:hover {
+  background-color: var(--gray-3);
+  border-color: var(--gray-3);
+}
+
+.share-container button.active,
+.share-container button:hover {
+  color: var(--blue);
+}
+.share-container button.active path,
+.share-container button:hover path{
+  stroke: var(--blue);
+}
+
+.share-container button.active path {
+  stroke: var(--blue);
+}
+
+.acessability-container button:disabled {
+  background-color: var(--gray-2);
+  border-color: var(--gray-2);;
+}
+
+.acessability-container button:disabled path{
+  stroke: var(--white);
+  fill: var(--white);
+}

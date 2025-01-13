@@ -10,10 +10,9 @@ export function Character({
     e.preventDefault();
     window.location.href = href;
   },
-  classes
+  classes,
 }) {
   name = name.length >= 15 ? name.substring(0, 12).padEnd(15, '.') : name;
-  
 
   return (
     <div
@@ -27,7 +26,7 @@ export function Character({
       />
       <span className="overlay absolute top-0 left-0 z-10 bg-black opacity-0 ease-in-out w-full h-full duration-300 rounded-md"></span>
       <div className="flex absolute items-center bottom-0 left-0 rounded-b z-20 h-0 duration-500 ease-in-out">
-        <h2 className="title-s-desktop pl-4 opacity-0 hover:opacity-100 duration-500 ease-in-out pointer-events-none">
+        <h2 className="title-s pl-4 opacity-0 hover:opacity-100 duration-500 ease-in-out pointer-events-none">
           {name}
         </h2>
       </div>

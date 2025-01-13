@@ -1,3 +1,7 @@
+#header.hide {
+  transform: translateY(-100%);
+}
+
 body.light .dark-mode-toggle,
 body.dark .dark-mode-toggle {
   color: var(--white);
@@ -83,7 +87,7 @@ body.dark .dark-mode-toggle span {
   background-color: var(--white);
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  font-size: var(--fontSize-title-desktop-3);
+  font-size: var(--fontSize-title-3);
 }
 
 .navbar-mobile .bar {
@@ -91,7 +95,7 @@ body.dark .dark-mode-toggle span {
 }
 
 @media (max-width: 1250px) {
-  .navbar {
+  .navbar-container {
     display: none;
   }
 

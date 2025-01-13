@@ -1,26 +1,26 @@
-.btn-filter {
+.another-posts .btn-filter {
   transition: 0.3s;
 }
 
-.btn-filter:hover,
-.btn-filter:focus,
-.btn-filter.active {
+.another-posts .btn-filter:hover,
+.another-posts .btn-filter:focus,
+.another-posts .btn-filter.active {
   color: var(--orange);
 }
 
-.tags-container {
+.another-posts .tags-container {
   background-color: var(--black);
   border: 1px solid var(--gray-3);
   bottom: -160%;
   z-index: 1;
 }
 
-body.light .tags-container {
+body.light .another-posts .tags-container {
   background-color: var(--gray-4);
   border: 1px solid var(--black);
 }
 
-.tags-container::before {
+.another-posts .tags-container::before {
   content: '';
   width: 0;
   height: 0;
@@ -33,34 +33,34 @@ body.light .tags-container {
   z-index: 2;
 }
 
-.tags-container .tag {
+.another-posts .tags-container .tag {
   border: 1px solid var(--gray-3);
 }
 
-body.light .tags-container .tag {
+body.light .another-posts .tags-container .tag {
   border: 1px solid var(--black);
   color: var(--black);
 }
 
-.tags-container .tag:hover {
+.another-posts .tags-container .tag:hover {
   background-color: var(--gray-3);
   color: var(--black);
   border: 1px solid var(--black);
 }
 
-body.light .tags-container .tag:hover {
+body.light .another-posts .tags-container .tag:hover {
   background-color: var(--black);
   border: 1px solid var(--black);
   color: var(--white);
 }
 
-.tags-container .tag.active {
+.another-posts .tags-container .tag.active {
   background-color: var(--orange);
   color: var(--black);
   border: 1px solid var(--orange) !important;
 }
 
-.tags-container label {
+.another-posts .tags-container label {
   background-color: var(--orange);
   color: var(--black);
 }

@@ -1,15 +1,9 @@
-import './styles/App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import PagePosts from './pages/PagePosts';
-import PageHome from './pages/PageHome';
-import PageCharacters from './pages/PageCharacters';
-import PageCharacter from './pages/PageCharacter';
-import Page404 from './pages/Page404';
+import React from 'react';
+import { RecentPosts } from '../components/RecentPosts.js';
+import { AnotherPosts } from '../components/AnotherPosts.js';
+import { Characters } from '../components/Characters.js';
 
-
-export const dados = [
+const dados = [
   {
     img: 'https://i.pinimg.com/736x/77/29/c8/7729c8fbc7ead89b1a5f29c860108b58.jpg',
     id: 1,
@@ -31,7 +25,7 @@ export const dados = [
     id: 2,
     title: 'Post 2',
     timeRead: '3 min',
-    tags: ['História', 'Guerra'],
+    tags: ['História', 'Personagem', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -45,7 +39,7 @@ export const dados = [
     id: 3,
     title: 'Post 3',
     timeRead: '4 min',
-    tags: ['Personagem', 'Guerra'],
+    tags: ['História', 'Personagem', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -74,7 +68,7 @@ export const dados = [
     id: 5,
     title: 'Post 5',
     timeRead: '2 min',
-    tags: ['História', 'Personagem', 'Ação'],
+    tags: ['História', 'Personagem', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -88,7 +82,7 @@ export const dados = [
     id: 6,
     title: 'Post 6',
     timeRead: '7 min',
-    tags: ['História', 'Personagem', 'Comedia'],
+    tags: ['História', 'Personagem', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -183,18 +177,14 @@ export const dados = [
   },
 ];
 
-export function App() {
+function PageHome() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<PageHome />} />
-        <Route path="/posts/:post" element={<PagePosts />} />
-        <Route path="/characters" element={<PageCharacters />} />
-        <Route path="/characters/:character" element={<PageCharacter />} />
-        <Route path="*" element={<Page404 />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <div className="PageHome">
+      <RecentPosts data={dados} />
+      <AnotherPosts data={dados} />
+      <Characters data={dados} />
+    </div>
   );
 }
+
+export default PageHome;

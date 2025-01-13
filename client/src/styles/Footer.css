@@ -47,3 +47,8 @@ footer .footer-link:hover {
   box-shadow: 0 0 10px 0 var(--blue);
   transform: translateY(-3px);
 }
+
+.social a:hover:first-child {
+  background-color: var(--purple);
+  box-shadow: 0 0 10px 0 var(--purple);
+}

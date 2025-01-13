@@ -1,12 +1,12 @@
-.recent-posts h1.title-b-desktop {
+.recent-posts h1.title-b {
   color: var(--purple);
 }
 
-body.dark .recent-posts h1.title-b-desktop {
+body.dark .recent-posts h1.title-b {
   color: var(--orange);
 }
 
-body.dark .recent-posts h1.title-b-desktop::before {
+body.dark .recent-posts h1.title-b::before {
   background-color: var(--orange);
 }
 
@@ -26,12 +26,6 @@ body.dark .recent-posts h1.title-b-desktop::before {
   height: 300px;
 }
 
-.time-read,
-.date {
+.post-box .icon {
   color: var(--gray-2);
-}
-.time-read svg,
-.date svg {
-  width: 16px;
-  height: 16px;
 }

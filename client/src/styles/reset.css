@@ -26,12 +26,10 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: var(--purple);
-}
 
 img {
-  height: auto;
+  object-fit: cover;
+  max-width: 100%;
 }
 
 input,

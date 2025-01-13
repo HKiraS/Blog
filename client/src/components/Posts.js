@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from './Button';
-import {ReactComponent as ClockSvg} from '../assets/icon/clock.svg';
-import {ReactComponent as CalendarSvg} from '../assets/icon/calendar.svg';
+import { ReactComponent as ClockSvg } from '../assets/icon/clock.svg';
+import { ReactComponent as CalendarSvg } from '../assets/icon/calendar.svg';
 import '../styles/RecentPosts.css';
 
 export function Posts({
@@ -11,11 +12,19 @@ export function Posts({
   timeRead,
   date,
   classes = 'small',
-  href = '/',
-  onClick = () => {
-    window.location.href = href;
+  href = '/posts',
+  onClick = (event) => {
+    event.preventDefault();
   },
 }) {
+  // if (classes.includes('ultra-small') && title.length > 12) {
+  //   title = title.substring(0, 9).padEnd(12, '...');
+  // }
+
+  // if (classes.includes('ultra-small') && description.length > 20) {
+  //   description = description.substring(0, 17).padEnd(20, '...');
+  // }
+
   if (classes.includes('small') && title.length > 16) {
     title = title.substring(0, 13).padEnd(16, '...');
   } else if (title.length > 27) {
@@ -30,41 +39,43 @@ export function Posts({
 
   const classPost = `post-box shadow-sm cursor-pointer rounded shadow-lg overflow-hidden duration-500 h-fit ${classes}`;
   const classesTitle = classes.includes('main')
-    ? 'post-title duration-500 title-b-desktop'
-    : 'post-title duration-500 title-m-desktop';
+    ? 'post-title duration-500 title-b'
+    : 'post-title duration-500 title-m';
   const classesText = classes.includes('main')
-    ? 'post-description title-s-desktop'
-    : 'post-description text-n-desktop';
+    ? 'post-description title-s'
+    : 'post-description text-n';
 
   return (
-    <div className={classPost} onClick={onClick}>
-      <div className="post-image flex flex-col justify-end relative">
-        <img
-          className="h-full w-full object-cover "
-          src={img}
-          alt="post-image"
-        />
-      </div>
-      <div className="post-content flex flex-col px-6 max-md:px-4 pt-4 max-md:pt-2 pb-8 ">
-        <h2 className={classesTitle}>{title}</h2>
-        <div className="flex gap-4 lg:gap-8 items-center mt-2 max-md:mt-1 mb-3 max-md:mb-2 text-s-desktop flex-wrap max-lg:gap-2">
-          <div className="time-read flex items-center gap-1">
-            <ClockSvg />
-            <span className="self-center">{timeRead}</span>
-          </div>
-          <div className="date flex items-center gap-1">
-            <CalendarSvg />
-            <span className="self-center">{date}</span>
-          </div>
+    <Link to={href +"/"+ title }>
+      <div className={classPost}>
+        <div className="post-image flex flex-col justify-end relative">
+          <img
+            className="h-full w-full object-cover "
+            src={img}
+            alt="post-image"
+          />
         </div>
-        <p className={classesText}>{description}</p>
-        <Button
-          text="Leia mais"
-          type="secundary"
-          size="s"
-          classes="mt-4 max-w-max max-md:max-w-full"
-        />
+        <div className="post-content flex flex-col px-6 max-md:px-4 pt-4 max-md:pt-2 pb-8 ">
+          <h2 className={classesTitle}>{title}</h2>
+          <div className="flex gap-4 lg:gap-8 items-center mt-2 max-md:mt-1 mb-3 max-md:mb-2 text-s flex-wrap max-lg:gap-2">
+            <div className="icon flex items-center gap-1">
+              <ClockSvg />
+              <span className="self-center">{timeRead}</span>
+            </div>
+            <div className="icon flex items-center gap-1">
+              <CalendarSvg />
+              <span className="self-center">{date}</span>
+            </div>
+          </div>
+          <p className={classesText}>{description}</p>
+          <Button
+            text="Leia mais"
+            type="secundary"
+            size="s"
+            classes="mt-4 max-w-max max-md:max-w-full"
+          />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
