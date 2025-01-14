@@ -1,11 +1,13 @@
 .article-post {
-  background-color: var(--white);
-  color: var(--gray-2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .article-post.dark {
   --blue: #fb923c;
+}
+
+.article-post.dark,
+.article-post.dark + .comments {
   --white: #1f2937;
   --gray-4: #374151;
   --gray-3: #6b7280;
@@ -49,7 +51,8 @@
   color: var(--purple);
 }
 
-body.dark .article-post .separator {
+body.dark .article-post .separator,
+body.dark .comments .separator {
   background-color: var(--black);
 }
 
@@ -68,16 +71,16 @@ body.dark .article-post .separator {
   border-color: var(--gray-3);
 }
 
-.share-container button.active,
-.share-container button:hover {
+.article-post .share-container button.active,
+.article-post .share-container button:hover {
   color: var(--blue);
 }
-.share-container button.active path,
-.share-container button:hover path{
+.article-post .share-container button.active path,
+.article-post .share-container button:hover path{
   stroke: var(--blue);
 }
 
-.share-container button.active path {
+.article-post .share-container button.active path {
   stroke: var(--blue);
 }
 

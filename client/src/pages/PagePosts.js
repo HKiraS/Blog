@@ -1,16 +1,14 @@
 import React from 'react';
-
-import Article from '../components/Article';
-import Comments from '../components/Comments';
-import { dados } from '../App';
+import { Route, Routes } from 'react-router-dom';
+import Posts from '../components/PagePost/Posts';
 
 function PagePosts() {
   return (
     <div>
-      <main>
-        <Article data={dados[0]} />
-        <Comments />
-      </main>
+      <Routes>
+        <Route path="/" element={<h1>Página de Posts</h1>} />
+        <Route path="/:post" element={<Posts />} />
+      </Routes>
     </div>
   );
 }

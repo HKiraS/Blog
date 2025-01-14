@@ -1,14 +1,15 @@
 import React from 'react';
-import '../styles/Article.css';
-import { ReactComponent as ClockSvg } from '../assets/icon/clock.svg';
-import { ReactComponent as CalendarSvg } from '../assets/icon/calendar.svg';
-import { ReactComponent as LikeSvg } from '../assets/icon/like.svg';
-import { ReactComponent as ViewSvg } from '../assets/icon/view.svg';
-import { ReactComponent as MinusSvg } from '../assets/icon/minus.svg';
-import { ReactComponent as PlusSvg } from '../assets/icon/plus.svg';
-import { ReactComponent as ContrastSvg } from '../assets/icon/contrast.svg';
-import { ReactComponent as ShareSvg } from '../assets/icon/share.svg';
-import imgExemplo from '../assets/images/girl random.jpeg';
+import { useParams } from 'react-router-dom';
+import '../../styles/Article.css';
+import { ReactComponent as ClockSvg } from '../../assets/icon/clock.svg';
+import { ReactComponent as CalendarSvg } from '../../assets/icon/calendar.svg';
+import { ReactComponent as LikeSvg } from '../../assets/icon/like.svg';
+import { ReactComponent as ViewSvg } from '../../assets/icon/view.svg';
+import { ReactComponent as MinusSvg } from '../../assets/icon/minus.svg';
+import { ReactComponent as PlusSvg } from '../../assets/icon/plus.svg';
+import { ReactComponent as ContrastSvg } from '../../assets/icon/contrast.svg';
+import { ReactComponent as ShareSvg } from '../../assets/icon/share.svg';
+import imgExemplo from '../../assets/images/girl random.jpeg';
 
 function reducer(state, action) {
   switch (action) {
@@ -33,6 +34,25 @@ function Article({ data }) {
   const [state, dispatch] = React.useReducer(reducer, fontSize);
   const articleContainer = React.useRef();
 
+  const params = useParams();
+
+  const dataIndex = data.findIndex((item) => {
+    return item.title === params.post;
+  });
+
+  data = data[dataIndex];
+  const {
+    title,
+    img,
+    tags,
+    author,
+    timeRead,
+    date,
+    views,
+    likes,
+    description,
+  } = data;
+
   function handleLike({ currentTarget }) {
     setLike(!Like);
     currentTarget.classList.toggle('active');
@@ -46,43 +66,39 @@ function Article({ data }) {
 
   return (
     <article
-      className="article-post max-w-4xl mx-auto py-16 mb-16 duration-300"
+      className="article-post color-gray-2 white-bg max-w-4xl mx-auto py-16 mb-16 duration-300 rounded-b"
       ref={articleContainer}
     >
       <div className="article-post-container mx-auto flex flex-col items-center">
         <figure className="img-post-container">
-          <img
-            src="https://i.pinimg.com/736x/4c/2a/39/4c2a39e777d2447f23bb73b7cbcdfd97.jpg"
-            alt="garota"
-            className="img-post"
-          />
+          <img src={img} alt="garota" className="img-post" />
         </figure>
 
-        <h1 className="title-m mt-8">{data.title}</h1>
-        <h2 className="text-n autor mb-6">{data.author}</h2>
+        <h1 className="title-m mt-8">{title}</h1>
+        <h2 className="text-n autor mb-6">{author}</h2>
         <div className="tags-container flex gap-4 mb-4 mx-auto">
-          {data.tags.map((tag) => (
-            <span className="tag-post duration-300" key={tag}>
+          {tags.map((tag, index) => (
+            <span className="tag-post duration-300" key={tag + '-' + index}>
               {tag}
             </span>
           ))}
         </div>
-        <div className="post-info flex gap-8 mb-8 mx-auto">
+        <div className="post-data flex gap-8 mb-8 mx-auto">
           <div className="icon flex items-center gap-1">
             <ClockSvg />
-            <span className="text-s">{data.timeRead}</span>
+            <span className="text-s">{timeRead}</span>
           </div>
           <div className="icon flex items-center gap-1">
             <CalendarSvg />
-            <span className="text-s">{data.date}</span>
+            <span className="text-s">{date}</span>
           </div>
           <div className="icon flex items-center gap-1">
             <LikeSvg />
-            <span className="text-s">{data.likes} curtidas</span>
+            <span className="text-s">{likes} curtidas</span>
           </div>
           <div className="icon flex items-center gap-1">
             <ViewSvg />
-            <span className="text-s">{data.views} visualizações</span>
+            <span className="text-s">{views} visualizações</span>
           </div>
         </div>
         <div className="flex w-full max-w-xl justify-between px-8 items-center">
@@ -127,8 +143,8 @@ function Article({ data }) {
           className="max-w-screen-sm max-md:px-4 flex flex-col gap-4 article-text"
           style={{ fontSize: state + 'px' }}
         >
-          {data.content.split('/n').map((text, index) => (
-            <p className="text-m" key={index}>
+          {description.split('/n').map((text, index) => (
+            <p className="text-m" key={`paragraph-${index}`}>
               {text}
             </p>
           ))}

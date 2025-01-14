@@ -3,6 +3,7 @@ import { ReactComponent as GithubSvg } from '../assets/icon/github.svg';
 import { ReactComponent as LinkedinSvg } from '../assets/icon/linkedin.svg';
 import { ReactComponent as DiscordSvg } from '../assets/icon/discord.svg';
 import '../styles/Footer.css';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -21,23 +22,25 @@ function Footer() {
           <h2 className="title-m self-center text-nowrap max-sm:text-wrap">
             Links Rapidos
           </h2>
-          <ul className="footer-links flex flex-col gap-2 lg:self-center">
-            <li className="footer-link relative flex items-center">
-              <a href="/" className="pl-3 duration-500">
-                Personagens
-              </a>
-            </li>
-            <li className="footer-link relative flex items-center">
-              <a href="/" className="pl-3 duration-500">
-                Tags
-              </a>
-            </li>
-            <li className="footer-link relative flex items-center">
-              <a href="/" className="pl-3 duration-500">
-                Contato
-              </a>
-            </li>
-          </ul>
+          <nav>
+            <ul className="footer-links flex flex-col gap-2 lg:self-center">
+              <li className="footer-link relative flex items-center">
+                <Link to='/characters' className="pl-3 duration-500">
+                  Personagens
+                </Link>
+              </li>
+              <li className="footer-link relative flex items-center">
+                <Link href="/" className="pl-3 duration-500">
+                  Tags
+                </Link>
+              </li>
+              <li className="footer-link relative flex items-center">
+                <Link to="contact" className="pl-3 duration-500">
+                  Contato
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
         <div className="copyright col-start-1 col-end-4 row-start-1 row-end-3 flex flex-col justify-center items-center gap-6">
           <span className="separator w-4/5 h-px in-black-bg opacity-20"></span>

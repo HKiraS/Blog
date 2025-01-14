@@ -1,7 +1,7 @@
 import React from 'react';
-import { RecentPosts } from '../components/RecentPosts.js';
-import { AnotherPosts } from '../components/AnotherPosts.js';
-import { Characters } from '../components/Characters.js';
+import { RecentPosts } from '../components/Home/RecentPosts';
+import { AnotherPosts } from '../components/Home/AnotherPosts';
+import { CharacterSlider } from '../components/Home/CharacterSlider';
 
 const dados = [
   {
@@ -182,7 +182,7 @@ function PageHome() {
     <div className="PageHome">
       <RecentPosts data={dados} />
       <AnotherPosts data={dados} />
-      <Characters data={dados} />
+      <CharacterSlider data={dados} />
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import '../styles/Character.css';
+import { Link } from 'react-router-dom';
 
-export function Character({
+export function CharacterCard({
   name,
   img,
   alt = 'Character',
@@ -15,6 +16,7 @@ export function Character({
   name = name.length >= 15 ? name.substring(0, 12).padEnd(15, '.') : name;
 
   return (
+    <Link to={name}>
     <div
       className={`character-card relative rounded-md cursor-pointer ${classes}`}
       onClick={onClick}
@@ -31,5 +33,6 @@ export function Character({
         </h2>
       </div>
     </div>
+    </Link>
   );
 }

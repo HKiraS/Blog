@@ -1,9 +1,9 @@
 import React from 'react';
-import { Character } from './Character.js';
-import { Button } from './Button.js';
-import NavArrows from './NavArrows';
+import { CharacterCard } from '../CharacterCard.js';
+import { Button } from '../Button.js';
+import NavArrows from '../NavArrows.js';
 
-export function Characters({ data }) {
+export function CharacterSlider({ data }) {
   const evenData = data.filter((_, index) => index % 2 === 0);
   const oddData = data.filter((_, index) => index % 2 !== 0);
 
@@ -33,7 +33,7 @@ export function Characters({ data }) {
         <div className="character-container mx-auto my-16 flex flex-col gap-8 overflow-hidden w-full">
           <div className="gap-8 character-box flex relative">
             {evenData.map((item) => (
-              <Character
+              <CharacterCard
                 key={item.title + item.id}
                 name={item.title}
                 img={item.img}
@@ -42,7 +42,7 @@ export function Characters({ data }) {
           </div>
           <div className="gap-8 character-box flex relative">
             {oddData.map((item) => (
-              <Character
+              <CharacterCard
                 key={item.title + item.id}
                 name={item.title}
                 img={item.img}

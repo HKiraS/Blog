@@ -43,14 +43,7 @@
   --weight-regular: 400;
   --weight-semibold: 600;
   --weight-bold: 700;
-
-  /* shape */
-
-  --border-radius: 4px;
-
-  --section-space: 70px;
 }
-
 /* 
   * Variaveis 
 */
@@ -116,9 +109,9 @@
 }
 
 input::placeholder,
-input::-moz-placeholder
-  input::-webkit-input-placeholder
-  input:-ms-input-placeholder {
+input::-moz-placeholder,
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder {
   color: var(--gray-2);
   font-family: var(--fontFamily-Lora);
   font-size: var(--fontSize-text-mobile-1);
@@ -130,6 +123,11 @@ body.loaded {
 
 body.no-scroll {
   overflow: hidden;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
 }
 
 body.dark .nav-arrow,
@@ -145,14 +143,32 @@ body.light .nav-arrow,
   background-color: var(--black);
 }
 
+h1.title-b::before,
+.purple-bg,
 body.light .nav-arrow:hover,
 body.dark .nav-arrow:hover {
   background-color: var(--purple);
 }
 
-.logo {
-  width: 64px;
-  height: 64px;
+h1.title-b.in-black-bg::before,
+.orange-bg {
+  background-color: var(--orange);
+}
+
+.gray-1-bg {
+  background-color: var(--gray-1);
+}
+
+.gray-2-bg {
+  background-color: var(--gray-2);
+}
+
+.gray-3-bg {
+  background-color: var(--gray-3);
+}
+
+.gray-4-bg {
+  background-color: var(--gray-4);
 }
 
 .color-white,
@@ -169,6 +185,31 @@ body.dark .nav-arrow:hover svg {
   color: var(--blue);
 }
 
+h1.title-b.in-black-bg,
+.color-orange {
+  color: var(--orange);
+}
+
+.color-purple {
+  color: var(--purple);
+}
+
+.color-gray-1 {
+  color: var(--gray-1);
+}
+
+.color-gray-2 {
+  color: var(--gray-2);
+}
+
+.color-gray-3 {
+  color: var(--gray-3);
+}
+
+.color-gray-4 {
+  color: var(--gray-4);
+}
+
 .left svg {
   transform: rotate(180deg);
 }
@@ -183,19 +224,10 @@ h1.title-b::before {
   content: '';
   width: 100%;
   height: 4px;
-  background-color: var(--purple);
   position: absolute;
   bottom: -5px;
   left: 0;
   border-radius: 4px;
-}
-
-h1.title-b.in-black-bg {
-  color: var(--orange);
-}
-
-h1.title-b.in-black-bg::before {
-  background-color: var(--orange);
 }
 
 .icon svg {

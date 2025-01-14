@@ -1,6 +1,6 @@
 import React from 'react';
-import { Posts } from './Posts';
-import '../styles/RecentPosts.css';
+import { Posts } from '../Post';
+import '../../styles/RecentPosts.css';
 
 export function RecentPosts({ data }) {
   const mainPost = data[0];
@@ -37,9 +37,9 @@ export function RecentPosts({ data }) {
             <div className="small-posts-container col-span-5 row-start-2 row-end-4 max-w-full grid grid-cols-2 gap-8 ">
               <span className="separator w-11/12 h-0.5 col-span-2 row-start-1 place-self-center opacity-20"></span>
               {smallPosts.map(
-                ({ img, title, description, timeRead, date, classes, id }) => (
+                ({ img, title, description, timeRead, date, classes, id }, index) => (
                   <Posts
-                    key={title+" "+id}
+                    key={title + ' ' + id + ' ' + index}
                     img={img}
                     title={title}
                     description={description}
@@ -60,7 +60,7 @@ export function RecentPosts({ data }) {
                 arr,
               ) => {
                 return (
-                  <div key={index}>
+                  <div key={index + ' - ' + title}>
                     <Posts
                       img={img}
                       title={title}

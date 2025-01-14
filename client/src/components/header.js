@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from './Button';
 import logo from '../assets/logo/logo.jpeg';
@@ -8,7 +8,6 @@ import { ReactComponent as SearchSvg } from '../assets/icon/search.svg';
 import '../styles/header.css';
 
 function Header() {
-  const header = React.useRef(null);
 
   // Trocar o tema da página
   function toggleDarkMode() {
@@ -30,41 +29,12 @@ function Header() {
   const handleClick = (event) => {
     const navbar = document.querySelector('.navbar-container-mobile');
     navbar.classList.toggle('active');
-    event.currentTarget.classList.toggle('active');
     document.body.classList.toggle('no-scroll');
+    
   };
 
-  useEffect(() => {
-    let lastScrollPos = 0;
-
-    // Função para ocultar o cabeçalho ao rolar a página
-    const hideHeader = function () {
-      const isScrollBottom = lastScrollPos < window.scrollY;
-      if (isScrollBottom) {
-        header.current.classList.add('hide');
-      } else {
-        header.current.classList.remove('hide');
-      }
-
-      lastScrollPos = window.scrollY;
-    };
-
-    // Adicionar um evento de rolagem para atualizar a posição de rolagem
-    if (header.current) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY >= 50) {
-          hideHeader();
-        }
-      });
-    }
-  }, []);
-
   return (
-    <header
-      id="header"
-      className="p-4 sticky top-0 left-0 duration-300 z-50"
-      ref={header}
-    >
+    <header id="header" className="p-4 sticky top-0 left-0 duration-300 z-50">
       <div className="container mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} className="logo" alt="Logo do site" />
@@ -83,6 +53,7 @@ function Header() {
             />
           </div>
         </div>
+   
         <div className="flex gap-6 items-center">
           <button
             className="dark-mode-toggle relative cursor-pointer "
@@ -133,7 +104,7 @@ function Header() {
               >
                 <NavLink
                   to="/"
-                  className="title-s px-3 py-4 duration-500 active"
+                  className="title-s px-3 py-4 duration-500"
                 >
                   Home
                 </NavLink>
@@ -144,7 +115,7 @@ function Header() {
                 onClick={handleClick}
               >
                 <NavLink
-                  to="/characters"
+                  to="characters"
                   className="title-s px-3 py-4 duration-500 "
                 >
                   Personagens
@@ -155,17 +126,19 @@ function Header() {
                 className="navbar-link-mobile cursor-pointer relative"
                 onClick={handleClick}
               >
-                <NavLink to="/posts" className="title-s px-3 py-4 duration-500">
+                <NavLink to="posts" className="title-s px-3 py-4 duration-500">
                   Tags
                 </NavLink>
                 <span className="w-full h-full absolute top-0 left-0"></span>
               </li>
-              <Button
-                text="Login"
-                type="primary"
-                size="m"
-                classes="rounded-none w-full"
-              />
+              <Link to="/login" onClick={() => {console.log('Clicou no link')}}>
+                <Button
+                  text="Login"
+                  type="primary"
+                  size="m"
+                  classes="rounded w-full"
+                />
+              </Link>
             </ul>
           </nav>
         </div>

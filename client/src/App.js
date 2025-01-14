@@ -6,7 +6,10 @@ import PagePosts from './pages/PagePosts';
 import PageHome from './pages/PageHome';
 import PageCharacters from './pages/PageCharacters';
 import PageCharacter from './pages/PageCharacter';
+import PageLogin from './pages/PageLogin.js';
+import PageAccount from './pages/PageAccount.js';
 import Page404 from './pages/Page404';
+import PageContact from './pages/PageContact.js';
 
 
 export const dados = [
@@ -59,11 +62,11 @@ export const dados = [
     id: 4,
     title: 'Post 4',
     timeRead: '6 min',
-    tags: ['História', 'Personagem', 'Guerra'],
+    tags: ['Personagem', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
-    tags: [],
+    tags: ['Horror'],
     date: '2024-12-27',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis blandit nulla ut tincidunt. In sollicitudin, lorem nec pretium tristique, ligula nibh scelerisque nulla, at interdum urna ante in tortor. Nunc mattis leo non ex placerat sollicitudin. Praesent consequat sagittis mi, at efficitur dui fermentum ac. Aliquam id bibendum magna. Morbi consequat justo eu ex facilisis volutpat. Sed eget sagittis eros. Duis arcu odio, lobortis semper tempor at, fringilla at velit. Phasellus venenatis porttitor nibh, vel malesuada nibh aliquet blandit. Pellentesque nibh nunc, eleifend sed odio in, suscipit porttitor justo. In finibus in nibh id cursus. Nullam porta maximus nisi, vitae tristique metus. do Post 4',
@@ -88,7 +91,7 @@ export const dados = [
     id: 6,
     title: 'Post 6',
     timeRead: '7 min',
-    tags: ['História', 'Personagem', 'Comedia'],
+    tags: ['História', 'Comedia'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -102,7 +105,7 @@ export const dados = [
     id: 7,
     title: 'Post 7',
     timeRead: '8 min',
-    tags: ['História', 'Personagem', 'Guerra'],
+    tags: ['Destruição', 'Personagem', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -116,7 +119,7 @@ export const dados = [
     id: 8,
     title: 'Post 8',
     timeRead: '5 min',
-    tags: ['História', 'Personagem', 'Guerra'],
+    tags: ['História', 'Terror', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -130,7 +133,7 @@ export const dados = [
     id: 9,
     title: 'Post 9',
     timeRead: '3 min',
-    tags: ['História', 'Personagem', 'Guerra'],
+    tags: ['Criação', 'Personagem', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -144,7 +147,7 @@ export const dados = [
     id: 10,
     title: 'Post 10',
     timeRead: '5 min',
-    tags: ['História', 'Personagem', 'Guerra'],
+    tags: ['Survival', 'Personagem', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -158,7 +161,7 @@ export const dados = [
     id: 11,
     title: 'Post 1dgubhuaidshuisdahujdhsuj',
     timeRead: '3 min',
-    tags: ['História', 'Personagem', 'Guerra'],
+    tags: ['Vingança', 'Personagem', 'Guerra'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -172,7 +175,7 @@ export const dados = [
     id: 12,
     title: 'Post 1dgubhuaidshuisdahujdhsuj',
     timeRead: '3 min',
-    tags: ['História', 'Personagem', 'Guerra'],
+    tags: ['História', 'Personagem', 'Aventura'],
     views: 100,
     likes: 21,
     author: 'Kira',
@@ -186,15 +189,18 @@ export const dados = [
 export function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<PageHome />} />
-        <Route path="/posts/:post" element={<PagePosts />} />
-        <Route path="/characters" element={<PageCharacters />} />
-        <Route path="/characters/:character" element={<PageCharacter />} />
-        <Route path="*" element={<Page404 />} />
-      </Routes>
-      <Footer />
+        <Header />
+        <Routes>
+          <Route path="/" element={<PageHome />} />
+          <Route path="/posts/*" element={<PagePosts />} />
+          <Route path="/characters" element={<PageCharacters />} />
+          <Route path="/characters/:character" element={<PageCharacter />} />
+          <Route path="/login/*" element={<PageLogin />} />
+          <Route path="/account" element={<PageAccount />} />
+          <Route path="/contact" element={<PageContact />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+        <Footer />
     </BrowserRouter>
   );
 }
