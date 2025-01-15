@@ -12,7 +12,6 @@ export function Posts({
   timeRead,
   date,
   classes = 'small',
-  href = '/posts',
   onClick = (event) => {
     event.preventDefault();
   },
@@ -46,13 +45,13 @@ export function Posts({
     : 'post-description text-n';
 
   return (
-    <Link to={href +"/"+ title }>
+    <Link to={'/posts/' + title}>
       <div className={classPost}>
         <div className="post-image flex flex-col justify-end relative">
           <img
             className="h-full w-full object-cover "
             src={img}
-            alt="post-image"
+            alt={`imagem de ${title}`}
           />
         </div>
         <div className="post-content flex flex-col px-6 max-md:px-4 pt-4 max-md:pt-2 pb-8 ">
@@ -68,12 +67,9 @@ export function Posts({
             </div>
           </div>
           <p className={classesText}>{description}</p>
-          <Button
-            text="Leia mais"
-            type="secundary"
-            size="s"
-            classes="mt-4 max-w-max max-md:max-w-full"
-          />
+          <Link to={`/posts/${title}`} className="btn-secundary-s rounded mt-4 text-center max-w-max max-md:max-w-full">
+            Leia Mais
+          </Link>
         </div>
       </div>
     </Link>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { CharacterCard } from '../CharacterCard.js';
-import { Button } from '../Button.js';
 import NavArrows from '../NavArrows.js';
+import { Link } from 'react-router-dom';
 
 export function CharacterSlider({ data }) {
   const evenData = data.filter((_, index) => index % 2 === 0);
@@ -24,7 +24,9 @@ export function CharacterSlider({ data }) {
                 Opção 1
               </button>
             </div> */}
-            <Button text="Ver Todos" type="secundary" size="s" />
+            <Link to="/characters" className="btn-secundary-s">
+              Ver Todos
+            </Link>
           </div>
         </div>
       </header>

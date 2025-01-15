@@ -6,8 +6,11 @@ import { ReactComponent as MoonSvg } from '../assets/icon/moon.svg';
 import { ReactComponent as SunSvg } from '../assets/icon/sun.svg';
 import { ReactComponent as SearchSvg } from '../assets/icon/search.svg';
 import '../styles/header.css';
+import { UserContext } from '../context/UserContext';
 
 function Header() {
+
+  const {login, data} = React.useContext(UserContext);
 
   // Trocar o tema da página
   function toggleDarkMode() {
@@ -30,7 +33,6 @@ function Header() {
     const navbar = document.querySelector('.navbar-container-mobile');
     navbar.classList.toggle('active');
     document.body.classList.toggle('no-scroll');
-    
   };
 
   return (
@@ -86,7 +88,21 @@ function Header() {
             >
               Artigos
             </NavLink>
-            <Button text="Login" type="primary" size="m" />
+            {login ? (
+              <NavLink
+                to="/account"
+                className="title-s relative cursor-pointer navbar-link"
+              >
+                {data.nome}
+              </NavLink>
+            ) : (
+              <NavLink
+                to="/login"
+                className="btn-primary-m title-s relative cursor-pointer navbar-link"
+              >
+                Login
+              </NavLink>
+            )}
           </nav>
           <nav className="navbar-mobile flex items-center">
             <button

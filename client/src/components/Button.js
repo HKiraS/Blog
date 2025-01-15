@@ -7,7 +7,7 @@ export const Button = ({
   size,
   classes,
   href = '',
-  onClick =  () => (window.location.href = href)
+  onClick =  () => {}
 }) => {
   const classesButton = `btn-${type}-${size} ${classes}`;
 

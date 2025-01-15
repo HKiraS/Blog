@@ -4,21 +4,21 @@
 .btn-secundary-b {
   padding: 16px 48px;
   font-size: 18px;
-  border-radius: var(--border-radius);
+  border-radius: 4px;
 }
 
 .btn-primary-m,
 .btn-secundary-m {
   padding: 12px 40px;
   font-size: 16px;
-  border-radius: var(--border-radius);
+  border-radius: 4px;
 }
 
 .btn-primary-s,
 .btn-secundary-s {
   padding: 8px 32px;
   font-size: 14px;
-  border-radius: var(--border-radius);
+  border-radius: 4px;
 }
 
 .btn-primary-b,
@@ -47,9 +47,9 @@
 .btn-primary-b:hover,
 .btn-primary-m:hover,
 .btn-primary-s:hover,
-.btn-primary-b:focus-visible,
-.btn-primary-m:focus-visible,
-.btn-primary-s:focus-visible,
+.btn-primary-b:focus,
+.btn-primary-m:focus,
+.btn-primary-s:focus,
 .btn-secundary-b:hover,
 .btn-secundary-m:hover,
 .btn-secundary-s:hover {
@@ -57,9 +57,9 @@
   color: var(--white);
 }
 
-.btn-secundary-b:focus-visible,
-.btn-secundary-m:focus-visible,
-.btn-secundary-s:focus-visible {
+.btn-secundary-b:focus,
+.btn-secundary-m:focus,
+.btn-secundary-s:focus {
   background-color: transparent;
   color: var(--dark-blue);
 }

@@ -1,7 +1,9 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './styles/App.css';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PagePosts from './pages/PagePosts';
 import PageHome from './pages/PageHome';
 import PageCharacters from './pages/PageCharacters';
@@ -10,7 +12,7 @@ import PageLogin from './pages/PageLogin.js';
 import PageAccount from './pages/PageAccount.js';
 import Page404 from './pages/Page404';
 import PageContact from './pages/PageContact.js';
-
+import { UserStorage } from './context/UserContext.js';
 
 export const dados = [
   {
@@ -189,6 +191,7 @@ export const dados = [
 export function App() {
   return (
     <BrowserRouter>
+      <UserStorage>
         <Header />
         <Routes>
           <Route path="/" element={<PageHome />} />
@@ -201,6 +204,7 @@ export function App() {
           <Route path="*" element={<Page404 />} />
         </Routes>
         <Footer />
+      </UserStorage>
     </BrowserRouter>
   );
 }
