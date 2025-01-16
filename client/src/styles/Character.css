@@ -8,10 +8,7 @@
 }
 
 .character-box {
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-snap-align: center;
+  padding-bottom: 16px;
 }
 
 .character-card {

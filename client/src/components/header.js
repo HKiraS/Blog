@@ -60,7 +60,7 @@ function Header() {
             />
           </div>
           <button
-            className="dark-mode-toggle relative cursor-pointer "
+            className="dark-mode-toggle relative cursor-pointer"
             onClick={toggleDarkMode}
           >
             <span className="absolute top-0 left-0 grid place-content-center duration-300">
@@ -93,7 +93,7 @@ function Header() {
             <Link
               to={login ? '/account' : '/login'}
               className={`title-s relative cursor-pointer ${
-                login ? 'navbar-link' : 'btn-primary-m'
+                login ? 'navbar-link' : 'btn-primary-m hover:translate-y-1'
               }`}
             >
                 {login ? ( 
@@ -144,7 +144,7 @@ function Header() {
                 }`}
               >
                 {login ? ( 
-                  <span className='flex items-center icon '>
+                  <span className='flex items-center icon'>
                     <UserSvg /> {data.nome}
                   </span>
                 ) : (

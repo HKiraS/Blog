@@ -12,6 +12,8 @@ import PageLogin from './pages/PageLogin.js';
 import PageAccount from './pages/PageAccount.js';
 import Page404 from './pages/Page404';
 import PageContact from './pages/PageContact.js';
+import PageSearch from './pages/PageSearch.js';
+
 import { UserStorage } from './context/UserContext.js';
 
 export const dados = [
@@ -22,7 +24,7 @@ export const dados = [
     timeRead: '5 min',
     tags: ['História', 'Personagem', 'Guerra'],
     views: 100,
-    likes: 21,
+    likes: 1,
     author: 'Kira',
     date: '2024-12-30',
     description:
@@ -37,8 +39,8 @@ export const dados = [
     title: 'Post 2',
     timeRead: '3 min',
     tags: ['História', 'Guerra'],
-    views: 100,
-    likes: 21,
+    views: 200,
+    likes: 93,
     author: 'Kira',
     date: '2024-12-29',
     description:
@@ -51,7 +53,7 @@ export const dados = [
     title: 'Post 3',
     timeRead: '4 min',
     tags: ['Personagem', 'Guerra'],
-    views: 100,
+    views: 130,
     likes: 21,
     author: 'Kira',
     date: '2024-12-28',
@@ -198,6 +200,7 @@ export function App() {
           <Route path="/posts/*" element={<PagePosts />} />
           <Route path="/characters" element={<PageCharacters />} />
           <Route path="/characters/:character" element={<PageCharacter />} />
+          <Route path="/search/*" element={<PageSearch />} />
           <Route path="/login/*" element={<PageLogin />} />
           <Route path="/account" element={<PageAccount />} />
           <Route path="/contact" element={<PageContact />} />

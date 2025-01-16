@@ -234,3 +234,7 @@ h1.title-b::before {
   width: 16px;
   height: 16px;
 }
+
+.anime-left {
+  animation: animeLeft ;
+}

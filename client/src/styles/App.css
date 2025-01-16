@@ -1,0 +1,26 @@
+/*
+* Estilos Globais
+*/
+
+@import url('./reset.css');
+@import url('./global.css');
+
+
+/*
+  *   Estilos de Seção
+*/
+
+@import url('./RecentPosts.css');
+@import url('./AnotherPosts.css');
+@import url('./Article.css');
+@import url('./Comments.css');
+@import url('./header.css');
+@import url('./Footer.css');
+@import url('./Loading.css');
+
+/*
+  *   Estilos de Componentes 
+*/
+
+@import url('./buttons.css');
+@import url('./Character.css');
