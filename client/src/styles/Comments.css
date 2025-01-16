@@ -1,13 +1,13 @@
 .comments {
   background-color: var(--white);
   color: var(--black);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .comments .x path {
   stroke: black;
   fill: black;
 }
-
 
 .user-comment-container {
   border-color: var(--gray-3);
@@ -30,21 +30,21 @@
   color: var(--blue);
 }
 
-.likes-container .like:hover  path,
-.likes-container .like.active  path {
+.likes-container .like:hover path,
+.likes-container .like.active path {
   stroke: var(--blue);
 }
 
-.likes-container .dislike.active, 
-.likes-container .dislike:hover{
+.likes-container .dislike.active,
+.likes-container .dislike:hover {
   color: var(--orange);
 }
 
-.likes-container .dislike.active  path,
-.likes-container .dislike:hover  path {
+.likes-container .dislike.active path,
+.likes-container .dislike:hover path {
   stroke: var(--orange);
 }
 
-.comment-options path{
+.comment-options path {
   stroke: var(--gray-2);
 }

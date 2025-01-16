@@ -18,7 +18,7 @@ export function CharacterCard({
   return (
     <Link to={name}>
     <div
-      className={`character-card relative rounded-md cursor-pointer ${classes}`}
+      className={`character-card relative rounded-md cursor-pointer snap-center ${classes}`}
       onClick={onClick}
     >
       <img

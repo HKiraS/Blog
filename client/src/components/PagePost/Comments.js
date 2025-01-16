@@ -92,7 +92,7 @@ function Comments() {
   // ];
 
   return (
-    <section className="comments max-w-4xl mx-auto py-16">
+    <section className="comments max-w-4xl mx-auto py-16 rounded-t-md">
       <div className="mx-auto flex flex-col max-w-2xl">
         <h2 className="title-m">Comentários</h2>
         <div className="flex gap-2 my-6 share-container *:p-2 *:rounded-full">

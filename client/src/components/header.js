@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Button } from './Button';
 import logo from '../assets/logo/logo.jpeg';
 import { ReactComponent as MoonSvg } from '../assets/icon/moon.svg';
 import { ReactComponent as SunSvg } from '../assets/icon/sun.svg';
 import { ReactComponent as SearchSvg } from '../assets/icon/search.svg';
-import '../styles/header.css';
+import { ReactComponent as UserSvg } from '../assets/icon/user.svg';
 import { UserContext } from '../context/UserContext';
+import '../styles/header.css';
 
 function Header() {
-
-  const {login, data} = React.useContext(UserContext);
+  const { login, data } = React.useContext(UserContext);
 
   // Trocar o tema da página
   function toggleDarkMode() {
@@ -41,9 +40,15 @@ function Header() {
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} className="logo" alt="Logo do site" />
         </Link>
-        <div className="flex-1 mx-4">
-          <div className="relative flex search-bar justify-center">
-            <button className="search-bar-btn py-2 px-3">
+
+        <div className="flex gap-6 max-sm:gap-3 items-center">
+          <div className="relative flex search-bar *:duration-500 justify-center rounded overflow-hidden ">
+            <button
+              className="search-bar-btn py-2 px-3 "
+              onClick={({ currentTarget }) => {
+                currentTarget.classList.toggle('active');
+              }}
+            >
               <SearchSvg />
             </button>
             <input
@@ -51,12 +56,9 @@ function Header() {
               placeholder="Buscar..."
               name="search"
               id="search"
-              className=" max-w-md search-bar-input"
+              className="max-w-md search-bar-input w-0"
             />
           </div>
-        </div>
-   
-        <div className="flex gap-6 items-center">
           <button
             className="dark-mode-toggle relative cursor-pointer "
             onClick={toggleDarkMode}
@@ -88,23 +90,22 @@ function Header() {
             >
               Artigos
             </NavLink>
-            {login ? (
-              <NavLink
-                to="/account"
-                className="title-s relative cursor-pointer navbar-link"
-              >
-                {data.nome}
-              </NavLink>
-            ) : (
-              <NavLink
-                to="/login"
-                className="btn-primary-m title-s relative cursor-pointer navbar-link"
-              >
-                Login
-              </NavLink>
-            )}
+            <Link
+              to={login ? '/account' : '/login'}
+              className={`title-s relative cursor-pointer ${
+                login ? 'navbar-link' : 'btn-primary-m'
+              }`}
+            >
+                {login ? ( 
+                  <span className='flex items-center icon '>
+                    <UserSvg /> {data.nome}
+                  </span>
+                ) : (
+                  'Login'
+                )}
+            </Link>
           </nav>
-          <nav className="navbar-mobile flex items-center">
+          <div className="navbar-mobile flex items-center">
             <button
               className="navbar-toggle-btn flex flex-col gap-2 p-4"
               onClick={handleClick}
@@ -113,50 +114,45 @@ function Header() {
               <span className="bar rounded-full w-8 h-0.5"></span>
               <span className="bar rounded-full w-8 h-0.5"></span>
             </button>
-            <ul className="flex navbar-container-mobile rounded-bl flex-col fixed gap-px overflow-hidden top-0 right-0 duration-300">
-              <li
-                className="navbar-link-mobile cursor-pointer relative active p-1"
+            <nav className="flex navbar-container-mobile rounded-bl flex-col fixed overflow-hidden top-0 right-0 duration-300 shadow-lg *:duration-500 *:px-3 *:py-4 *:cursor-pointer *:flex *:items-center *:relative *:gap-2 *:w-full">
+              <NavLink
+                to="/"
+                className="title-s navbar-link-mobile"
                 onClick={handleClick}
               >
-                <NavLink
-                  to="/"
-                  className="title-s px-3 py-4 duration-500"
-                >
-                  Home
-                </NavLink>
-                <span className="w-full h-full absolute top-0 left-0"></span>
-              </li>
-              <li
-                className="navbar-link-mobile cursor-pointer relative"
+                Home
+              </NavLink>
+              <NavLink
+                to="characters"
+                className="title-s navbar-link-mobile"
                 onClick={handleClick}
               >
-                <NavLink
-                  to="characters"
-                  className="title-s px-3 py-4 duration-500 "
-                >
-                  Personagens
-                </NavLink>
-                <span className="w-full h-full absolute top-0 left-0"></span>
-              </li>
-              <li
-                className="navbar-link-mobile cursor-pointer relative"
+                Personagens
+              </NavLink>
+
+              <NavLink
+                to="posts"
+                className="title-s navbar-link-mobile"
                 onClick={handleClick}
               >
-                <NavLink to="posts" className="title-s px-3 py-4 duration-500">
-                  Tags
-                </NavLink>
-                <span className="w-full h-full absolute top-0 left-0"></span>
-              </li>
-              <Link to="/login" onClick={() => {console.log('Clicou no link')}}>
-                <Button
-                  text="Login"
-                  type="primary"
-                  size="m"
-                  classes="rounded w-full"
-                />
+                Tags
+              </NavLink>
+              <Link
+                to={login ? '/account' : '/login'}
+                className={`title-s text-center ${
+                  login ? 'navbar-link' : 'btn-primary-m'
+                }`}
+              >
+                {login ? ( 
+                  <span className='flex items-center icon '>
+                    <UserSvg /> {data.nome}
+                  </span>
+                ) : (
+                  'Login'
+                )}
               </Link>
-            </ul>
-          </nav>
+            </nav>
+          </div>
         </div>
       </div>
     </header>

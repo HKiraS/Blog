@@ -1,6 +1,5 @@
 import React from 'react';
 import { CharacterCard } from '../CharacterCard.js';
-import NavArrows from '../NavArrows.js';
 import { Link } from 'react-router-dom';
 
 export function CharacterSlider({ data }) {
@@ -30,10 +29,9 @@ export function CharacterSlider({ data }) {
           </div>
         </div>
       </header>
-      <div className="flex items-center max-w-screen-2xl mx-auto justify-center w-11/12 gap-8">
-        <NavArrows classes="max-md:hidden" direction="left" />
+      <div className="flex items-center max-w-screen-2xl mx-auto justify-center w-11/12 gap-8 px-8 max-sm:px-4">
         <div className="character-container mx-auto my-16 flex flex-col gap-8 overflow-hidden w-full">
-          <div className="gap-8 character-box flex relative">
+          <div className="gap-8 character-box flex relative scroll-py-4 snap-x">
             {evenData.map((item) => (
               <CharacterCard
                 key={item.title + item.id}
@@ -42,7 +40,7 @@ export function CharacterSlider({ data }) {
               />
             ))}
           </div>
-          <div className="gap-8 character-box flex relative">
+          <div className="gap-8 character-box flex relative scroll-py-4 snap-x">
             {oddData.map((item) => (
               <CharacterCard
                 key={item.title + item.id}
@@ -52,7 +50,6 @@ export function CharacterSlider({ data }) {
             ))}
           </div>
         </div>
-        <NavArrows classes="max-md:hidden" direction="right" />
       </div>
     </section>
   );

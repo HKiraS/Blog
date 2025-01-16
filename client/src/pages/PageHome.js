@@ -178,6 +178,8 @@ const dados = [
 ];
 
 function PageHome() {
+    document.title = 'UnderBlog | Home'
+
   return (
     <div className="PageHome">
       <RecentPosts data={dados} />

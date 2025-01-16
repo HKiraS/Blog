@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from './Button';
 import { ReactComponent as ClockSvg } from '../assets/icon/clock.svg';
 import { ReactComponent as CalendarSvg } from '../assets/icon/calendar.svg';
 import '../styles/RecentPosts.css';
@@ -36,7 +35,6 @@ export function Posts({
     description = description.substring(0, 197).padEnd(200, '...');
   }
 
-  const classPost = `post-box shadow-sm cursor-pointer rounded shadow-lg overflow-hidden duration-500 h-fit ${classes}`;
   const classesTitle = classes.includes('main')
     ? 'post-title duration-500 title-b'
     : 'post-title duration-500 title-m';
@@ -46,7 +44,7 @@ export function Posts({
 
   return (
     <Link to={'/posts/' + title}>
-      <div className={classPost}>
+      <div className={`post-box shadow-sm cursor-pointer rounded hover:shadow-lg overflow-hidden duration-500 h-fit ${classes}`}>
         <div className="post-image flex flex-col justify-end relative">
           <img
             className="h-full w-full object-cover "
