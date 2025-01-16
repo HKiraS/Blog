@@ -11,9 +11,7 @@ export function Posts({
   timeRead,
   date,
   classes = 'small',
-  onClick = (event) => {
-    event.preventDefault();
-  },
+  ...props
 }) {
   // if (classes.includes('ultra-small') && title.length > 12) {
   //   title = title.substring(0, 9).padEnd(12, '...');
@@ -43,8 +41,8 @@ export function Posts({
     : 'post-description text-n';
 
   return (
-    <Link to={'/posts/' + title}>
-      <div className={`post-box shadow-sm cursor-pointer rounded hover:shadow-lg overflow-hidden duration-500 h-fit ${classes}`}>
+    <Link to={`/posts/${title}`}>
+      <div className={`post-box shadow-sm cursor-pointer rounded hover:shadow-lg overflow-hidden duration-500 h-fit ${classes}`} {...props}>
         <div className="post-image flex flex-col justify-end relative">
           <img
             className="h-full w-full object-cover "
@@ -65,9 +63,9 @@ export function Posts({
             </div>
           </div>
           <p className={classesText}>{description}</p>
-          <Link to={`/posts/${title}`} className="btn-secundary-s rounded mt-4 text-center max-w-max max-md:max-w-full">
+          <span to={`/posts/${title}`} className="btn-secundary-s rounded mt-4 text-center max-w-max max-md:max-w-full">
             Leia Mais
-          </Link>
+          </span>
         </div>
       </div>
     </Link>

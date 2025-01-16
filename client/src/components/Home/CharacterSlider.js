@@ -7,7 +7,7 @@ export function CharacterSlider({ data }) {
   const oddData = data.filter((_, index) => index % 2 !== 0);
 
   return (
-    <section className="w-full my-16" id="characters">
+    <section className="w-full my-16">
       <header className="shadow-lg">
         <div className="container mx-auto flex justify-between items-center my-8">
           <h1 className="title-b relative in-black-bg gap-4">Personagens</h1>

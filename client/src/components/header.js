@@ -28,11 +28,15 @@ function Header() {
   })();
 
   // Função para alternar o menu de navegação
-  const handleClick = (event) => {
+  const handleMenuClick = () => {
     const navbar = document.querySelector('.navbar-container-mobile');
     navbar.classList.toggle('active');
     document.body.classList.toggle('no-scroll');
   };
+
+  const handleClick = ({currentTarget}) => {
+    currentTarget.classList.toggle('active')
+  }
 
   return (
     <header id="header" className="p-4 sticky top-0 left-0 duration-300 z-50">
@@ -45,9 +49,7 @@ function Header() {
           <div className="relative flex search-bar *:duration-500 justify-center rounded overflow-hidden ">
             <button
               className="search-bar-btn py-2 px-3 "
-              onClick={({ currentTarget }) => {
-                currentTarget.classList.toggle('active');
-              }}
+              onClick={handleClick}
             >
               <SearchSvg />
             </button>
@@ -108,7 +110,7 @@ function Header() {
           <div className="navbar-mobile flex items-center">
             <button
               className="navbar-toggle-btn flex flex-col gap-2 p-4"
-              onClick={handleClick}
+              onClick={handleMenuClick}
             >
               <span className="bar rounded-full w-8 h-0.5"></span>
               <span className="bar rounded-full w-8 h-0.5"></span>
@@ -118,14 +120,14 @@ function Header() {
               <NavLink
                 to="/"
                 className="title-s navbar-link-mobile"
-                onClick={handleClick}
+                onClick={handleMenuClick}
               >
                 Home
               </NavLink>
               <NavLink
                 to="characters"
                 className="title-s navbar-link-mobile"
-                onClick={handleClick}
+                onClick={handleMenuClick}
               >
                 Personagens
               </NavLink>
@@ -133,7 +135,7 @@ function Header() {
               <NavLink
                 to="posts"
                 className="title-s navbar-link-mobile"
-                onClick={handleClick}
+                onClick={handleMenuClick}
               >
                 Tags
               </NavLink>

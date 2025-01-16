@@ -37,10 +37,9 @@
   --fontSize-title-mobile-2: 1.5rem;
   --fontSize-title-mobile-3: 1.125rem;
   --fontSize-text-mobile-1: 0.875rem;
-  --fontSize-text-mobile-2: 0.6rem;
+  --fontSize-text-mobile-2: 0.7rem;
 
   /* font-weight */
-  --weight-regular: 400;
   --weight-semibold: 600;
   --weight-bold: 700;
 }
@@ -68,13 +67,11 @@
 .text-n {
   font-size: var(--fontSize-text-1);
   font-family: var(--fontFamily-Lora);
-  font-weight: var(--weight-regular);
   line-height: 1.5rem;
 }
 .text-s {
   font-size: var(--fontSize-text-2);
   font-family: var(--fontFamily-Lora);
-  font-weight: var(--weight-regular);
   line-height: 1.25rem;
 }
 
@@ -99,12 +96,10 @@
   .text-n {
     font-size: var(--fontSize-text-mobile-1);
     font-family: var(--fontFamily-Lora);
-    font-weight: var(--weight-regular);
   }
   .text-s {
     font-size: var(--fontSize-text-mobile-2);
     font-family: var(--fontFamily-Lora);
-    font-weight: var(--weight-regular);
   }
 }
 
@@ -236,5 +231,16 @@ h1.title-b::before {
 }
 
 .anime-left {
-  animation: animeLeft ;
+  animation: animeLeft 800ms ease forwards;
+}
+
+@keyframes animeLeft {
+  from {
+    opacity: .3;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../../styles/Article.css';
 import { ReactComponent as ClockSvg } from '../../assets/icon/clock.svg';
@@ -14,11 +14,11 @@ import imgExemplo from '../../assets/images/girl random.jpeg';
 function reducer(state, action) {
   switch (action) {
     case 'increment':
-      state += 2;
+      state = state <= 24 ? state + 2 : state;
       window.localStorage.setItem('fontSize', state);
       return state;
     case 'decrement':
-      state -= 2;
+      state = state >= 12 ? state - 2 : state;
       window.localStorage.setItem('fontSize', state);
       return state;
     default:
@@ -29,10 +29,10 @@ function reducer(state, action) {
 function Article({ data }) {
   const [Like, setLike] = React.useState(false);
   const fontSize = window.localStorage.getItem('fontSize')
-    ? window.localStorage.getItem('fontSize')
+    ? parseInt(window.localStorage.getItem('fontSize'))
     : 14;
   const [state, dispatch] = React.useReducer(reducer, fontSize);
-  const articleContainer = React.useRef();
+  const articleRef = React.useRef();
 
   const params = useParams();
 
@@ -59,17 +59,30 @@ function Article({ data }) {
   }
 
   function changeColorContent() {
-    if (articleContainer.current) {
-      articleContainer.current.classList.toggle('dark');
+    const article = articleRef.current;
+    if (article) {
+      article.classList.toggle('dark');
+      if (window.localStorage.getItem('articleContrast') === 'active') {
+        window.localStorage.removeItem('articleContrast');
+      }
+      window.localStorage.setItem('articleContrast', 'active');
     }
   }
+
+  useEffect(() => {
+    const article = articleRef.current;
+    if (!article) return;
+    if (window.localStorage.getItem('articleContrast') === 'active') {
+      article.classList.add('dark');
+    }
+  }, []);
 
   return (
     <article
       className="article-post color-gray-2 white-bg max-w-4xl mx-auto py-16 mb-16 duration-300 rounded-b"
-      ref={articleContainer}
+      ref={articleRef}
     >
-      <div className="article-post-container mx-auto flex flex-col items-center">
+      <div className="article-post-container mx-auto flex flex-col items-center max-w-full">
         <figure className="img-post-container">
           <img src={img} alt="garota" className="img-post" />
         </figure>
@@ -83,41 +96,41 @@ function Article({ data }) {
             </span>
           ))}
         </div>
-        <div className="post-data flex gap-8 mb-8 mx-auto">
-          <div className="icon flex items-center gap-1">
+        <div className="post-data flex flex-wrap gap-8 mb-8 px-8 max-sm:gap-4 mx-auto *:flex *:items-center *:gap-1 ">
+          <div className="icon">
             <ClockSvg />
             <span className="text-s">{timeRead}</span>
           </div>
-          <div className="icon flex items-center gap-1">
+          <div className="icon">
             <CalendarSvg />
             <span className="text-s">{date}</span>
           </div>
-          <div className="icon flex items-center gap-1">
+          <div className="icon">
             <LikeSvg />
             <span className="text-s">{likes} curtidas</span>
           </div>
-          <div className="icon flex items-center gap-1">
+          <div className="icon">
             <ViewSvg />
             <span className="text-s">{views} visualizações</span>
           </div>
         </div>
-        <div className="flex w-full max-w-xl justify-between px-8 items-center">
-          <div className="acessability-container flex gap-3">
+        <div className="flex w-full flex-wrap max-w-xl justify-between max-sm:justify-center gap-4 px-8 items-center">
+          <div className="acessability-container flex gap-3 *:border-2 *:p-2 *:duration-500 *:border-black *:border-solid *:rounded">
             <button
-              className="border-2 p-2 duration-500 border-black border-solid rounded"
+              className=""
               onClick={changeColorContent}
             >
               <ContrastSvg />
             </button>
             <button
-              className="border-2 p-2 duration-500 border-black border-solid rounded"
+              className=""
               onClick={() => dispatch('increment')}
-              disabled={state >= 20}
+              disabled={state >= 24}
             >
               <PlusSvg />
             </button>
             <button
-              className="border-2 p-2 duration-500 border-black border-solid rounded"
+              className=""
               onClick={() => dispatch('decrement')}
               disabled={state === 12}
             >

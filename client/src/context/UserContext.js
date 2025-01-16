@@ -46,7 +46,10 @@ export const UserStorage = ({ children }) => {
   useEffect(() => {
     async function autoLogin() {
       const token = window.localStorage.getItem('token');
-      if (!token) setLogin(false);
+      if (!token) {
+        setLogin(false)
+      return
+      };
       try {
         setError(null);
         setLoading(true);

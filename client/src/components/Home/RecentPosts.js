@@ -18,7 +18,7 @@ export function RecentPosts({ data }) {
 
   return (
     <section className="">
-      <div className="max-w-screen-2xl container mx-auto px-4 lg:px-0 recent-posts">
+      <div className="recent-posts max-w-screen-2xl container mx-auto px-4 lg:px-4 anime-left">
         <h1 className="title-b w-fit relative my-16 justify-self-center">
           Destaques
         </h1>

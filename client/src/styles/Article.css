@@ -41,6 +41,25 @@
   overflow: hidden;
 }
 
+@media (max-width: 780px) {
+  
+  .img-post-container {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+  }
+}
+@media (max-width: 500px) {
+  
+  .img-post-container {
+    height: 270px;
+    overflow: hidden;
+  }
+} 
+
+
+
+
 .tag-post::before {
   content: url('../assets/icon/tag.svg');
   margin-right: 4px;

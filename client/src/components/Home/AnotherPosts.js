@@ -28,7 +28,7 @@ export function AnotherPosts({ data }) {
   }, []);
 
   return (
-    <section className="another-posts w-full my-16" id="posts">
+    <section className="another-posts w-full my-16">
       <div>
         <header className="shadow-lg my-16" id="AnotherPosts">
           <div className="container mx-auto flex justify-between items-center py-8 relative">
