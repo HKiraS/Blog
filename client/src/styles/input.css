@@ -1,12 +1,4 @@
-.input-form {
-  border-color: var(--gray-3);
-}
-
-.input-form:hover {
-  border-color: var(--blue);
-}
 
 .input-form:focus {
-  border-color: var(--blue);
-  box-shadow: 0 0 2px 2px #94bdff;
+  box-shadow: 0 0 2px 4px #94bdff;
 }

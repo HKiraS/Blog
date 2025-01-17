@@ -99,8 +99,8 @@ function Header() {
               }`}
             >
                 {login ? ( 
-                  <span className='flex items-center icon '>
-                    <UserSvg /> {data.nome}
+                  <span className='flex items-center  gap-2'>
+                   {data.nome} <UserSvg /> 
                   </span>
                 ) : (
                   'Login'
