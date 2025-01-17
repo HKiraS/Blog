@@ -6,9 +6,7 @@ import { ReactComponent as LoadSvg } from '../../assets/icon/load.svg';
 import Error from '../Helper/Erro';;
 
 const LoginPasswordLost = () => {
-  const username = useForm();
   const email = useForm('email');
-  const password = useForm('password');
 
   const { loading, error } = React.useContext(UserContext);
 
@@ -18,15 +16,15 @@ const LoginPasswordLost = () => {
 
   return (
     <section className="bg-white flex items-center w-full flex-col md:py-40 max-md:py-24 fade-in">
-      <h1 className="title-b color-purple mb-8">Recupere sua Senha</h1>
+      <h1 className="title-b color-purple mb-4">Recupere sua Senha</h1>
+    <p className='title-s mb-8'>Será enviado um email com link para recuperar a senha</p>
+
       <form
         action=""
         className="flex flex-col items-center container p-8 w-full"
         onSubmit={handleSubmit}
       >
-        <Input label="Usuário" type="text" name="username" {...username} />
-        <Input label="Email" type="text" name="email" {...email} />
-        <Input label="Senha" type="password" name="password" {...password} />
+        <Input label="Informe o Email da conta" type="text" name="email" {...email} />
         <button
           className="btn-primary-m mt-6"
           disabled={loading}
@@ -37,7 +35,7 @@ const LoginPasswordLost = () => {
               Carregando <LoadSvg className="animate-spin" />
             </span>
           ) : (
-            'Entrar'
+            'Enviar'
           )}
         </button>
         <Error erro={error} />

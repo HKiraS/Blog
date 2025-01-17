@@ -14,11 +14,11 @@ const PageLogin = () => {
     <section className="login gray-3-bg my-16 mx-auto sm:w-3/4 md:w-2/3 lg:w-1/2 rounded-md shadow-md anime-left overflow-hidden">
       <div className='flex justify-between'>
         <nav className="flex *:px-5 *:py-3 *:rounded-t-md *:duration-300 ">
-          <NavLink to="" end>
+          <NavLink to="/login" end>
             Login
           </NavLink>
-          <NavLink to="create">Cadrastrar</NavLink>
-          <NavLink to="lost">Recuperar senha</NavLink>
+          <NavLink to="/login/create">Cadrastrar</NavLink>
+          <NavLink to="/login/lost">Recuperar senha</NavLink>
         </nav>
         <Link to='/' className='px-5 py-3 duration-200 hover:bg-red-500'>
           <CloseSvg />

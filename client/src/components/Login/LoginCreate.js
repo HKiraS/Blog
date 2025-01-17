@@ -48,7 +48,7 @@ const LoginCreate = () => {
               Carregando <LoadSvg className="animate-spin" />
             </span>
           ) : (
-            'Entrar'
+            'Criar'
           )}
         </button>
         <Error erro={error} />
