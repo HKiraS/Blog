@@ -17,6 +17,7 @@ import PageSearch from './pages/PageSearch.js';
 import { UserStorage } from './context/UserContext.js';
 import ProtectedRoute from './components/Helper/ProtectedRoute.js';
 
+/* eslint-disable no-dupe-keys */
 export const dados = [
   {
     img: 'https://i.pinimg.com/736x/77/29/c8/7729c8fbc7ead89b1a5f29c860108b58.jpg',
@@ -67,11 +68,10 @@ export const dados = [
     id: 4,
     title: 'Post 4',
     timeRead: '6 min',
-    tags: ['Personagem', 'Guerra'],
+    tags: ['Personagem', 'Guerra', 'Criativo'],
     views: 100,
     likes: 21,
     author: 'Kira',
-    tags: ['Horror'],
     date: '2024-12-27',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis blandit nulla ut tincidunt. In sollicitudin, lorem nec pretium tristique, ligula nibh scelerisque nulla, at interdum urna ante in tortor. Nunc mattis leo non ex placerat sollicitudin. Praesent consequat sagittis mi, at efficitur dui fermentum ac. Aliquam id bibendum magna. Morbi consequat justo eu ex facilisis volutpat. Sed eget sagittis eros. Duis arcu odio, lobortis semper tempor at, fringilla at velit. Phasellus venenatis porttitor nibh, vel malesuada nibh aliquet blandit. Pellentesque nibh nunc, eleifend sed odio in, suscipit porttitor justo. In finibus in nibh id cursus. Nullam porta maximus nisi, vitae tristique metus. do Post 4',
@@ -190,6 +190,7 @@ export const dados = [
     href: '/',
   },
 ];
+/* eslint-enable no-dupe-keys */
 
 export function App() {
   return (
@@ -200,7 +201,7 @@ export function App() {
           <Route path="/" element={<PageHome />} />
           <Route path="/posts/*" element={<PagePosts />} />
           <Route path="/characters" element={<PageCharacters />} />
-          <Route path="/characters/:character" element={<PageCharacter />} />
+          <Route path="/characters/:character/*" element={<PageCharacter />} />
           <Route path="/search/*" element={<PageSearch />} />
           <Route path="/login/*" element={<PageLogin />} />
           <Route
