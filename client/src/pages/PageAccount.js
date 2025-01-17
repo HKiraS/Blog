@@ -1,15 +1,24 @@
-import React from 'react'
+import React from 'react';
 import { UserContext } from '../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const PageAccount = () => {
-  const { userLogout } = React.useContext(UserContext)
+  const { userLogout } = React.useContext(UserContext);
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    userLogout();
+    navigate('/login');
+  }
 
   return (
     <section>
       <h1>Conta</h1>
-      <button className='btn-secundary-m' onClick={userLogout}>Sair</button>
+      <button className="btn-secundary-m" onClick={handleLogout}>
+        Sair
+      </button>
     </section>
-  )
-}
+  );
+};
 
-export default PageAccount
+export default PageAccount;
