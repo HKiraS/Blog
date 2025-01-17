@@ -39,7 +39,7 @@ const LoginCreate = () => {
         <Input label="Email" type="text" name="email" {...email} />
         <Input label="Senha" type="password" name="password" {...password} />
         <button
-          className="btn-primary-m mt-6"
+          className="btn-primary-m rounded mt-6"
           disabled={loading}
           aria-label={loading ? 'Carregando...' : 'Entrar'}
         >

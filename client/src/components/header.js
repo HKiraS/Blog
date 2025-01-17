@@ -10,7 +10,6 @@ import '../styles/header.css';
 
 function Header() {
   const { login, data } = React.useContext(UserContext);
-
   // Trocar o tema da página
   function toggleDarkMode() {
     const body = document.body;
@@ -27,15 +26,14 @@ function Header() {
     document.body.classList.add(savedTheme);
   })();
 
-  // Função para alternar o menu de navegação
-  const handleMenuClick = () => {
-    const navbar = document.querySelector('.navbar-container-mobile');
-    navbar.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-  };
-
   const handleClick = ({ currentTarget }) => {
     currentTarget.classList.toggle('active');
+  };
+
+  // Função para alternar o menu de navegação
+  const handleMenuClick = (e) => {
+    handleClick(e);
+    document.body.classList.toggle('no-scroll');
   };
 
   return (
@@ -64,7 +62,7 @@ function Header() {
           >
             <span className="absolute top-0 left-0 grid place-content-center duration-300">
               <SunSvg className="sun absolute top-0 left-0 opacity-100 invisible" />
-              <MoonSvg className="moon absolute top-0 left-0 opacity-0 invisible stroke-black" />
+              <MoonSvg className="moon absolute top-0 left-0 opacity-0 invisible" />
             </span>
           </button>
           <nav className="navbar-container flex gap-6 items-center">
@@ -101,20 +99,20 @@ function Header() {
                 to="/account"
                 className="title-s relative cursor-pointer navbar-link flex items-center gap-2"
               >
-                {data.nome} <UserSvg className='*:active:stroke-purple-700' />
+                {data.nome} <UserSvg className="*:active:stroke-purple-700" />
               </NavLink>
             )}
           </nav>
           <div className="navbar-mobile flex items-center">
             <button
-              className="navbar-toggle-btn flex flex-col gap-2 p-4"
+              className="navbar-toggle-btn flex flex-col gap-2 w-16 h-14 justify-center items-center"
               onClick={handleMenuClick}
             >
-              <span className="bar rounded-full w-8 h-0.5"></span>
-              <span className="bar rounded-full w-8 h-0.5"></span>
-              <span className="bar rounded-full w-8 h-0.5"></span>
+              <span className="bar rounded-full w-8 h-0.5 duration-300 gray-3-bg"></span>
+              <span className="bar rounded-full w-8 h-0.5 duration-300 gray-3-bg"></span>
+              <span className="bar rounded-full w-8 h-0.5 duration-300 gray-3-bg"></span>
             </button>
-            <nav className="flex navbar-container-mobile rounded-bl flex-col fixed overflow-hidden top-0 right-0 duration-300 shadow-lg *:duration-500 *:px-3 *:py-4 *:cursor-pointer *:flex *:items-center *:relative *:gap-2 *:w-full">
+            <nav className="flex navbar-container-mobile rounded-bl flex-col fixed overflow-hidden top-0 right-0 duration-300 shadow-lg *:duration-500 *:px-3 *:py-6 *:cursor-pointer *:flex *:items-center *:relative *:gap-2 *:w-full">
               <NavLink
                 to="/"
                 className="title-s navbar-link-mobile"
@@ -137,20 +135,22 @@ function Header() {
               >
                 Tags
               </NavLink>
-              <Link
-                to={login ? '/account' : '/login'}
-                className={`title-s text-center ${
-                  login ? 'navbar-link' : 'btn-primary-m'
-                }`}
-              >
-                {login ? (
-                  <span className="flex items-center icon">
-                    <UserSvg /> {data.nome}
-                  </span>
-                ) : (
-                  'Login'
-                )}
-              </Link>
+
+              {!login ? (
+                <Link
+                  to="/login"
+                  className="title-s relative cursor-pointer btn-primary-b flex justify-center"
+                >
+                  Login
+                </Link>
+              ) : (
+                <NavLink
+                  to="/account"
+                  className="title-s relative cursor-pointer navbar-link-mobile flex items-center gap-2"
+                >
+                  {data.nome} <UserSvg className='color-black'/>
+                </NavLink>
+              )}
             </nav>
           </div>
         </div>

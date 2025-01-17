@@ -23,7 +23,7 @@ export function CharacterSlider({ data }) {
                 Opção 1
               </button>
             </div> */}
-            <Link to="/characters" className="btn-secundary-s">
+            <Link to="/characters" className="btn-secundary-s rounded">
               Ver Todos
             </Link>
           </div>

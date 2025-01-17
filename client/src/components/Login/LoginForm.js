@@ -39,7 +39,7 @@ const LoginForm = () => {
           </span>
         )}
         <button
-          className="btn-primary-m mt-6"
+          className="btn-primary-m rounded mt-6"
           disabled={loading}
           aria-label={loading ? 'Carregando...' : 'Entrar'}
         >

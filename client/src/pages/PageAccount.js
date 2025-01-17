@@ -14,7 +14,7 @@ const PageAccount = () => {
   return (
     <section>
       <h1>Conta</h1>
-      <button className="btn-secundary-m" onClick={handleLogout}>
+      <button className="btn-secundary-m rounded" onClick={handleLogout}>
         Sair
       </button>
     </section>

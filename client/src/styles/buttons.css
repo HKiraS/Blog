@@ -2,21 +2,18 @@
 .btn-secundary-b {
   padding: 16px 48px;
   font-size: 18px;
-  border-radius: 4px;
 }
 
 .btn-primary-m,
 .btn-secundary-m {
   padding: 12px 40px;
   font-size: 16px;
-  border-radius: 4px;
 }
 
 .btn-primary-s,
 .btn-secundary-s {
   padding: 8px 32px;
   font-size: 14px;
-  border-radius: 4px;
 }
 
 .btn-primary-b,
@@ -25,6 +22,7 @@
   background: var(--blue);
   color: var(--white);
   transition: 0.3s;
+  text-align: center;
 }
 
 .btn-secundary-b,
@@ -34,6 +32,7 @@
   color: var(--blue);
   border: 2px solid var(--blue);
   transition: 0.3s;
+  text-align: center;
 }
 
 .btn-secundary-b:hover,

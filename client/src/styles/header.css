@@ -48,6 +48,21 @@ body.dark .dark-mode-toggle span {
   transform: translateY(-4px);
 }
 
+.navbar-link.active,
+.navbar-link:focus,
+.navbar-link:hover,
+.navbar-container-mobile .navbar-link-mobile.active,
+.navbar-container-mobile .navbar-link-mobile:focus,
+.navbar-container-mobile .navbar-link-mobile:hover,
+.navbar-container-mobile .navbar-link-mobile.active svg,
+.navbar-container-mobile .navbar-link-mobile:focus svg,
+.navbar-container-mobile .navbar-link-mobile:hover svg,
+.navbar-link.active svg,
+.navbar-link:focus svg,
+.navbar-link:hover svg{
+  color: var(--purple);
+}
+
 .navbar-link::after {
   content: '';
   background-color: var(--purple);
@@ -59,11 +74,6 @@ body.dark .dark-mode-toggle span {
   left: 0;
   z-index: 1;
   border-radius: 4px;
-}
-
-.navbar-link.active,
-.navbar-link:hover {
-  color: var(--purple);
 }
 
 .navbar-link.active::after,
@@ -110,8 +120,18 @@ body.dark .dark-mode-toggle span {
   background-color: var(--white);
 }
 
-.navbar-mobile .bar {
-  background-color: var(--gray-3);
+.navbar-toggle-btn.active .bar {
+  transform: rotate(225deg);
+  position: absolute;
+  background-color: var(--orange);
+}
+
+.navbar-toggle-btn.active .bar:first-child {
+  transform: rotate(405deg);
+}
+
+.navbar-toggle-btn.active .bar:last-child {
+  transform: rotate(-225deg);
 }
 
 @media (max-width: 1040px) {
@@ -129,7 +149,7 @@ body.dark .dark-mode-toggle span {
     transform: translateX(100%);
   }
 
-  .navbar-container-mobile.active {
+  .navbar-toggle-btn.active ~ .navbar-container-mobile {
     transform: translateX(0);
   }
 
@@ -163,11 +183,6 @@ body.dark .dark-mode-toggle span {
   .navbar-container-mobile .navbar-link-mobile:focus::before {
     width: 8px;
     left: -8px;
-  }
-
-  .navbar-container-mobile .navbar-link-mobile.active,
-  .navbar-container-mobile .navbar-link-mobile:hover {
-    color: var(--purple);
   }
 
   .navbar-mobile {
