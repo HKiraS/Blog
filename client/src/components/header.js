@@ -34,9 +34,9 @@ function Header() {
     document.body.classList.toggle('no-scroll');
   };
 
-  const handleClick = ({currentTarget}) => {
-    currentTarget.classList.toggle('active')
-  }
+  const handleClick = ({ currentTarget }) => {
+    currentTarget.classList.toggle('active');
+  };
 
   return (
     <header id="header" className="p-4 sticky top-0 left-0 duration-300 z-50">
@@ -47,10 +47,7 @@ function Header() {
 
         <div className="flex gap-6 max-sm:gap-3 items-center">
           <div className="relative flex search-bar *:duration-500 justify-center rounded overflow-hidden ">
-            <button
-              className="search-bar-btn py-2 px-3 "
-              onClick={handleClick}
-            >
+            <button className="search-bar-btn py-2 px-3 " onClick={handleClick}>
               <SearchSvg />
             </button>
             <input
@@ -92,20 +89,21 @@ function Header() {
             >
               Artigos
             </NavLink>
-            <Link
-              to={login ? '/account' : '/login'}
-              className={`title-s relative cursor-pointer ${
-                login ? 'navbar-link' : 'btn-primary-m hover:translate-y-1'
-              }`}
-            >
-                {login ? ( 
-                  <span className='flex items-center  gap-2'>
-                   {data.nome} <UserSvg /> 
-                  </span>
-                ) : (
-                  'Login'
-                )}
-            </Link>
+            {!login ? (
+              <Link
+                to="/login"
+                className="title-s relative cursor-pointer btn-primary-m hover:translate-y-1"
+              >
+                Login
+              </Link>
+            ) : (
+              <NavLink
+                to="/account"
+                className="title-s relative cursor-pointer navbar-link flex items-center gap-2"
+              >
+                {data.nome} <UserSvg className='*:active:stroke-purple-700' />
+              </NavLink>
+            )}
           </nav>
           <div className="navbar-mobile flex items-center">
             <button
@@ -145,8 +143,8 @@ function Header() {
                   login ? 'navbar-link' : 'btn-primary-m'
                 }`}
               >
-                {login ? ( 
-                  <span className='flex items-center icon'>
+                {login ? (
+                  <span className="flex items-center icon">
                     <UserSvg /> {data.nome}
                   </span>
                 ) : (

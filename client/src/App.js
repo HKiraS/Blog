@@ -15,6 +15,7 @@ import PageContact from './pages/PageContact.js';
 import PageSearch from './pages/PageSearch.js';
 
 import { UserStorage } from './context/UserContext.js';
+import ProtectedRoute from './components/Helper/ProtectedRoute.js';
 
 export const dados = [
   {
@@ -202,7 +203,14 @@ export function App() {
           <Route path="/characters/:character" element={<PageCharacter />} />
           <Route path="/search/*" element={<PageSearch />} />
           <Route path="/login/*" element={<PageLogin />} />
-          <Route path="/account" element={<PageAccount />} />
+          <Route
+            path="/account"
+            element={
+              <ProtectedRoute>
+                <PageAccount />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/contact" element={<PageContact />} />
           <Route path="*" element={<Page404 />} />
         </Routes>

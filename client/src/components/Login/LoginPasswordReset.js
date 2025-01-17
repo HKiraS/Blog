@@ -2,9 +2,9 @@ import React from 'react'
 
 const LoginPasswordReset = () => {
   return (
-    <div>
+    <section className='fade-in'>
       
-    </div>
+    </section>
   )
 }
 

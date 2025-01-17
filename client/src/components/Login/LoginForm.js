@@ -21,7 +21,7 @@ const LoginForm = () => {
   }
 
   return (
-    <section className="bg-white flex items-center w-full flex-col md:py-52 max-md:py-24">
+    <section className="bg-white flex items-center w-full flex-col md:py-52 max-md:py-24 fade-in">
       <h1 className="title-b color-purple">Faça Login</h1>
       <form
         action=""

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import '../../styles/Article.css';
 import { ReactComponent as ClockSvg } from '../../assets/icon/clock.svg';
 import { ReactComponent as CalendarSvg } from '../../assets/icon/calendar.svg';
@@ -79,7 +79,7 @@ function Article({ data }) {
 
   return (
     <article
-      className="article-post color-gray-2 white-bg max-w-4xl mx-auto py-16 mb-16 duration-300 rounded-b"
+      className="article-post color-gray-2 white-bg max-w-4xl mx-auto py-16 mb-16 duration-300 rounded-b anime-down"
       ref={articleRef}
     >
       <div className="article-post-container mx-auto flex flex-col items-center max-w-full">
@@ -91,9 +91,9 @@ function Article({ data }) {
         <h2 className="text-n autor mb-6">{author}</h2>
         <div className="tags-container flex gap-4 mb-4 mx-auto">
           {tags.map((tag, index) => (
-            <span className="tag-post duration-300" key={tag + '-' + index}>
+            <Link to={'/search/' + tag} className="tag-post duration-300" key={tag + '-' + index}>
               {tag}
-            </span>
+            </Link>
           ))}
         </div>
         <div className="post-data flex flex-wrap gap-8 mb-8 px-8 max-sm:gap-4 mx-auto *:flex *:items-center *:gap-1 ">

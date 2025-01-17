@@ -244,3 +244,31 @@ h1.title-b::before {
     transform: translateX(0);
   }
 }
+
+.anime-down {
+  animation: animeDown 800ms ease forwards;
+}
+
+@keyframes animeDown {
+  from {
+    transform: translateY(-50px);
+    opacity: .5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 300ms ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: .5;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import Input from '../Forms/Input';
 import { UserContext } from '../../context/UserContext';
@@ -29,7 +28,7 @@ const LoginCreate = () => {
   }
 
   return (
-    <section className="bg-white flex items-center w-full flex-col md:py-40 max-md:py-24">
+    <section className="bg-white flex items-center w-full flex-col md:py-40 max-md:py-24 fade-in">
       <h1 className="title-b color-purple mb-8">Crie sua Conta</h1>
       <form
         action=""

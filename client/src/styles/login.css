@@ -1,3 +1,10 @@
-.login > nav > a.active {
+.login nav > a.active,
+.login nav a.active:hover {
   background-color: white;
+  color: var(--purple);
+}
+
+.login nav a:hover {
+  background-color: var(--gray-4);
+  
 }
