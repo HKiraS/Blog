@@ -205,7 +205,7 @@ export function App() {
           <Route path="/search/*" element={<PageSearch />} />
           <Route path="/login/*" element={<PageLogin />} />
           <Route
-            path="/account"
+            path="/account/*"
             element={
               <ProtectedRoute>
                 <PageAccount />
