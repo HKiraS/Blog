@@ -49,3 +49,16 @@ export function USER_POST(body) {
     },
   };
 }
+
+export function ARTICLE_POST(formData, token) {
+  return {
+    url: API_URL + '/api/user',
+    options: {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+      body: formData,
+    },
+  };
+}

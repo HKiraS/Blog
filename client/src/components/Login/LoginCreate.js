@@ -32,7 +32,7 @@ const LoginCreate = () => {
       <h1 className="title-b color-purple mb-8">Crie sua Conta</h1>
       <form
         action=""
-        className="flex flex-col items-center container p-8 w-full"
+        className="flex flex-col items-center container p-8 gap-6 w-full"
         onSubmit={handleSubmit}
       >
         <Input label="Usuário" type="text" name="username" {...username} />

@@ -21,7 +21,7 @@ const PageLogin = () => {
           <NavLink to="/login/lost">Recuperar senha</NavLink>
         </nav>
         <Link to='/' className='px-5 py-3 duration-200 hover:bg-red-500'>
-          <CloseSvg />
+          <CloseSvg className='color-black' />
         </Link>
       </div>
       <div>

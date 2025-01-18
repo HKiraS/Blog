@@ -1,18 +1,29 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import FileUploadField from '../Forms/FileUploadField';
 import ImageGallery from '../Forms/ImageGalery';
 import PreviewSection from '../Forms/PreviewSection';
-// import { ReactComponent as CloseSvg } from '../../assets/icon/close.svg';
+import useForm from '../../hooks/useForm';
+import Input from '../Forms/Input';
+import { ReactComponent as CloseSvg } from '../../assets/icon/close.svg';
 
 const AdminPost = () => {
-  // const formData = new FormData();
-  const [previews, setPreviews] = React.useState([]);
+  const [imgPreviews, setImgPreviews] = React.useState([]);
+  const [tags, setTags] = React.useState([]);
   const [imgCape, setImgCape] = React.useState(null);
   const [textPreview, setTextPrewiew] = React.useState(null);
   const [textContent, setTextContent] = React.useState('');
+  const title = useForm();
+  const topics = useForm();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append('imgCape', imgCape);
+    formData.append('text', textPreview);
+    formData.append('imgs', imgPreviews);
+    formData.append('title', title.value);
+    formData.append('tags', tags);
+
     console.log('submit');
   };
 
@@ -41,7 +52,7 @@ const AdminPost = () => {
     const previewUrls = files.map((file) => URL.createObjectURL(file));
 
     // Atualiza o estado para armazenar as pré-visualizações
-    setPreviews((prev) => [...prev, ...previewUrls]);
+    setImgPreviews((prev) => [...prev, ...previewUrls]);
   };
 
   const addText = async (e) => {
@@ -107,52 +118,100 @@ const AdminPost = () => {
     setImgCape(null);
     setTextPrewiew(null);
     setTextContent('');
-    setPreviews([]);
+    setImgPreviews([]);
+    setTags([]);
+  };
+
+  const removeImg = (e) => {
+    setImgPreviews((prev) => prev.filter((_, index) => index !== e));
   };
 
   return (
-    <section className="container bg-white mx-auto flex flex-col justify-center items-center py-8 shadow-lg">
-      <h1 className="title-b color-purple w-fit mb-12 mt-8">
-        Envio dos Artigos
-      </h1>
+    <section className="max-w-3xl bg-white mx-auto flex flex-col justify-center items-center py-8 shadow-lg">
+      <h1 className="title-b color-purple w-fit mb-12 mt-8">Envio do Artigo</h1>
 
       <form
         onSubmit={handleSubmit}
-        className="mt-8 gap-8 grid grid-cols-2 max-w-xl  max-md:grid-cols-1 row-auto"
+        className="mt-8 gap-8 grid grid-cols-2 max-w-xl max-md:grid-cols-1 row-auto anime-down"
       >
         <div className="flex flex-col gap-6 justify-center">
+          <Input label="Titulo" name="title" type="text" {...title} />
+          <div className="flex flex-wrap gap-3">
+            {Array.isArray(tags) && tags.length > 0 ? (
+              tags.map((tag, index) => {
+                return (
+                  <span
+                    key={index}
+                    className="rounded flex items-center icon w-fit gap-3 cursor-pointer purple-bg px-4 py-2 color-white"
+                    onClick={() => {
+                      setTags(tags.filter((item) => item !== tag));
+                    }}
+                  >
+                    {tag} <CloseSvg />
+                  </span>
+                );
+              })
+            ) : (
+              <span className="rounded flex items-center icon w-fit gap-3 cursor-pointer purple-bg px-4 py-2 color-white">
+                Exemplo <CloseSvg />
+              </span>
+            )}
+          </div>
+          <Input label="Tags" name="tags" type="text" {...topics} />
+          <button
+            className="btn-secundary-m rounded"
+            onClick={(e) => {
+              e.preventDefault();
+              if (topics.value.trim()) {
+                setTags((prev) => {
+                  return [...prev, topics.value.trim()];
+                });
+                topics.setValue('');
+              }
+            }}
+          >
+            Adicionar
+          </button>
           <FileUploadField
             type="file"
-            multiple={false}
             required={true}
-            accept={'image/*'}
+            accept="image/*"
             onClick={addImgCape}
-            label={'Imagem de Capa'}
+            label="Imagem de Capa"
           />
           <FileUploadField
             type="file"
-            multiple={false}
             required={true}
-            accept={'.md'}
+            accept=".md"
             onClick={addText}
-            label={'Arquivo de Texto'}
+            label="Arquivo de Texto"
           />
           <FileUploadField
             type="file"
             multiple={true}
             required={true}
-            accept={'image/*'}
+            accept="image/*"
             onClick={handleImgsChange}
-            label={'Imagens do Arquivo'}
+            label="Imagens do Arquivo"
           />
         </div>
-        <PreviewSection imgCape={imgCape} textPreview={textPreview} textContent={textContent} />
-        <ImageGallery previews={previews} setPreviews={setPreviews} className="col-start-1 col-end-3" />
+        <PreviewSection
+          imgCape={imgCape}
+          textPreview={textPreview}
+          textContent={textContent}
+        />
+        <ImageGallery
+          imgs={imgPreviews}
+          onClick={removeImg}
+          className="col-start-1 col-end-3"
+        />
         <div className="flex justify-between gap-4 mt-4 col-start-1 col-end-3">
           <button className="btn-secundary-m rounded" onClick={handleCancel}>
             Cancelar
           </button>
-          <button className="btn-primary-m rounded">Enviar</button>
+          <button className="btn-primary-m rounded" type="submit">
+            Enviar
+          </button>
         </div>
       </form>
     </section>

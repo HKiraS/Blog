@@ -21,7 +21,7 @@ const LoginPasswordLost = () => {
 
       <form
         action=""
-        className="flex flex-col items-center container p-8 w-full"
+        className="flex flex-col items-center container p-8 gap-6 w-full"
         onSubmit={handleSubmit}
       >
         <Input label="Informe o Email da conta" type="text" name="email" {...email} />
