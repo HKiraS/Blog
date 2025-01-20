@@ -5,6 +5,21 @@
 /.pnp
 .pnp.js
 
+# Arquivos de configuração específicos do Firebase
+firebase-debug.log
+.firebase/
+
+# Pastas dos emuladores Firebase (dados do emulador)
+.dataconnect/
+.firestore/
+
+# Arquivos de log
+*.log
+
+# Arquivos de configuração de IDEs
+.idea/
+.vscode/
+
 # testing
 /coverage
 
@@ -21,3 +36,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+apphosting.local.yaml

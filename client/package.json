@@ -5,6 +5,7 @@
   "dependencies": {
     "@cloudinary/react": "^1.13.1",
     "@cloudinary/url-gen": "^1.21.0",
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "axios": "^1.7.9",
     "cloudinary-react": "^1.8.1",
     "cra-template": "1.2.0",
