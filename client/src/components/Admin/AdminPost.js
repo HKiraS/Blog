@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPost } from '../../firebase/utils';
 import FileUploadField from '../Forms/FileUploadField';
 import ImageGallery from '../Forms/ImageGalery';
 import PreviewSection from '../Forms/PreviewSection';
@@ -8,6 +9,7 @@ import { ReactComponent as CloseSvg } from '../../assets/icon/close.svg';
 
 const AdminPost = () => {
   const [imgPreviews, setImgPreviews] = React.useState([]);
+  const [imgs, setImgs] = React.useState([]);
   const [tags, setTags] = React.useState([]);
   const [imgCape, setImgCape] = React.useState(null);
   const [textPreview, setTextPrewiew] = React.useState(null);
@@ -15,14 +17,29 @@ const AdminPost = () => {
   const title = useForm();
   const topics = useForm();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('imgCape', imgCape);
-    formData.append('text', textPreview);
-    formData.append('imgs', imgPreviews);
-    formData.append('title', title.value);
-    formData.append('tags', tags);
+
+    try {
+      const postData = {
+        title: title.value,
+        content: textContent,
+        tags: tags,
+      };
+
+      const coverFile = imgCape;
+      const contentImages = imgs.reduce((acc, img) => {
+        return {
+          ...acc,
+          [img.name]: img,
+        };
+      }, {});
+
+      const postId = await createPost(postData, coverFile, contentImages);
+      console.log('Post criado com sucesso!', postId);
+    } catch (error) {
+      console.error('Erro ao criar post:', error);
+    }
 
     console.log('submit');
   };
@@ -47,13 +64,27 @@ const AdminPost = () => {
     });
 
     if (!files || files.length === 0) return;
-
-    // Cria URLs temporárias para as imagens
+    console.log(files);
+    setImgs((prev) => [...prev, ...files]);
     const previewUrls = files.map((file) => URL.createObjectURL(file));
 
     // Atualiza o estado para armazenar as pré-visualizações
     setImgPreviews((prev) => [...prev, ...previewUrls]);
   };
+
+  const handleAddTag = (e) => {
+    e.preventDefault();
+
+    if (topics.value.trim()) {
+      setTags((prev) => {
+        if (prev.includes(topics.value.trim())) {
+          return prev;
+        }
+        return [...prev, topics.value.trim()];
+      });
+      topics.setValue('');
+    }
+  }
 
   const addText = async (e) => {
     e.preventDefault();
@@ -119,11 +150,13 @@ const AdminPost = () => {
     setTextPrewiew(null);
     setTextContent('');
     setImgPreviews([]);
+    setImgs([]);
     setTags([]);
   };
 
   const removeImg = (e) => {
     setImgPreviews((prev) => prev.filter((_, index) => index !== e));
+    setImgs((prev) => prev.filter((_, index) => index !== e));
   };
 
   return (
@@ -135,8 +168,8 @@ const AdminPost = () => {
         className="mt-8 gap-8 grid grid-cols-2 max-w-xl max-md:grid-cols-1 row-auto anime-down"
       >
         <div className="flex flex-col gap-6 justify-center">
-          <Input label="Titulo" name="title" type="text" {...title} />
-          <div className="flex flex-wrap gap-3">
+          <Input label="Titulo" name="title" type="text" {...title} required />
+          <div className="flex flex-wrap gap-3 max-h-20 overflow-y-auto">
             {Array.isArray(tags) && tags.length > 0 ? (
               tags.map((tag, index) => {
                 return (
@@ -160,15 +193,7 @@ const AdminPost = () => {
           <Input label="Tags" name="tags" type="text" {...topics} />
           <button
             className="btn-secundary-m rounded"
-            onClick={(e) => {
-              e.preventDefault();
-              if (topics.value.trim()) {
-                setTags((prev) => {
-                  return [...prev, topics.value.trim()];
-                });
-                topics.setValue('');
-              }
-            }}
+            onClick={handleAddTag}
           >
             Adicionar
           </button>

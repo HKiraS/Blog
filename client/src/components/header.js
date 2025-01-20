@@ -90,7 +90,7 @@ function Header() {
             {!login ? (
               <Link
                 to="/login"
-                className="title-s relative cursor-pointer btn-primary-m hover:translate-y-1"
+                className="title-s relative cursor-pointer btn-primary-m rounded hover:translate-y-1"
               >
                 Login
               </Link>

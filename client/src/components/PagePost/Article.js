@@ -18,7 +18,7 @@ function reducer(state, action) {
       window.localStorage.setItem('fontSize', state);
       return state;
     case 'decrement':
-      state = state >= 12 ? state - 2 : state;
+      state = state >= 14 ? state - 2 : state;
       window.localStorage.setItem('fontSize', state);
       return state;
     default:
@@ -79,7 +79,7 @@ function Article({ data }) {
 
   return (
     <article
-      className="article-post color-gray-2 white-bg max-w-4xl mx-auto py-16 mb-16 duration-300 rounded-b anime-down"
+      className="article-post color-gray-1 white-bg max-w-4xl mx-auto py-16 mb-16 duration-300 rounded-b anime-down"
       ref={articleRef}
     >
       <div className="article-post-container mx-auto flex flex-col items-center max-w-full">
@@ -87,7 +87,7 @@ function Article({ data }) {
           <img src={img} alt="garota" className="img-post" />
         </figure>
 
-        <h1 className="title-m mt-8">{title}</h1>
+        <h1 className="title-m mt-8 color-black">{title}</h1>
         <h2 className="text-n autor mb-6">{author}</h2>
         <div className="tags-container flex gap-4 mb-4 mx-auto">
           {tags.map((tag, index) => (
@@ -96,7 +96,7 @@ function Article({ data }) {
             </Link>
           ))}
         </div>
-        <div className="post-data flex flex-wrap gap-8 mb-8 px-8 max-sm:gap-4 mx-auto *:flex *:items-center *:gap-1 ">
+        <div className="post-data flex flex-wrap gap-8 mb-8 px-8 max-sm:gap-4 mx-auto *:flex *:items-center *:gap-1 color-gray-1">
           <div className="icon">
             <ClockSvg />
             <span className="text-s">{timeRead}</span>
@@ -132,7 +132,7 @@ function Article({ data }) {
             <button
               className=""
               onClick={() => dispatch('decrement')}
-              disabled={state === 12}
+              disabled={state <= 14}
             >
               <MinusSvg />
             </button>
@@ -153,7 +153,7 @@ function Article({ data }) {
         </div>
         <span className="separator w-11/12 h-0.5 col-span-2 row-start-1 place-self-center opacity-20 my-8"></span>
         <div
-          className="max-w-screen-sm max-md:px-4 flex flex-col gap-4 article-text"
+          className="max-w-screen-sm max-md:px-4 flex flex-col gap-4 article-text color-black"
           style={{ fontSize: state + 'px' }}
         >
           {description.split('/n').map((text, index) => (
