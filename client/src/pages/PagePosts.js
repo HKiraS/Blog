@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Posts from '../components/PagePost/Posts';
 
 function PagePosts() {
-      document.title = 'UnderBlog | Postagens'
+  document.title = 'UnderBlog | Postagens';
 
   return (
     <div>

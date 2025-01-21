@@ -3,15 +3,18 @@ import React from 'react';
 import Article from './Article';
 import Comments from './Comments';
 import { dados } from '../../App';
+import { useParams } from 'react-router-dom';
 
 function Posts() {
+  const { post } = useParams();
+
+  document.title = `UnderBlog | ${post}`;
+
   return (
-    <div>
-      <main>
-        <Article data={dados} />
-        <Comments />
-      </main>
-    </div>
+    <main>
+      <Article data={dados} />
+      <Comments />
+    </main>
   );
 }
 

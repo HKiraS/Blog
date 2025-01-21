@@ -48,3 +48,22 @@
 .comment-options path {
   stroke: var(--gray-2);
 }
+
+.comment-container {
+  grid-template-columns: auto 1fr;
+}
+
+.comment.response {
+  width: calc(100% - 20px);
+  margin-left: 20px;
+}
+
+.comment.response::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: var(--gray-3);
+}

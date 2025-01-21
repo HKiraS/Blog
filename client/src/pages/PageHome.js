@@ -57,6 +57,7 @@ const dados = [
     views: 100,
     likes: 21,
     author: 'Kira',
+    // eslint-disable-next-line 
     tags: [],
     date: '2024-12-27',
     description:

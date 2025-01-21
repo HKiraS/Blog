@@ -21,7 +21,7 @@ const LoginForm = () => {
   }
 
   return (
-    <section className="bg-white flex items-center w-full flex-col md:py-52 max-md:py-24 fade-in">
+    <section className="bg-color-white flex items-center w-full flex-col md:py-52 max-md:py-24 fade-in">
       <h1 className="title-b color-purple">Faça Login</h1>
       <form
         action=""
@@ -31,7 +31,7 @@ const LoginForm = () => {
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
         {error && (
-          <span className="color-black flex gap-2">
+          <span className="text-color-black flex gap-2">
             Esqueceu a senha?
             <Link to="login/lost" className="color-blue hover:text-blue-800">
               Recupere agora
@@ -53,7 +53,7 @@ const LoginForm = () => {
         </button>
         <Error erro={error} />
       </form>
-      <span className="color-black flex gap-2">
+      <span className="text-color-black flex gap-2">
         Ainda não fez o cadrastro?
         <Link to="./create" className="color-blue hover:text-blue-800">
           Faça agora

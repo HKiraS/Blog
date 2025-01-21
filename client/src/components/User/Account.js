@@ -12,12 +12,14 @@ const Account = () => {
   }
 
   return (
-    <section className='container mx-auto bg-white px-10 py-8'>
+    <section className="container mx-auto bg-color-white px-10 py-8">
       <h1>Conta</h1>
       <button className="btn-secundary-m rounded" onClick={handleLogout}>
         Sair
       </button>
-      <Link to='/account/admin' className='btn-secundary-m my-3 rounded'>Admin</Link>
+      <Link to="/account/admin" className="btn-secundary-m my-3 rounded">
+        Admin
+      </Link>
     </section>
   );
 };

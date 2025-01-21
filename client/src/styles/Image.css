@@ -1,0 +1,20 @@
+.image-skeleton {
+  background-color: var(--gray-4);
+  background: linear-gradient(
+    to right,
+    var(--gray-4) 0%,
+    var(--gray-3) 50%,
+    var(--gray-4) 100%
+  );
+  background-size: 200%;
+  animation: skeleton-loading 1.5s infinite linear;
+}
+
+@keyframes skeleton-loading {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -200%;
+  }
+}

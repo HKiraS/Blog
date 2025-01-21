@@ -10,19 +10,6 @@
   }
 }
 
-.footer-container .separator {
-  margin-inline: 1rem;
-}
-
-.footer-text, 
-.copyright p {
-  color: var(--gray-3);
-}
-
-.footer-links {
-  color: var(--gray-3);
-}
-
 footer .footer-link:hover {
   color: var(--purple);
 }
