@@ -11,7 +11,7 @@ function Footer() {
       <div className="footer-container container mx-auto grid max-md:grid-cols-2 gap-4">
         <div className="about gap-6 grid  pr-3 pb-4">
           <h2 className="footer-title title-m">Sobre</h2>
-          <p className="footer-text text-s">
+          <p className="footer-text text-s color-gray-3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             mattis blandit nulla ut tincidunt. In sollicitudin, lorem nec
             pretium tristique, ligula nibh scelerisque nulla, at interdum urna
@@ -24,7 +24,7 @@ function Footer() {
           </h2>
           <nav>
             <ul className="footer-links flex flex-col gap-2 lg:self-center">
-              <li className="footer-link relative flex items-center">
+              <li className="footer-link relative flex items-center color-gray-3">
                 <Link to='/characters' className="pl-3 duration-500">
                   Personagens
                 </Link>
@@ -43,8 +43,8 @@ function Footer() {
           </nav>
         </div>
         <div className="copyright col-start-1 col-end-4 row-start-1 row-end-3 flex flex-col justify-center items-center gap-6">
-          <span className="separator w-4/5 h-px in-black-bg opacity-20"></span>
-          <p className="text-s">
+          <span className="separator my-4 w-4/5 h-px in-black-bg opacity-20"></span>
+          <p className="text-s color-gray-3">
             &copy; 2024 Undertale Blog. Todos os direitos reservados.
           </p>
           <div className="social flex gap-6">

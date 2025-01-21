@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+# arquive text
+
+missing.md
+
 # production
 /build
 
