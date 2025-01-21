@@ -1,5 +1,4 @@
 import React from 'react';
-import { createPost } from '../../firebase/utils';
 import FileUploadField from '../Forms/FileUploadField';
 import ImageGallery from '../Forms/ImageGalery';
 import PreviewSection from '../Forms/PreviewSection';
@@ -19,28 +18,6 @@ const AdminPost = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const postData = {
-        title: title.value,
-        content: textContent,
-        tags: tags,
-      };
-
-      const coverFile = imgCape;
-      const contentImages = imgs.reduce((acc, img) => {
-        return {
-          ...acc,
-          [img.name]: img,
-        };
-      }, {});
-
-      const postId = await createPost(postData, coverFile, contentImages);
-      console.log('Post criado com sucesso!', postId);
-    } catch (error) {
-      console.error('Erro ao criar post:', error);
-    }
-
     console.log('submit');
   };
 
@@ -161,7 +138,7 @@ const AdminPost = () => {
 
   return (
     <section className="max-w-3xl bg-color-white mx-auto flex flex-col justify-center items-center py-8 shadow-lg">
-      <h1 className="title-b color-purple w-fit mb-12 mt-8">Envio do Artigo</h1>
+      <h1 className="title-b text-color-purple w-fit mb-12 mt-8">Envio do Artigo</h1>
 
       <form
         onSubmit={handleSubmit}
@@ -175,7 +152,7 @@ const AdminPost = () => {
                 return (
                   <span
                     key={index}
-                    className="rounded flex items-center icon w-fit gap-3 cursor-pointer purple-bg px-4 py-2 text-color-white"
+                    className="rounded flex items-center icon w-fit gap-3 cursor-pointer bg-purple px-4 py-2 text-color-white"
                     onClick={() => {
                       setTags(tags.filter((item) => item !== tag));
                     }}
@@ -185,7 +162,7 @@ const AdminPost = () => {
                 );
               })
             ) : (
-              <span className="rounded flex items-center icon w-fit gap-3 cursor-pointer purple-bg px-4 py-2 text-color-white">
+              <span className="rounded flex items-center icon w-fit gap-3 cursor-pointer bg-purple px-4 py-2 text-color-white">
                 Exemplo <CloseSvg />
               </span>
             )}

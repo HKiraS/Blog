@@ -2,9 +2,9 @@ import React from "react";
 
 function PreviewSection({ imgCape, textPreview, textContent }) {
   return (
-    <div className="preview border-solid border-2 border-gray-500 py-3 px-5 flex flex-col items-center justify-self-center rounded max-w-60 h-full">
+    <div className="preview border-solid border-2 border-gray-2 py-3 px-5 flex flex-col items-center justify-self-center rounded max-w-60 h-full">
       <h2 className="title-s mb-6">Pré-visualização</h2>
-      <div className="border-solid border-2 border-gray-400 w-48 h-24 justify-self-center rounded mb-4 flex items-center justify-center">
+      <div className="border-solid border-2 border-gray-4 w-48 h-24 justify-self-center rounded-lg mb-4 flex items-center justify-center overflow-hidden">
         {imgCape ? (
           <img
             src={imgCape}
