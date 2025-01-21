@@ -1,104 +1,20 @@
-.another-posts .btn-filter {
-  transition: 0.3s;
-}
-
 .another-posts .btn-filter:hover,
 .another-posts .btn-filter:focus,
 .another-posts .btn-filter.active {
   color: var(--orange);
 }
 
-.another-posts .tags-container {
-  background-color: var(--black);
-  border: 1px solid var(--gray-3);
-  bottom: -160%;
-  z-index: 1;
-}
-
-body.light .another-posts .tags-container {
-  background-color: var(--gray-4);
-  border: 1px solid var(--black);
-}
-
-.another-posts .tags-container::before {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 30px solid var(--gray-3);
-  position: absolute;
-  top: -15%;
-  right: 20px;
-  z-index: 2;
-}
-
-.another-posts .tags-container .tag {
-  border: 1px solid var(--gray-3);
-}
-
-body.light .another-posts .tags-container .tag {
-  border: 1px solid var(--black);
-  color: var(--black);
-}
-
-.another-posts .tags-container .tag:hover {
-  background-color: var(--gray-3);
-  color: var(--black);
-  border: 1px solid var(--black);
-}
-
-body.light .another-posts .tags-container .tag:hover {
-  background-color: var(--black);
-  border: 1px solid var(--black);
-  color: var(--white);
-}
-
-.another-posts .tags-container .tag.active {
-  background-color: var(--orange);
-  color: var(--black);
-  border: 1px solid var(--orange) !important;
-}
-
-.another-posts .tags-container label {
-  background-color: var(--orange);
-  color: var(--black);
-}
-
 body.dark #page-controls button {
   color: var(--white);
 }
 
-body.light #page-controls button {
-  color: var(--black);
+@media (max-width: 768px) {
+  .another-posts .posts-container {
+    width: calc(100vw - 2rem);
+  }
 }
 
 #page-controls button:hover,
 #page-controls button.active {
   color: var(--orange) !important;
-}
-
-@media (min-width: 1000px) {
-  .another-posts .posts-container .post-content > div {
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .another-posts .posts-container {
-    width: calc(100% - 2rem);
-  }
-
-  .another-posts .post-box button {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 500px) {
-  .another-posts .post-box {
-    max-width: 100%;
-  }
-  .another-posts .post-box .post-image {
-    max-height: 150px;
-  }
 }

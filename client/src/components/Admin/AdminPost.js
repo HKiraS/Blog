@@ -160,7 +160,7 @@ const AdminPost = () => {
   };
 
   return (
-    <section className="max-w-3xl bg-white mx-auto flex flex-col justify-center items-center py-8 shadow-lg">
+    <section className="max-w-3xl bg-color-white mx-auto flex flex-col justify-center items-center py-8 shadow-lg">
       <h1 className="title-b color-purple w-fit mb-12 mt-8">Envio do Artigo</h1>
 
       <form
@@ -175,7 +175,7 @@ const AdminPost = () => {
                 return (
                   <span
                     key={index}
-                    className="rounded flex items-center icon w-fit gap-3 cursor-pointer purple-bg px-4 py-2 color-white"
+                    className="rounded flex items-center icon w-fit gap-3 cursor-pointer purple-bg px-4 py-2 text-color-white"
                     onClick={() => {
                       setTags(tags.filter((item) => item !== tag));
                     }}
@@ -185,7 +185,7 @@ const AdminPost = () => {
                 );
               })
             ) : (
-              <span className="rounded flex items-center icon w-fit gap-3 cursor-pointer purple-bg px-4 py-2 color-white">
+              <span className="rounded flex items-center icon w-fit gap-3 cursor-pointer purple-bg px-4 py-2 text-color-white">
                 Exemplo <CloseSvg />
               </span>
             )}

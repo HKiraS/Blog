@@ -19,7 +19,7 @@ export function RecentPosts({ data }) {
   return (
     <section className="">
       <div className="recent-posts max-w-screen-2xl container mx-auto px-4 lg:px-4 anime-left">
-        <h1 className="title-b w-fit relative my-16 justify-self-center">
+        <h1 className="title-b w-fit relative my-16 justify-self-center text-color-purple">
           Destaques
         </h1>
         <div className="posts-container container max-md:px-4 mx-auto grid grid-cols-10 max-md:flex max-md:flex-col max-lg:gap-0 max-lg:px-0">

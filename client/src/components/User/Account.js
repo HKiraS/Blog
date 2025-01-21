@@ -12,23 +12,14 @@ const Account = () => {
   }
 
   return (
-    <section className='container mx-auto white-bg shadow-lg px-10 py-8'>
-      <h1 className='title-b w-fit color-purple mb-8'>Conta</h1>
-
-      {data && (
-        <ul className='flex flex-col gap-3'>
-          <li>
-            <span className='font-bold'>Nome:</span> {data.nome}
-          </li>
-          <li>
-            <span className='font-bold'>Email:</span> {data.email}
-          </li>
-        </ul>
-      )}
+    <section className="container mx-auto bg-color-white px-10 py-8">
+      <h1>Conta</h1>
       <button className="btn-secundary-m rounded" onClick={handleLogout}>
         Sair
       </button>
-      <Link to='/account/admin' className='btn-secundary-m my-3 rounded'>Admin</Link>
+      <Link to="/account/admin" className="btn-secundary-m my-3 rounded">
+        Admin
+      </Link>
     </section>
   );
 };

@@ -12,10 +12,6 @@
   --gray-4: #f3f4f6;
   --white: #f9fafb;
 
-  /* Gradient-colors */
-  --gradient-gray: linear-gradient(to bottom, #6b7280e3 25%, #1f2937 90%);
-  --gradient-blue: linear-gradient(to bottom, #3b82f6 50%, #1627a7 100%);
-
   /* font-style*/
 
   --fontFamily-Texturina: 'Texturina', cursive;
@@ -127,82 +123,37 @@ body.no-scroll {
 
 body.dark .nav-arrow,
 .separator.in-black-bg,
-body.dark .separator,
-.white-bg {
+body.dark .separator {
   background-color: var(--white);
 }
 
 body.light .nav-arrow,
-.separator,
-.black-bg {
+.separator {
   background-color: var(--black);
 }
 
 h1.title-b::before,
-.purple-bg,
 body.light .nav-arrow:hover,
 body.dark .nav-arrow:hover {
   background-color: var(--purple);
 }
 
-h1.title-b.in-black-bg::before,
-.orange-bg {
+h1.title-b.in-black-bg::before {
   background-color: var(--orange);
 }
 
-.gray-1-bg {
-  background-color: var(--gray-1);
-}
-
-.gray-2-bg {
-  background-color: var(--gray-2);
-}
-
-.gray-3-bg {
-  background-color: var(--gray-3);
-}
-
-.gray-4-bg {
-  background-color: var(--gray-4);
-}
-
-.color-white,
 body.light .nav-arrow svg {
   color: var(--white);
 }
-.color-black,
+
 body.dark .nav-arrow svg,
 body.light .nav-arrow:hover svg,
 body.dark .nav-arrow:hover svg {
   color: var(--black);
 }
-.color-blue {
-  color: var(--blue);
-}
 
-h1.title-b.in-black-bg,
-.color-orange {
+h1.title-b.in-black-bg {
   color: var(--orange);
-}
-
-.color-purple {
-  color: var(--purple);
-}
-
-.color-gray-1 {
-  color: var(--gray-1);
-}
-
-.color-gray-2 {
-  color: var(--gray-2);
-}
-
-.color-gray-3 {
-  color: var(--gray-3);
-}
-
-.color-gray-4 {
-  color: var(--gray-4);
 }
 
 .left svg {
@@ -236,7 +187,7 @@ h1.title-b::before {
 
 @keyframes animeLeft {
   from {
-    opacity: .3;
+    opacity: 0.3;
     transform: translateX(-100px);
   }
   to {
@@ -252,7 +203,7 @@ h1.title-b::before {
 @keyframes animeDown {
   from {
     transform: translateY(-50px);
-    opacity: .5;
+    opacity: 0.5;
   }
   to {
     transform: translateY(0);
@@ -266,7 +217,7 @@ h1.title-b::before {
 
 @keyframes fadeIn {
   from {
-    opacity: .5;
+    opacity: 0.5;
   }
   to {
     opacity: 1;

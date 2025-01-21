@@ -24,11 +24,11 @@ const LoginCreate = () => {
       password: password.value,
     });
     const response = await fetch(url, options);
-    if (response.ok) userLogin(username.value,password.value);
+    if (response.ok) userLogin(username.value, password.value);
   }
 
   return (
-    <section className="bg-white flex items-center w-full flex-col md:py-40 max-md:py-24 fade-in">
+    <section className="bg-color-white flex items-center w-full flex-col md:py-40 max-md:py-24 fade-in">
       <h1 className="title-b color-purple mb-8">Crie sua Conta</h1>
       <form
         action=""

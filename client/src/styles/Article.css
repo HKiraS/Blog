@@ -1,5 +1,11 @@
 .article-post {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  color: var(--gray-1);
+}
+
+.article-post h1 {
+  color: var(--black);
 }
 
 .article-post.dark {
@@ -19,46 +25,6 @@
 .article-post path {
   stroke: var(--gray-2);
 }
-
-.article-post .autor {
-  color: var(--gray-2);
-}
-
-.article-post-container {
-  max-width: 80%;
-}
-
-.img-post {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.img-post-container {
-  width: 640px;
-  height: 320px;
-  overflow: hidden;
-}
-
-@media (max-width: 780px) {
-  
-  .img-post-container {
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-  }
-}
-@media (max-width: 500px) {
-  
-  .img-post-container {
-    height: 270px;
-    overflow: hidden;
-  }
-} 
-
-
-
 
 .tag-post::before {
   content: url('../assets/icon/tag.svg');

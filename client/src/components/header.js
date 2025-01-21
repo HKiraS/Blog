@@ -45,7 +45,10 @@ function Header() {
 
         <div className="flex gap-6 max-sm:gap-3 items-center">
           <div className="relative flex search-bar *:duration-500 justify-center rounded overflow-hidden ">
-            <button className="search-bar-btn py-2 px-3 " onClick={handleClick}>
+            <button
+              className="search-bar-btn bg-color-white active:bg-gray-3 hover:bg-color-blue py-2 px-3 "
+              onClick={handleClick}
+            >
               <SearchSvg />
             </button>
             <input
@@ -53,19 +56,19 @@ function Header() {
               placeholder="Buscar..."
               name="search"
               id="search"
-              className="max-w-md search-bar-input w-0"
+              className="max-w-md search-bar-input -order-1 text-color-black bg-color-white w-0"
             />
           </div>
           <button
-            className="dark-mode-toggle relative cursor-pointer"
+            className="dark-mode-toggle relative cursor-pointer w-12 h-6 rounded-full"
             onClick={toggleDarkMode}
           >
-            <span className="absolute top-0 left-0 grid place-content-center duration-300">
-              <SunSvg className="sun absolute top-0 left-0 opacity-100 invisible" />
-              <MoonSvg className="moon absolute top-0 left-0 opacity-0 invisible" />
+            <span className="absolute top-0 left-0 grid place-content-center duration-300 w-6 h-6 rounded-full *:w-6 *:h-6 *:rounded-full">
+              <SunSvg className="sun absolute top-0 left-0 opacity-100 invisible text-color-white" />
+              <MoonSvg className="moon absolute top-0 left-0 opacity-0 invisible text-color-black" />
             </span>
           </button>
-          <nav className="navbar-container flex gap-6 items-center">
+          <nav className="navbar-container -translate-y-1 flex gap-6 items-center max-lg:hidden">
             <NavLink
               end
               to=""
@@ -90,7 +93,11 @@ function Header() {
             {!login ? (
               <Link
                 to="/login"
+<<<<<<< HEAD
                 className="title-s relative cursor-pointer btn-primary-m rounded hover:translate-y-1"
+=======
+                className="title-s relative cursor-pointer btn-primary-m hover:translate-y-1 rounded"
+>>>>>>> stop
               >
                 Login
               </Link>
@@ -103,16 +110,16 @@ function Header() {
               </NavLink>
             )}
           </nav>
-          <div className="navbar-mobile flex items-center">
+          <div className="navbar-mobile hidden items-center max-lg:block">
             <button
               className="navbar-toggle-btn flex flex-col gap-2 w-16 h-14 justify-center items-center"
               onClick={handleMenuClick}
             >
-              <span className="bar rounded-full w-8 h-0.5 duration-300 gray-3-bg"></span>
-              <span className="bar rounded-full w-8 h-0.5 duration-300 gray-3-bg"></span>
-              <span className="bar rounded-full w-8 h-0.5 duration-300 gray-3-bg"></span>
+              <span className="bar rounded-full w-8 h-0.5 duration-300 bg-gray-3"></span>
+              <span className="bar rounded-full w-8 h-0.5 duration-300 bg-gray-3"></span>
+              <span className="bar rounded-full w-8 h-0.5 duration-300 bg-gray-3"></span>
             </button>
-            <nav className="flex navbar-container-mobile rounded-bl flex-col fixed overflow-hidden top-0 right-0 duration-300 shadow-lg *:duration-500 *:px-3 *:py-6 *:cursor-pointer *:flex *:items-center *:relative *:gap-2 *:w-full">
+            <nav className="flex navbar-container-mobile z-20 h-max bg-color-white w-6/12 rounded-bl flex-col fixed overflow-hidden top-0 right-0 duration-300 shadow-lg *:duration-500 *:px-3 *:py-6 *:cursor-pointer *:flex *:items-center *:relative *:gap-2 *:w-full *:bg-text-color-white *:text-color-black">
               <NavLink
                 to="/"
                 className="title-s navbar-link-mobile"
@@ -148,7 +155,7 @@ function Header() {
                   to="/account"
                   className="title-s relative cursor-pointer navbar-link-mobile flex items-center gap-2"
                 >
-                  {data.nome} <UserSvg className='color-black'/>
+                  {data.nome} <UserSvg className="text-color-black" />
                 </NavLink>
               )}
             </nav>

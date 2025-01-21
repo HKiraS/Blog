@@ -1,27 +1,8 @@
-#header.hide {
-  transform: translateY(-100%);
-}
-
-body.light .dark-mode-toggle,
-body.dark .dark-mode-toggle {
-  color: var(--white);
-  width: 48px;
-  height: 24px;
-  border-radius: 24px;
-}
-
 body.light .dark-mode-toggle {
   background: hsla(27, 96%, 61%, 0.2);
 }
 body.dark .dark-mode-toggle {
   background: hsla(266, 100%, 64%, 0.2);
-}
-
-.dark-mode-toggle span,
-.dark-mode-toggle span svg {
-  width: 24px;
-  height: 24px;
-  border-radius: 24px;
 }
 
 body.light .dark-mode-toggle span svg.sun,
@@ -40,14 +21,6 @@ body.dark .dark-mode-toggle span {
   left: calc(100% - 24px);
 }
 
-.navbar-mobile {
-  display: none;
-}
-
-.navbar-container {
-  transform: translateY(-4px);
-}
-
 .navbar-link.active,
 .navbar-link:focus,
 .navbar-link:hover,
@@ -59,7 +32,7 @@ body.dark .dark-mode-toggle span {
 .navbar-container-mobile .navbar-link-mobile:hover svg,
 .navbar-link.active svg,
 .navbar-link:focus svg,
-.navbar-link:hover svg{
+.navbar-link:hover svg {
   color: var(--purple);
 }
 
@@ -79,18 +52,6 @@ body.dark .dark-mode-toggle span {
 .navbar-link.active::after,
 .navbar-link:hover::after {
   width: 100%;
-}
-
-.search-bar-btn {
-  background-color: var(--white);
-}
-
-.search-bar-btn.active {
-  background-color: var(--gray-3);
-}
-
-.search-bar-btn:hover {
-  background-color: var(--blue);
 }
 
 .search-bar-btn.active ~ .search-bar-input {
@@ -114,12 +75,6 @@ body.dark .dark-mode-toggle span {
   }
 }
 
-.search-bar-input {
-  order: -1;
-  color: var(--black);
-  background-color: var(--white);
-}
-
 .navbar-toggle-btn.active .bar {
   transform: rotate(225deg);
   position: absolute;
@@ -134,28 +89,14 @@ body.dark .dark-mode-toggle span {
   transform: rotate(-225deg);
 }
 
-@media (max-width: 1040px) {
-  .navbar-container {
-    display: none;
-  }
-
+@media (max-width: 1024px) {
   .navbar-container-mobile {
-    position: fixed;
-    top: 95px;
-    width: 50%;
-    height: max-content;
-    background-color: var(--white);
-    z-index: 11;
+    top: 96px;
     transform: translateX(100%);
   }
 
   .navbar-toggle-btn.active ~ .navbar-container-mobile {
     transform: translateX(0);
-  }
-
-  .navbar-container-mobile .navbar-link-mobile {
-    background-color: var(--white);
-    color: var(--black);
   }
 
   .navbar-container-mobile .navbar-link-mobile::before {
@@ -183,13 +124,5 @@ body.dark .dark-mode-toggle span {
   .navbar-container-mobile .navbar-link-mobile:focus::before {
     width: 8px;
     left: -8px;
-  }
-
-  .navbar-mobile {
-    display: block;
-  }
-
-  .navbar-mobile .btn-primary-m {
-    border-radius: 0;
   }
 }

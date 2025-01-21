@@ -10,6 +10,7 @@ import { ReactComponent as PlusSvg } from '../../assets/icon/plus.svg';
 import { ReactComponent as ContrastSvg } from '../../assets/icon/contrast.svg';
 import { ReactComponent as ShareSvg } from '../../assets/icon/share.svg';
 import imgExemplo from '../../assets/images/girl random.jpeg';
+import Image from '../Helper/Image';
 
 function reducer(state, action) {
   switch (action) {
@@ -61,11 +62,16 @@ function Article({ data }) {
   function changeColorContent() {
     const article = articleRef.current;
     if (article) {
-      article.classList.toggle('dark');
-      if (window.localStorage.getItem('articleContrast') === 'active') {
+      if (
+        window.localStorage.getItem('articleContrast') === 'active' &&
+        article.classList.contains('dark')
+      ) {
         window.localStorage.removeItem('articleContrast');
+        article.classList.remove('dark');
+      } else {
+        article.classList.add('dark');
+        window.localStorage.setItem('articleContrast', 'active');
       }
-      window.localStorage.setItem('articleContrast', 'active');
     }
   }
 
@@ -79,24 +85,32 @@ function Article({ data }) {
 
   return (
     <article
-      className="article-post color-gray-1 white-bg max-w-4xl mx-auto py-16 mb-16 duration-300 rounded-b anime-down"
+      className="article-post max-w-4xl mx-auto py-16 max-md:py-8 mb-16 duration-300 rounded-b anime-down"
       ref={articleRef}
     >
-      <div className="article-post-container mx-auto flex flex-col items-center max-w-full">
-        <figure className="img-post-container">
-          <img src={img} alt="garota" className="img-post" />
+      <div className="article-post-container mx-auto flex flex-col items-center max-md:max-w-full max-w-3xl">
+        <figure className="w-10/12 h-80 max-sm:h-72 overflow-hidden rounded">
+          <Image
+            src={img}
+            alt="garota"
+            className="w-full h-full object-cover"
+          />
         </figure>
 
-        <h1 className="title-m mt-8 color-black">{title}</h1>
-        <h2 className="text-n autor mb-6">{author}</h2>
+        <h1 className="title-m mt-8 text-color-black">{title}</h1>
+        <h2 className="text-n autor mb-6 color-gray-1">{author}</h2>
         <div className="tags-container flex gap-4 mb-4 mx-auto">
-          {tags.map((tag, index) => (
-            <Link to={'/search/' + tag} className="tag-post duration-300" key={tag + '-' + index}>
+          {tags.map((tag) => (
+            <Link
+              to={'/search/' + tag}
+              className="tag-post duration-300"
+              key={tag}
+            >
               {tag}
             </Link>
           ))}
         </div>
-        <div className="post-data flex flex-wrap gap-8 mb-8 px-8 max-sm:gap-4 mx-auto *:flex *:items-center *:gap-1 color-gray-1">
+        <div className="post-data flex flex-wrap gap-8 mb-8 px-8 max-sm:gap-4 mx-auto *:flex *:items-center *:gap-1 color-gray-2">
           <div className="icon">
             <ClockSvg />
             <span className="text-s">{timeRead}</span>
@@ -107,30 +121,29 @@ function Article({ data }) {
           </div>
           <div className="icon">
             <LikeSvg />
-            <span className="text-s">{likes} curtidas</span>
+            <span className="text-s">
+              {likes > 1 ? likes + ' curtidas' : likes + ' curtidas'}
+            </span>
           </div>
           <div className="icon">
             <ViewSvg />
-            <span className="text-s">{views} visualizações</span>
+            <span className="text-s">
+              {views > 1 ? views + ' visualizações' : views + ' visualização'}
+            </span>
           </div>
         </div>
         <div className="flex w-full flex-wrap max-w-xl justify-between max-sm:justify-center gap-4 px-8 items-center">
           <div className="acessability-container flex gap-3 *:border-2 *:p-2 *:duration-500 *:border-black *:border-solid *:rounded">
-            <button
-              className=""
-              onClick={changeColorContent}
-            >
+            <button className="" onClick={changeColorContent}>
               <ContrastSvg />
             </button>
             <button
-              className=""
               onClick={() => dispatch('increment')}
               disabled={state >= 24}
             >
               <PlusSvg />
             </button>
             <button
-              className=""
               onClick={() => dispatch('decrement')}
               disabled={state <= 14}
             >
@@ -153,7 +166,7 @@ function Article({ data }) {
         </div>
         <span className="separator w-11/12 h-0.5 col-span-2 row-start-1 place-self-center opacity-20 my-8"></span>
         <div
-          className="max-w-screen-sm max-md:px-4 flex flex-col gap-4 article-text color-black"
+          className="max-w-screen-sm max-md:px-4 flex flex-col gap-4 article-text w-11/12 mx-auto"
           style={{ fontSize: state + 'px' }}
         >
           {description.split('/n').map((text, index) => (
@@ -192,7 +205,7 @@ function Article({ data }) {
             a iaculis.
           </p>
           <figure className="my-8">
-            <img
+            <Image
               src={imgExemplo}
               alt="Exemplo de imagem"
               title="Exemplo de imagem"

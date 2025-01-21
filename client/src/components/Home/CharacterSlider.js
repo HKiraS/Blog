@@ -13,13 +13,13 @@ export function CharacterSlider({ data }) {
           <h1 className="title-b relative in-black-bg gap-4">Personagens</h1>
           <div className="btn-container flex gap-6">
             {/* <div className="options flex items-center gap-4">
-              <button className="py-2 px-4 rounded btn-option duration-300">
+              <button className="py-2 px-4 rounded bg-color-white text-color-black duration-300">
                 Opção 1
               </button>
-              <button className="py-2 px-4 rounded btn-option duration-300">
+              <button className="py-2 px-4 rounded bg-color-white text-color-black duration-300">
                 Opção 1
               </button>
-              <button className="py-2 px-4 rounded btn-option duration-300">
+              <button className="py-2 px-4 rounded bg-color-white text-color-black duration-300">
                 Opção 1
               </button>
             </div> */}
@@ -30,8 +30,8 @@ export function CharacterSlider({ data }) {
         </div>
       </header>
       <div className="flex items-center max-w-screen-2xl mx-auto justify-center w-11/12 gap-8 px-8 max-sm:px-4 anime-left">
-        <div className="character-container mx-auto my-16 flex flex-col gap-8 overflow-hidden w-full">
-          <div className="gap-8 character-box flex relative mb-4 *:snap-center snap-x snap-mandatory overflow-x-auto overflow-y-hidden">
+        <div className="character-container mx-auto my-16 flex flex-col gap-8 max-md:gap-4 overflow-hidden w-full">
+          <div className="gap-8 max-md:gap-4 character-box pb-4 flex relative mb-4 *:snap-center snap-x snap-mandatory overflow-x-auto overflow-y-hidden">
             {evenData.map((item) => (
               <CharacterCard
                 key={item.title + item.id}
@@ -40,7 +40,7 @@ export function CharacterSlider({ data }) {
               />
             ))}
           </div>
-          <div className="gap-8 character-box flex relative mb-4 *:snap-center snap-x snap-mandatory overflow-x-auto overflow-y-hidden">
+          <div className="gap-8 max-md:gap-4 character-box flex relative mb-4 pb-4 *:snap-center snap-x snap-mandatory overflow-x-auto overflow-y-hidden">
             {oddData.map((item) => (
               <CharacterCard
                 key={item.title + item.id}
