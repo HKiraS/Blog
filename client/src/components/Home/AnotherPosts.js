@@ -49,7 +49,7 @@ export function AnotherPosts({ data }) {
           return (
             <button
               key={'button-' + index}
-              className={`w-10 h-10 text-color-black p-2 duration-300 hover:text-color-orange active:text-color-orange ${isActive}`}
+              className={`w-10 h-10 text-color-black p-2 duration-300 ${isActive}`}
             >
               {item}
             </button>

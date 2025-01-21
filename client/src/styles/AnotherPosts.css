@@ -13,3 +13,8 @@ body.dark #page-controls button {
     width: calc(100vw - 2rem);
   }
 }
+
+#page-controls button:hover,
+#page-controls button.active {
+  color: var(--orange) !important;
+}

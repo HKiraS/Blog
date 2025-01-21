@@ -8,7 +8,7 @@ function Comment({ comment, handleReaction, response = false, userReactions }) {
   return (
     <div className={`comment-container relative ${response ? 'my-0' : 'my-1'}`}>
       <div
-        className={`comment w-full block ${response ? 'response col-start-2 col-end-3' : 'col-start-1 col-end-3'}`}
+        className={`comment max-w-3xl w-full max-md:mx-8 block ${response ? 'response max-md:hidden' : 'col-start-1 col-end-3'}`}
         id={`comment-${comment.id}`}
         key={comment.name + ' - ' + comment.id}
       >
@@ -39,7 +39,7 @@ function Comment({ comment, handleReaction, response = false, userReactions }) {
                 handleReaction(comment.id, 'like');
               }}
             >
-              <span className="">{comment.likes}</span>
+              <span>{comment.likes}</span>
               <LikeSvg className="-rotate-90 w-6" />
             </button>
             <button
@@ -50,7 +50,7 @@ function Comment({ comment, handleReaction, response = false, userReactions }) {
                 handleReaction(comment.id, 'dislike');
               }}
             >
-              <span className="">- {comment.dislikes}</span>
+              <span>- {comment.dislikes}</span>
               <LikeSvg className="rotate-90 w-5" />
             </button>
           </div>

@@ -85,7 +85,7 @@ function Article({ data }) {
 
   return (
     <article
-      className="article-post color-gray-1  bg-color-white max-w-4xl mx-auto py-16 max-md:py-12 mb-16 duration-300 rounded-b anime-down "
+      className="article-post max-w-4xl mx-auto py-16 max-md:py-8 mb-16 duration-300 rounded-b anime-down"
       ref={articleRef}
     >
       <div className="article-post-container mx-auto flex flex-col items-center max-md:max-w-full max-w-3xl">
@@ -166,7 +166,7 @@ function Article({ data }) {
         </div>
         <span className="separator w-11/12 h-0.5 col-span-2 row-start-1 place-self-center opacity-20 my-8"></span>
         <div
-          className="max-w-screen-sm max-md:px-4 flex flex-col gap-4 article-text"
+          className="max-w-screen-sm max-md:px-4 flex flex-col gap-4 article-text w-11/12 mx-auto"
           style={{ fontSize: state + 'px' }}
         >
           {description.split('/n').map((text, index) => (

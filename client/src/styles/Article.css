@@ -1,5 +1,11 @@
 .article-post {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  color: var(--gray-1);
+}
+
+.article-post h1 {
+  color: var(--black);
 }
 
 .article-post.dark {

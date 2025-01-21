@@ -90,6 +90,7 @@ function Comments() {
       response: [],
     },
   ];
+
   const [comments, setComments] = React.useState(arrayComments);
   const [userReactions, setUserReactions] = useState({});
 

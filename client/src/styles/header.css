@@ -32,7 +32,7 @@ body.dark .dark-mode-toggle span {
 .navbar-container-mobile .navbar-link-mobile:hover svg,
 .navbar-link.active svg,
 .navbar-link:focus svg,
-.navbar-link:hover svg{
+.navbar-link:hover svg {
   color: var(--purple);
 }
 
@@ -90,7 +90,6 @@ body.dark .dark-mode-toggle span {
 }
 
 @media (max-width: 1024px) {
-
   .navbar-container-mobile {
     top: 96px;
     transform: translateX(100%);
